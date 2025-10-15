@@ -1,0 +1,386 @@
+/* Modern Navbar Styles 2024-2025 */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Advanced backdrop blur with fallback */
+.navbar-container {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Modern logo glow animation */
+.logo-glow {
+  animation: modern-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes modern-glow {
+  0% {
+    box-shadow: 
+      0 0 20px rgba(107, 114, 128, 0.2),
+      0 0 40px rgba(107, 114, 128, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 0 30px rgba(212, 175, 55, 0.3),
+      0 0 60px rgba(212, 175, 55, 0.1);
+  }
+}
+
+/* Modern navigation link effects */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6b7280, #d4af37, #6b7280);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+/* Modern dropdown animations */
+.dropdown-menu {
+  animation: modernFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top center;
+}
+
+@keyframes modernFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-2px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modern mobile menu animation */
+.mobile-menu {
+  animation: slideDownModern 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDownModern {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modern button effects */
+.modern-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-button:hover::before {
+  left: 100%;
+}
+
+/* Modern certification badges */
+.cert-badge {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.cert-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Modern scroll progress indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6b7280, #d4af37, #6b7280);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 9999;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modern scrollbar styling */
+.modern-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modern-scroll::-webkit-scrollbar-track {
+  background: rgba(107, 114, 128, 0.1);
+  border-radius: 3px;
+}
+
+.modern-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6b7280, #d4af37);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.modern-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #374151, #b8860b);
+}
+
+/* Modern focus styles for accessibility */
+.modern-focus:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+  border-radius: 12px;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+}
+
+/* Modern text gradient effects */
+.text-gradient {
+  background: linear-gradient(135deg, #374151, #6b7280, #9ca3af);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Modern ripple effect */
+.modern-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1), height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-ripple:active::after {
+  width: 400px;
+  height: 400px;
+}
+
+/* Advanced glass morphism effect */
+.modern-glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Modern staggered animation for mobile menu items */
+.mobile-menu-item {
+  animation: modernSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.mobile-menu-item:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu-item:nth-child(2) { animation-delay: 0.15s; }
+.mobile-menu-item:nth-child(3) { animation-delay: 0.2s; }
+.mobile-menu-item:nth-child(4) { animation-delay: 0.25s; }
+.mobile-menu-item:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes modernSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-2px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modern navbar shadow when scrolled */
+.navbar-scrolled {
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced micro-interactions */
+.micro-interaction {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.micro-interaction:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Modern loading state */
+.modern-loading {
+  animation: modernPulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes modernPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Modern brand gradients */
+.brand-gradient-1 {
+  background: linear-gradient(135deg, #6b7280 0%, #d4af37 50%, #6b7280 100%);
+}
+
+.brand-gradient-2 {
+  background: linear-gradient(135deg, #374151 0%, #d4af37 100%);
+}
+
+.brand-gradient-3 {
+  background: linear-gradient(135deg, #111827 0%, #6b7280 50%, #d4af37 100%);
+}
+
+/* Modern responsive design */
+@media (max-width: 1024px) {
+  .navbar-container {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-text-adjust {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .mobile-menu-item {
+    animation-duration: 0.4s;
+  }
+}
+
+/* Modern dark mode support */
+@media (prefers-color-scheme: dark) {
+  .navbar-dark {
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(20px);
+    border-color: rgba(75, 85, 99, 0.3);
+  }
+  
+  .navbar-dark .text-gradient {
+    background: linear-gradient(135deg, #e5e7eb, #f9fafb, #d1d5db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Advanced animation utilities */
+@keyframes gentleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.gentle-bounce {
+  animation: gentleBounce 2s ease-in-out infinite;
+}
+
+/* Modern interaction states */
+.modern-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Performance optimizations */
+.navbar-container {
+  will-change: transform, opacity;
+}
+
+.dropdown-menu {
+  will-change: transform, opacity;
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .modern-glow,
+  .gradient-shift,
+  .gentle-bounce {
+    animation: none !important;
+  }
+}

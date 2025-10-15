@@ -1,26 +1,130 @@
 @import "tailwindcss";
+@import "../styles/navbar.css";
 
 :root {
+  /* Layout Variables */
+  --navbar-height-mobile: 4rem;   /* 64px */
+  --navbar-height-desktop: 5rem;  /* 80px */
+  
+  /* V7 MARKETPLACE Brand Colors */
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground: #374151;        /* Gris carbón elegante */
+  --card: #ffffff;
+  --card-foreground: #374151;
+  --popover: #ffffff;
+  --popover-foreground: #374151;
+  
+  /* Primarios basados en logo V7 */
+  --primary: #6B7280;          /* Gris principal del logo V7 */
+  --primary-foreground: #ffffff;
+  --secondary: #9CA3AF;        /* Gris medio del "7" */
+  --secondary-foreground: #374151;
+  
+  /* Acento dorado del logo Zaché */
+  --accent: #D4AF37;           /* Dorado elegante */
+  --accent-foreground: #374151;
+  
+  /* Neutrales sofisticados */
+  --muted: #F9FAFB;           /* Gris muy claro */
+  --muted-foreground: #6B7280;
+  
+  /* Estados y acciones */
+  --destructive: #EF4444;
+  --destructive-foreground: #ffffff;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --info: #64748B;
+  
+  /* Bordes y inputs */
+  --border: #E5E7EB;
+  --input: #F3F4F6;
+  --ring: #6B7280;
+  --radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --border: #27272a;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-white text-gray-900;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-optical-sizing: auto;
+    /* Prevent horizontal scroll and improve touch scrolling */
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  html {
+    /* Ensure smooth scrolling on all devices */
+    scroll-behavior: smooth;
+    /* Prevent text size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Clases auxiliares para fuentes específicas */
+  .font-primary {
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-optical-sizing: auto;
+  }
+  
+  .font-accent {
+    font-family: var(--font-montserrat), var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: 'ss01', 'ss02';
+  }
+  
+  /* Mejoras tipográficas */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* Responsive utilities for professional appearance */
+  .container-responsive {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Mobile-first responsive text scaling */
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+  }
+  
+  /* Professional spacing utilities */
+  .space-responsive-sm {
+    @apply space-y-4 sm:space-y-5 md:space-y-6;
+  }
+  
+  .space-responsive-md {
+    @apply space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10;
+  }
+  
+  .space-responsive-lg {
+    @apply space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16;
+  }
 }
