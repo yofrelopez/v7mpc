@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏢 V7 Marketplace Corporation - Official Website
 
-## Getting Started
+Modern, professional corporate website built with Next.js 15 for V7 Marketplace Corporation, a minority-owned, Latin woman-led enterprise specializing in global sourcing and manufacturing solutions.
 
-First, run the development server:
+## 🌟 Current Status
+
+**✅ Phase 1 Complete - Foundation & Hero Section**
+
+- [x] Modern Hero section with responsive design
+- [x] Professional navbar with mobile menu
+- [x] Elegant footer with 4-column layout
+- [x] Complete typography system
+- [x] Responsive design (mobile-first)
+- [x] Brand color palette implementation
+- [x] Basic page structure
+
+## 🚀 Live Preview
+
+**🔗 GitHub Repository**: https://github.com/yofrelopez/v7mpc  
+**🌐 Live Site**: Coming soon on Vercel
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.5.5 with Turbopack
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4.x
+- **Components**: Shadcn/ui
+- **Icons**: Lucide React
+- **Fonts**: Inter + Montserrat (Google Fonts)
+- **Deployment**: Vercel (ready to deploy)
+
+## 🎨 Design Features
+
+### Hero Section
+- Professional responsive design
+- Certification logos (SBA, NMSDC, SAM.gov)
+- Auto-centering content on mobile
+- Smooth animations and hover effects
+- Brand-consistent styling
+
+### Navigation
+- Modern glassmorphism navbar
+- Smooth scroll effects
+- Mobile-responsive menu
+- Brand logo integration
+
+### Typography
+- Professional font pairing (Inter + Montserrat)
+- Responsive text scaling
+- Optimal readability across devices
+
+## 📱 Responsive Design
+
+Optimized for all device types:
+- **Mobile**: 320px - 640px
+- **Tablet**: 640px - 1024px  
+- **Laptop**: 1024px - 1440px
+- **Desktop**: 1440px+
+
+## 🎯 Brand Colors
+
+- **V7 Charcoal**: `#374151` - Primary text
+- **V7 Steel**: `#6b7280` - Secondary elements  
+- **V7 Gold**: `#d4af37` - Brand accent
+- **V7 Amber**: `#f59e0b` - Call-to-action
+
+## 💻 Development Setup
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # App router pages
+│   ├── admin/             # Admin dashboard
+│   ├── contacto/          # Contact page
+│   ├── cotizacion/        # Quote page
+│   ├── nosotros/          # About page
+│   ├── productos/         # Products page
+│   └── layout.tsx         # Root layout
+├── components/
+│   ├── home/              # Home page sections
+│   │   └── Hero.tsx       # Main hero section
+│   ├── layout/            # Layout components
+│   │   ├── Navbar.tsx     # Navigation
+│   │   └── Footer.tsx     # Footer
+│   └── ui/                # Shadcn/ui components
+├── lib/                   # Utilities
+└── styles/                # Custom CSS
+```
 
-## Learn More
+## 🚧 Development Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+### Phase 2 - Home Page Sections
+- [ ] Services overview
+- [ ] Client testimonials  
+- [ ] Company statistics
+- [ ] Contact call-to-action
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Phase 3 - Content Pages
+- [ ] About Us page development
+- [ ] Products catalog
+- [ ] Contact form functionality
+- [ ] Quote request system
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Phase 4 - Advanced Features
+- [ ] CMS integration
+- [ ] Multi-language support
+- [ ] Performance optimization
+- [ ] SEO enhancement
 
-## Deploy on Vercel
+## 🏆 Certifications Featured
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **SBA**: U.S. Small Business Administration
+- **NMSDC**: National Minority Supplier Development Council  
+- **SAM.gov**: System for Award Management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📞 Contact
+
+**V7 Marketplace Corporation**
+- Industry: Global Sourcing & Manufacturing
+- Certifications: MBE, WBENC Certified
+- Focus: Reliable, standardized solutions for international markets
+
+---
+
+**Built with ❤️ for V7 Marketplace Corporation**
