@@ -5,6 +5,7 @@
   /* Layout Variables */
   --navbar-height-mobile: 4rem;   /* 64px */
   --navbar-height-desktop: 5rem;  /* 80px */
+  --navbar-total-height: 94px;    /* Optimized navbar height: 6px(border-t) + 80px(h-20) + 8px(py-2) */
   
   /* V7 MARKETPLACE Corporate Colors - Opción 1: Azul-Gris Suave */
   --background: #ffffff;

@@ -43,8 +43,8 @@ export default function RootLayout({
           <Navbar />
         </header>
         
-        {/* Main Content with proper semantic structure and responsive spacing */}
-        <main className="min-h-screen">
+        {/* Main Content with natural flow */}
+        <main>
           {children}
         </main>
         

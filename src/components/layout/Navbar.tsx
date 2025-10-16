@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Modern Navigation */}
       <nav 
-        className={`navbar-container py-2 fixed top-0 w-full z-50 transition-all duration-700 ease-out border-t-6 border-t-slate-600 ${
+        className={`navbar-container py-2 sticky top-0 w-full z-50 transition-all duration-700 ease-out border-t-6 border-t-slate-600 ${
           isMounted && isScrolled 
             ? 'bg-white/95 backdrop-blur-xl shadow-2xl shadow-gray-900/10 border-b border-gray-200/50' 
             : 'bg-white/98 shadow-lg'
@@ -139,7 +139,7 @@ export default function Navbar() {
                     <div className="border-t border-gray-100 my-2"></div>
                     
                     <Link 
-                      href="/productos?category=promotional" 
+                      href="/productos" 
                       className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
                       onClick={() => setActiveDropdown(null)}
                     >
@@ -147,7 +147,7 @@ export default function Navbar() {
                       Productos Promocionales
                     </Link>
                     <Link 
-                      href="/productos?category=office" 
+                      href="/productos" 
                       className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
                       onClick={() => setActiveDropdown(null)}
                     >
@@ -155,7 +155,7 @@ export default function Navbar() {
                       Suministros de Oficina
                     </Link>
                     <Link 
-                      href="/productos?category=custom" 
+                      href="/productos" 
                       className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
                       onClick={() => setActiveDropdown(null)}
                     >
@@ -279,7 +279,7 @@ export default function Navbar() {
                           </div>
                         </Link>
 
-                        <Link href="/productos?category=promotional" onClick={() => setIsOpen(false)}>
+                        <Link href="/productos" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-200">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Productos Promocionales</span>
@@ -289,7 +289,7 @@ export default function Navbar() {
                           </div>
                         </Link>
 
-                        <Link href="/productos?category=office" onClick={() => setIsOpen(false)}>
+                        <Link href="/productos" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-250">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Suministros de Oficina</span>
@@ -299,7 +299,7 @@ export default function Navbar() {
                           </div>
                         </Link>
 
-                        <Link href="/productos?category=custom" onClick={() => setIsOpen(false)}>
+                        <Link href="/productos" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-300">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Manufactura Personalizada</span>

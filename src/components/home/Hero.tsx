@@ -7,18 +7,18 @@ import { ArrowRight, Users, Globe, CheckCircle } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20 lg:pt-18">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-transparent to-white/60"></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-12rem)]">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center min-h-[calc(100vh-200px)] lg:min-h-[calc(100vh-150px)]">
           
           {/* Content Section */}
-          <div className="space-y-8 lg:pr-8 order-2 lg:order-1 text-center lg:text-left">
+          <div className="space-y-6 md:space-y-8 lg:pr-8 order-2 lg:order-1 text-center lg:text-left">
             
             {/* Main Headline */}
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <h1 className="font-primary text-3xl md:text-4xl lg:text-5xl font-bold text-gray-700 leading-tight">
                 <span className="block">Reliable. Efficient.</span>
                 <span className="block text-slate-600">Global.</span>
@@ -97,7 +97,7 @@ export default function Hero() {
           </div>
 
           {/* Image Section */}
-          <div className="relative h-[400px] lg:h-[600px] order-1 lg:order-2">
+          <div className="relative h-[350px] md:h-[450px] lg:h-[600px] order-1 lg:order-2">
             <div className="absolute inset-0 bg-gradient-to-br from-slate-600/10 to-slate-400/5 rounded-3xl"></div>
             <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl shadow-gray-900/20">
               <Image
