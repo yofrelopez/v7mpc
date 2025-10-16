@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { Shield, Award, ArrowRight, MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
+import { Shield, Award, MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
 
 export default function Footer() {
   return (

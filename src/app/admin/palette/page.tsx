@@ -57,7 +57,7 @@ export default function PalettePage() {
             🎨 Opciones de Paleta Corporativa
           </h1>
           <p className="text-lg text-gray-600 mb-2">
-            Paletas "grises azules yendo a grises" para V7MPC
+            Paletas &ldquo;grises azules yendo a grises&rdquo; para V7MPC
           </p>
           <p className="text-sm text-gray-500">
             Haz clic en cualquier color para copiar su código
