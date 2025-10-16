@@ -6,7 +6,7 @@
   --navbar-height-mobile: 4rem;   /* 64px */
   --navbar-height-desktop: 5rem;  /* 80px */
   
-  /* V7 MARKETPLACE Brand Colors */
+  /* V7 MARKETPLACE Corporate Colors - Opción 1: Azul-Gris Suave */
   --background: #ffffff;
   --foreground: #374151;        /* Gris carbón elegante */
   --card: #ffffff;
@@ -14,26 +14,26 @@
   --popover: #ffffff;
   --popover-foreground: #374151;
   
-  /* Primarios basados en logo V7 */
-  --primary: #6B7280;          /* Gris principal del logo V7 */
+  /* Primarios Opción 1: Transición Azul-Gris Suave */
+  --primary: #64748b;          /* Slate-600: Gris azulado medio */
   --primary-foreground: #ffffff;
-  --secondary: #9CA3AF;        /* Gris medio del "7" */
+  --secondary: #94a3b8;        /* Slate-400: Gris azulado claro */
   --secondary-foreground: #374151;
   
-  /* Acento dorado del logo Zaché */
-  --accent: #D4AF37;           /* Dorado elegante */
-  --accent-foreground: #374151;
+  /* Acento principal */
+  --accent: #475569;           /* Slate-600: Gris azulado oscuro */
+  --accent-foreground: #ffffff;
   
   /* Neutrales sofisticados */
   --muted: #F9FAFB;           /* Gris muy claro */
   --muted-foreground: #6B7280;
   
-  /* Estados y acciones */
-  --destructive: #EF4444;
+  /* Estados y acciones corporativos */
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --success: #10B981;
-  --warning: #F59E0B;
-  --info: #64748B;
+  --success: #22c55e;
+  --warning: #f97316;
+  --info: #3b82f6;
   
   /* Bordes y inputs */
   --border: #E5E7EB;

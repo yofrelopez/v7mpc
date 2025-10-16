@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Modern Navigation */}
       <nav 
-        className={`navbar-container py-2 fixed top-0 w-full z-50 transition-all duration-700 ease-out border-t-4 border-t-[#f59e0b] ${
+        className={`navbar-container py-2 fixed top-0 w-full z-50 transition-all duration-700 ease-out border-t-6 border-t-slate-600 ${
           isMounted && isScrolled 
             ? 'bg-white/95 backdrop-blur-xl shadow-2xl shadow-gray-900/10 border-b border-gray-200/50' 
             : 'bg-white/98 shadow-lg'
@@ -81,9 +81,9 @@ export default function Navbar() {
                   {/* Clean horizontal logo without background */}
                   <div className="flex items-center justify-center transition-all duration-500">
                     <Image
-                      src="/logo.png"
+                      src="/logo_2.png"
                       alt="V7MPC Logo"
-                      width={isMounted && isScrolled ? 150 : 210}
+                      width={isMounted && isScrolled ? 70 : 90}
                       height={isMounted && isScrolled ? 50 : 58}
                       className="transition-all duration-500 group-hover:scale-105"
                       priority
@@ -190,11 +190,11 @@ export default function Navbar() {
               {/* Certifications - Desktop */}
               <div className="hidden xl:flex items-center justify-center space-x-2 h-full">
                 <Badge className="font-accent bg-gray-50/80 text-gray-600 border border-gray-200/50 text-xs px-3 py-1.5 font-normal transition-all duration-300 hover:bg-gray-100/60 hover:text-gray-700 flex items-center">
-                  <Award width={14} height={14} className="mr-1.5 text-[#d4af37]/60" />
+                  <Award width={14} height={14} className="mr-1.5 text-slate-500/60" />
                   MBE Certified
                 </Badge>
                 <Badge className="font-accent bg-gray-50/80 text-gray-600 border border-gray-200/50 text-xs px-3 py-1.5 font-normal transition-all duration-300 hover:bg-gray-100/60 hover:text-gray-700 flex items-center">
-                  <Shield width={12} height={12} className="mr-1.5 text-[#d4af37]/60" />
+                  <Shield width={12} height={12} className="mr-1.5 text-slate-500/60" />
                   WBENC
                 </Badge>
               </div>
@@ -202,11 +202,11 @@ export default function Navbar() {
               {/* Refined Quote Button */}
               <Link href="/cotizacion">
                 <Button 
-                  className="font-primary group bg-white/80 text-[#f59e0b] hover:text-[#f59e0b]/80 font-medium px-5 py-2.5 rounded-xl border-2 border-[#f59e0b]/60 hover:border-[#f59e0b] transition-all duration-300"
+                  className="font-primary group bg-white/80 text-slate-600 hover:text-slate-700 font-medium px-5 py-2.5 rounded-xl border-2 border-slate-400/60 hover:border-slate-600 transition-all duration-300"
                 >
                   <span className="flex items-center gap-2">
-                    <span className="hidden sm:inline">Solicitar Cotización</span>
-                    <span className="sm:hidden">Cotizar</span>
+                    <span className="hidden sm:inline">Request Quote</span>
+                    <span className="sm:hidden">Quote</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-all duration-300" />
                   </span>
                 </Button>
@@ -244,10 +244,10 @@ export default function Navbar() {
                 
                 {/* Home Link */}
                 <Link href="/" onClick={() => setIsOpen(false)}>
-                  <div className="group flex items-center px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-[#f59e0b]">
+                  <div className="group flex items-center px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500">
                     <span className="font-primary font-normal text-base tracking-wide">Inicio</span>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <ArrowRight className="w-4 h-4 text-[#f59e0b]" />
+                      <ArrowRight className="w-4 h-4 text-slate-500" />
                     </div>
                   </div>
                 </Link>
@@ -255,56 +255,56 @@ export default function Navbar() {
                 {/* Products Section with Enhanced Animation */}
                 <div>
                   <button 
-                    className="group w-full flex items-center justify-between px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-[#f59e0b]"
+                    className="group w-full flex items-center justify-between px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500"
                     onClick={() => handleDropdownToggle('mobile-products')}
                   >
                     <span className="font-primary font-normal text-base tracking-wide">Productos</span>
-                    <ChevronDown className={`w-5 h-5 text-gray-400 transition-all duration-400 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-                      activeDropdown === 'mobile-products' ? 'rotate-180 text-[#f59e0b] scale-110' : 'group-hover:text-gray-600'
+                    <ChevronDown className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      activeDropdown === 'mobile-products' ? 'rotate-180 text-slate-600 scale-110' : 'group-hover:text-gray-600'
                     }`} />
                   </button>
                   
                   {/* Refined Sub-menu with Staggered Animation */}
                   {activeDropdown === 'mobile-products' && (
-                    <div className="bg-gradient-to-r from-gray-50/60 to-gray-50/30 border-l-4 border-[#f59e0b]/20 animate-in slide-in-from-top-3 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <div className="bg-gradient-to-r from-gray-50/60 to-gray-50/30 border-l-4 border-slate-600/20 animate-in slide-in-from-top-3 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
                       <div className="py-2 space-y-0.5">
                         
                         <Link href="/productos" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-150">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-[#f59e0b] group-hover:scale-125 transition-all duration-400"></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Catálogo Completo</span>
                             <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-[#f59e0b]" />
+                              <ArrowRight className="w-3 h-3 text-slate-600" />
                             </div>
                           </div>
                         </Link>
 
                         <Link href="/productos?category=promotional" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-200">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-[#f59e0b] group-hover:scale-125 transition-all duration-400"></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Productos Promocionales</span>
                             <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-[#f59e0b]" />
+                              <ArrowRight className="w-3 h-3 text-slate-600" />
                             </div>
                           </div>
                         </Link>
 
                         <Link href="/productos?category=office" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-250">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-[#f59e0b] group-hover:scale-125 transition-all duration-400"></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Suministros de Oficina</span>
                             <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-[#f59e0b]" />
+                              <ArrowRight className="w-3 h-3 text-slate-600" />
                             </div>
                           </div>
                         </Link>
 
                         <Link href="/productos?category=custom" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-300">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-[#f59e0b] group-hover:scale-125 transition-all duration-400"></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Manufactura Personalizada</span>
                             <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-[#f59e0b]" />
+                              <ArrowRight className="w-3 h-3 text-slate-600" />
                             </div>
                           </div>
                         </Link>
@@ -316,20 +316,20 @@ export default function Navbar() {
 
                 {/* About Link */}
                 <Link href="/nosotros" onClick={() => setIsOpen(false)}>
-                  <div className="group flex items-center px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-[#f59e0b]">
+                  <div className="group flex items-center px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500">
                     <span className="font-primary font-normal text-base tracking-wide">Nosotros</span>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <ArrowRight className="w-4 h-4 text-[#f59e0b]" />
+                      <ArrowRight className="w-4 h-4 text-slate-600" />
                     </div>
                   </div>
                 </Link>
 
                 {/* Contact Link */}
                 <Link href="/contacto" onClick={() => setIsOpen(false)}>
-                  <div className="group flex items-center px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-[#f59e0b]">
+                  <div className="group flex items-center px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500">
                     <span className="font-primary font-normal text-base tracking-wide">Contacto</span>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <ArrowRight className="w-4 h-4 text-[#f59e0b]" />
+                      <ArrowRight className="w-4 h-4 text-slate-600" />
                     </div>
                   </div>
                 </Link>
@@ -337,7 +337,7 @@ export default function Navbar() {
               </div>
 
               {/* Elegant Bottom Accent */}
-              <div className="h-1 bg-gradient-to-r from-[#f59e0b]/20 via-[#f59e0b] to-[#f59e0b]/20"></div>
+              <div className="h-1 bg-gradient-to-r from-slate-600/20 via-slate-600 to-slate-600/20"></div>
 
             </div>
           </div>

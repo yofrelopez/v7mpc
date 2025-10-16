@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="space-y-6">
               <h1 className="font-primary text-3xl md:text-4xl lg:text-5xl font-bold text-gray-700 leading-tight">
                 <span className="block">Reliable. Efficient.</span>
-                <span className="block text-[#f59e0b]">Global.</span>
+                <span className="block text-slate-600">Global.</span>
                 <span className="block text-gray-600">Manufacturing</span>
                 <span className="block text-gray-600">Solutions</span>
               </h1>
@@ -36,7 +36,7 @@ export default function Hero() {
               {/* Team Avatars */}
               <div className="flex items-center space-x-2">
                 <div className="flex -space-x-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#f59e0b] to-[#d4af37] rounded-full border-2 border-white flex items-center justify-center shadow-lg">
+                  <div className="w-10 h-10 bg-gradient-to-br from-slate-600 to-slate-500 rounded-full border-2 border-white flex items-center justify-center shadow-lg">
                     <Users className="w-5 h-5 text-white" />
                   </div>
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full border-2 border-white flex items-center justify-center shadow-lg">
@@ -52,7 +52,7 @@ export default function Hero() {
               <Link href="/productos">
                 <Button 
                   size="lg"
-                  className="font-primary group bg-[#f59e0b] hover:bg-[#f59e0b]/90 text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-[#f59e0b]/20"
+                  className="font-primary group bg-slate-600 hover:bg-slate-700 text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-slate-600/20"
                 >
                   <span className="flex items-center gap-3">
                     <span>Check out our Products</span>
@@ -98,7 +98,7 @@ export default function Hero() {
 
           {/* Image Section */}
           <div className="relative h-[400px] lg:h-[600px] order-1 lg:order-2">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#f59e0b]/10 to-[#d4af37]/5 rounded-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-600/10 to-slate-400/5 rounded-3xl"></div>
             <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl shadow-gray-900/20">
               <Image
                 src="/home/hero.jpg"
@@ -113,7 +113,7 @@ export default function Hero() {
             </div>
             
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#d4af37] rounded-full opacity-20 blur-xl animate-pulse"></div>
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-slate-600 to-slate-400 rounded-full opacity-20 blur-xl animate-pulse"></div>
             <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-20 blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
 
