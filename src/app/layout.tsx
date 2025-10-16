@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   title: "V7 Marketplace Corporation - Global B2B Sourcing & Manufacturing",
   description: "V7MPC provides reliable, standardized solutions for sourcing and manufacturing products across international markets. MBE & WBENC certified.",
   keywords: "B2B sourcing, manufacturing, promotional products, office supplies, jewelry supplies, custom branding, MBE, WBENC",
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: "V7 Marketplace Corporation",
     description: "Global sourcing, manufacturing, and logistics for quality products and custom branding.",
