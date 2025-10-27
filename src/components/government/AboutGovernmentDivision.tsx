@@ -32,7 +32,7 @@ export default function AboutGovernmentDivision() {
               </div>
               
               <p className="font-accent text-lg text-slate-700 leading-relaxed">
-                With <span className="font-semibold text-slate-900">more than 20 years</span> of experience supporting federal agencies, state and local governments, schools, universities, and religious organizations, we understand the unique requirements of public sector procurement.
+                With <span className="font-semibold text-slate-900">more than 20 years</span> of experience supporting federal, state, and local agencies, schools, universities, and religious organizations, we understand the unique requirements of public sector procurement.
               </p>
               
               {/* Timeline Visual */}
@@ -54,7 +54,7 @@ export default function AboutGovernmentDivision() {
                 <div>
                   <h3 className="font-primary text-lg font-semibold text-slate-900 mb-3">Our Mission</h3>
                   <p className="font-accent text-base text-slate-700 leading-relaxed italic">
-                    Simplify the procurement process by offering reliable products, transparent pricing, and timely delivery — all while maintaining excellence in design and service.
+                    Simplify procurement through reliable products, transparent pricing, and on-time delivery — ensuring excellence from design to service.
                   </p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export default function AboutGovernmentDivision() {
             </div>
 
             {/* Certifications Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               {/* MBE Certification */}
               <div className="group bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -85,7 +85,7 @@ export default function AboutGovernmentDivision() {
                     <h4 className="font-primary font-semibold text-slate-900">MBE Certified</h4>
                     <p className="font-accent text-sm text-slate-600">Minority Business Enterprise</p>
                   </div>
-                  <div className="w-3 h-3 bg-emerald-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                  <div className="w-3 h-3 bg-emerald-500 rounded-full group-hover:scale-125 transition-transform sm:hidden"></div>
                 </div>
               </div>
 
@@ -99,7 +99,7 @@ export default function AboutGovernmentDivision() {
                     <h4 className="font-primary font-semibold text-slate-900">WBENC Certified</h4>
                     <p className="font-accent text-sm text-slate-600">Woman-Owned Business</p>
                   </div>
-                  <div className="w-3 h-3 bg-purple-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                  <div className="w-3 h-3 bg-purple-500 rounded-full group-hover:scale-125 transition-transform sm:hidden"></div>
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ export default function AboutGovernmentDivision() {
                     <h4 className="font-primary font-semibold text-slate-900">SAM Registered</h4>
                     <p className="font-accent text-sm text-slate-600">Government Vendor</p>
                   </div>
-                  <div className="w-3 h-3 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                  <div className="w-3 h-3 bg-blue-500 rounded-full group-hover:scale-125 transition-transform sm:hidden"></div>
                 </div>
               </div>
 
@@ -127,9 +127,24 @@ export default function AboutGovernmentDivision() {
                     <h4 className="font-primary font-semibold text-slate-900">DUNS & CAGE</h4>
                     <p className="font-accent text-sm text-slate-600">Available upon request</p>
                   </div>
-                  <div className="w-3 h-3 bg-slate-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                  <div className="w-3 h-3 bg-slate-500 rounded-full group-hover:scale-125 transition-transform sm:hidden"></div>
                 </div>
               </div>
+            </div>
+
+            {/* Credibility Statement */}
+            <div className="bg-gradient-to-r from-emerald-50 to-blue-50 p-6 rounded-xl border border-emerald-200/50 shadow-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-4 h-4 text-white" />
+                </div>
+                <span className="font-primary text-sm font-semibold text-emerald-700 uppercase tracking-wide">
+                  Verified Eligibility
+                </span>
+              </div>
+              <p className="font-accent text-slate-700 leading-relaxed">
+                Our verified certifications ensure full eligibility for federal, state, and local contracting.
+              </p>
             </div>
           </div>
 

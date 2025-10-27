@@ -65,26 +65,26 @@ export default function ContactSection() {
             
             {/* Main Heading */}
             <div>
-              <h2 className="font-primary text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
+              <h2 className="font-primary text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 Ready to Partner with{' '}
                 <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                   V7 Marketplace?
                 </span>
               </h2>
-              <p className="font-accent text-xl text-slate-300 leading-relaxed max-w-xl">
+              <p className="font-accent text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-xl">
                 Our dedicated government team is ready to support your agency or institution with excellence and reliability. 
                 Reach out for quotes, contract requests, or supplier documentation.
               </p>
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-3 sm:gap-6">
               {trustBadges.map((badge, index) => {
                 const IconComponent = badge.icon;
                 return (
-                  <div key={index} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
-                    <IconComponent className={`w-5 h-5 ${badge.color}`} />
-                    <span className="font-accent text-sm font-medium text-slate-300">
+                  <div key={index} className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 border border-white/20">
+                    <IconComponent className={`w-4 h-4 sm:w-5 sm:h-5 ${badge.color}`} />
+                    <span className="font-accent text-xs sm:text-sm font-medium text-slate-300">
                       {badge.title}
                     </span>
                   </div>
@@ -97,19 +97,19 @@ export default function ContactSection() {
               {contactMethods.map((method, index) => {
                 const IconComponent = method.icon;
                 return (
-                  <div key={index} className="group flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                    <div className={`w-12 h-12 ${method.bgColor} rounded-xl flex items-center justify-center`}>
-                      <IconComponent className={`w-6 h-6 ${method.color}`} />
+                  <div key={index} className="group flex items-center gap-3 sm:gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 ${method.bgColor} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                      <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 ${method.color}`} />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-primary text-sm font-semibold text-slate-300 mb-1">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-primary text-xs sm:text-sm font-semibold text-slate-300 mb-1">
                         {method.title}
                       </h4>
-                      <p className="font-accent text-white text-lg">
+                      <p className="font-accent text-white text-sm sm:text-base lg:text-lg truncate sm:overflow-visible">
                         {method.value}
                       </p>
                     </div>
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
                       <span className="font-accent text-sm text-blue-400">
                         {method.action}
                       </span>
@@ -120,17 +120,17 @@ export default function ContactSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="group inline-flex items-center gap-3 font-primary bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 hover:from-blue-700 hover:to-blue-800">
-                <Users className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-                Contact Government Team
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+              <button className="group inline-flex items-center gap-2 sm:gap-3 font-primary bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 hover:from-blue-700 hover:to-blue-800">
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300 flex-shrink-0" />
+                <span className="truncate">Contact Government Team</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
               </button>
               
-              <button className="group inline-flex items-center gap-3 font-primary bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 transition-all duration-300">
-                <FileText className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-                Request Quote
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <button className="group inline-flex items-center gap-2 sm:gap-3 font-primary bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 transition-all duration-300">
+                <FileText className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300 flex-shrink-0" />
+                <span className="truncate">Request Quote</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
               </button>
             </div>
 

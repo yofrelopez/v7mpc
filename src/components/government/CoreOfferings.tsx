@@ -5,7 +5,7 @@ export default function CoreOfferings() {
   const offerings = [
     {
       title: "Jewelry & Recognition",
-      description: "Medals, pins, plaques, and commemorative awards for recognition and achievements.",
+      description: "Custom medals, pins, plaques, and commemorative awards designed for recognition and service programs.",
       icon: Medal,
       color: "from-slate-600 to-slate-700",
       bgColor: "bg-slate-50",
@@ -23,7 +23,7 @@ export default function CoreOfferings() {
     },
     {
       title: "Promotional & Office Products",
-      description: "Branded pens, folders, mugs, lanyards, and office essentials for outreach and campaigns.",
+      description: "Branded pens, mugs, lanyards, and office essentials — ideal for outreach, recruitment, and campaign visibility.",
       icon: Briefcase,
       color: "from-gray-600 to-gray-700",
       bgColor: "bg-gray-50",
@@ -57,10 +57,10 @@ export default function CoreOfferings() {
         </div>
 
         {/* Central Hero Image */}
-        <div className="mb-12 lg:mb-16">
-          <div className="relative aspect-[21/9] lg:aspect-[16/6] rounded-2xl overflow-hidden shadow-xl group">
+        <div className="mb-12 lg:mb-16 sm:px-12 lg:px-16 xl:px-20">
+          <div className="relative aspect-[3/2] overflow-hidden shadow-xl group">
             <Image
-              src="/government/core_offerings.png"
+              src="/government/core_offerings_products.png"
               alt="V7MPC Core Offerings for Government & Institutions"
               fill
               className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

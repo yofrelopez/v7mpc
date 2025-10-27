@@ -96,8 +96,7 @@ export default function ProcurementCompliance() {
             Procurement & Compliance
           </h2>
           <p className="font-accent text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            We understand the standards and compliance requirements that come with government and institutional projects. 
-            Our team is equipped to handle quotes, purchase orders, and documentation efficiently.
+            We understand the rigorous standards of government and institutional procurement. Our team efficiently manages quotes, purchase orders, and compliance documentation with precision and accountability.
           </p>
           <div className="w-24 h-1 bg-slate-600 mx-auto mt-6 rounded-full"></div>
         </div>
@@ -216,7 +215,7 @@ export default function ProcurementCompliance() {
               Ready to Start Your Next Government Project?
             </h3>
             <p className="font-accent text-slate-600 mb-6 max-w-xl mx-auto">
-              Get in touch with our procurement specialists to discuss your requirements and receive a detailed quote.
+              <strong>Let&apos;s build your solution together.</strong> Get in touch with our procurement specialists to discuss your requirements and receive a detailed quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="font-primary bg-slate-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-slate-700 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">

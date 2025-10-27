@@ -38,7 +38,7 @@ export default function CapabilityStatement() {
             Capability Statement
           </h2>
           <p className="font-accent text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Download our official Capability Statement (PDF) to view our NAICS codes, certifications, and past performance references.
+            Download our official document (PDF) to view our NAICS codes, certifications, and past performance references.
           </p>
           <div className="w-24 h-1 bg-slate-600 mx-auto mt-6 rounded-full"></div>
         </div>
@@ -63,11 +63,11 @@ export default function CapabilityStatement() {
                 </div>
                 
                 <h3 className="font-primary text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-                  Official Capability Statement
+                  Official Capability Overview
                 </h3>
                 
                 <p className="font-accent text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto">
-                  Comprehensive documentation of our capabilities, certifications, and track record for government contracting.
+                  Comprehensive documentation of our qualifications, certifications, and performance record for government contracting.
                 </p>
               </div>
 
@@ -92,13 +92,21 @@ export default function CapabilityStatement() {
               </div>
 
               {/* Document Info */}
-              <div className="bg-white rounded-2xl p-6 mb-8 border border-slate-200/50 shadow-sm">
-                <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 mb-8 border border-slate-200/50 shadow-sm">
+                <div className="flex items-center gap-4">
+                  {/* PDF Icon */}
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-14 sm:w-16 sm:h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-lg shadow-lg flex items-center justify-center">
+                      <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                    </div>
+                  </div>
+                  
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-primary text-lg font-semibold text-slate-900 mb-1">
+                    <h4 className="font-primary text-base sm:text-lg font-semibold text-slate-900 mb-1">
                       V7MPC-CapabilityStatement-2024.pdf
                     </h4>
-                    <div className="flex items-center gap-4 text-sm text-slate-600">
+                    {/* Metadata - Hidden on mobile, shown on larger screens */}
+                    <div className="hidden sm:flex items-center gap-4 text-sm text-slate-600 flex-wrap">
                       <span className="font-accent">File Size: 2.3 MB</span>
                       <span className="font-accent">Last Updated: October 2024</span>
                       <div className="flex items-center gap-1">
@@ -106,12 +114,10 @@ export default function CapabilityStatement() {
                         <span className="font-accent">Current</span>
                       </div>
                     </div>
-                  </div>
-                  
-                  {/* PDF Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-lg shadow-lg flex items-center justify-center">
-                      <FileText className="w-8 h-8 text-white" />
+                    {/* Simplified metadata for mobile */}
+                    <div className="sm:hidden flex items-center gap-2 text-xs text-slate-500">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="font-accent">Ready to download</span>
                     </div>
                   </div>
                 </div>
@@ -119,12 +125,12 @@ export default function CapabilityStatement() {
 
               {/* Download Button */}
               <div className="text-center">
-                <button className="group/btn inline-flex items-center gap-3 font-primary bg-gradient-to-r from-slate-600 to-slate-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:from-slate-700 hover:to-slate-800">
-                  <Download className="w-6 h-6 group-hover/btn:animate-bounce" />
-                  Download Capability Statement
+                <button className="group/btn inline-flex items-center gap-2 sm:gap-3 font-primary bg-gradient-to-r from-slate-600 to-slate-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:from-slate-700 hover:to-slate-800">
+                  <Download className="w-7 h-7 sm:w-6 sm:h-6 group-hover/btn:animate-bounce flex-shrink-0" />
+                  <span className="sm:inline">Download Capability Statement</span>
                 </button>
                 
-                <p className="font-accent text-sm text-slate-500 mt-4">
+                <p className="font-accent text-xs sm:text-sm text-slate-500 mt-3 sm:mt-4">
                   Free download • No registration required • Compatible with all devices
                 </p>
               </div>

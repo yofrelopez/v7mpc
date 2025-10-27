@@ -33,7 +33,7 @@ export default function GovernmentHero() {
               </h1>
               
               <p className="font-accent text-base md:text-lg text-slate-100 leading-relaxed font-light max-w-xl mx-auto text-balance">
-                V7 Marketplace Corporation is a certified minority- and woman-owned business delivering quality, compliant, and cost-effective solutions to public and institutional clients across the U.S.
+                V7 Marketplace Corporation is a certified minority- and woman-owned business delivering reliable, compliant, and cost-effective procurement support to public and institutional clients across the U.S.
               </p>
             </div>
 
