@@ -12,7 +12,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   // Create URLs for navigation
-  const productUrl = `/productos/${product.id}`;
+  const productUrl = `/products/${product.id}`;
   const quoteUrl = `/cotizacion?product=${encodeURIComponent(product.name)}&id=${encodeURIComponent(product.id)}`;
 
   return (

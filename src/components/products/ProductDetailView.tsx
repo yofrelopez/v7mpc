@@ -28,7 +28,7 @@ export default function ProductDetailView({ product }: ProductDetailViewProps) {
   };
 
   const handleBackToProducts = () => {
-    router.push('/productos');
+    router.push('/products');
   };
 
   return (
@@ -38,8 +38,8 @@ export default function ProductDetailView({ product }: ProductDetailViewProps) {
         <Breadcrumbs 
           items={[
             { label: 'Home', href: '/' },
-            { label: 'Products', href: '/productos' },
-            { label: product.category.name, href: `/productos?category=${product.category.slug}` },
+            { label: 'Products', href: '/products' },
+            { label: product.category.name, href: `/products?category=${product.category.slug}` },
             { label: product.name, href: '#', current: true }
           ]}
         />

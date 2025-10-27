@@ -48,7 +48,7 @@ export default function ProductFilters({
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-4 w-4" />
           <input
             type="text"
-            placeholder="Buscar productos..."
+            placeholder="Search products..."
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
             className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all"
@@ -151,7 +151,7 @@ export default function ProductFilters({
       <div className="mt-4 pt-3 border-t border-slate-100">
         <p className="text-sm text-slate-600">
           Mostrando <span className="font-medium">{productCount}</span> de{' '}
-          <span className="font-medium">{totalProducts}</span> productos
+          <span className="font-medium">{totalProducts}</span> products
           {hasActiveFilters && (
             <span className="text-slate-500 ml-1">
               (filtrado{searchTerm && ` por "${searchTerm}"`}

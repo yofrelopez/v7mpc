@@ -40,7 +40,7 @@ export default function RelatedProducts({ currentProduct, maxItems = 4 }: Relate
           Related Products
         </h2>
         <Link 
-          href="/productos" 
+          href="/products" 
           className="text-slate-600 hover:text-slate-900 text-sm font-medium transition-colors"
         >
           View all products →
@@ -59,7 +59,7 @@ export default function RelatedProducts({ currentProduct, maxItems = 4 }: Relate
           Explore more products in <strong>{currentProduct.category.name}</strong>
         </p>
         <Link
-          href={`/productos?category=${currentProduct.category.slug}`}
+          href={`/products?category=${currentProduct.category.slug}`}
           className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-md hover:bg-slate-200 transition-colors font-medium"
         >
           Browse {currentProduct.category.name}
