@@ -50,7 +50,7 @@ export default function AboutGovernmentDivision() {
             {/* Mission Statement */}
             <div className="bg-white/80 backdrop-blur-sm p-6 lg:p-8 rounded-xl border border-slate-200/50 shadow-lg">
               <div className="flex items-start gap-4">
-                <div className="text-6xl text-slate-300 leading-none font-serif">"</div>
+                <div className="text-6xl text-slate-300 leading-none font-serif">&ldquo;</div>
                 <div>
                   <h3 className="font-primary text-lg font-semibold text-slate-900 mb-3">Our Mission</h3>
                   <p className="font-accent text-base text-slate-700 leading-relaxed italic">
