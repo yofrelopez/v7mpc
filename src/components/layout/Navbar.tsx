@@ -124,7 +124,7 @@ export default function Navbar() {
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <Link 
-                      href="/products" 
+                      href="/products/jewelry-recognition" 
                       className="group flex items-center justify-between px-6 py-4 text-sm text-gray-700 hover:bg-gray-50 transition-all duration-200"
                       onClick={() => setActiveDropdown(null)}
                     >
@@ -143,7 +143,7 @@ export default function Navbar() {
                       Apparel
                     </Link>
                     <Link 
-                      href="/products" 
+                      href="/products/promos" 
                       className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
                       onClick={() => setActiveDropdown(null)}
                     >
@@ -274,7 +274,7 @@ export default function Navbar() {
                     <div className="bg-gradient-to-r from-gray-50/60 to-gray-50/30 border-l-4 border-slate-600/20 animate-in slide-in-from-top-3 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
                       <div className="py-2 space-y-0.5">
                         
-                        <Link href="/products" onClick={() => setIsOpen(false)}>
+                        <Link href="/products/jewelry-recognition" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-150">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Jewelry & Recognition</span>
@@ -294,7 +294,7 @@ export default function Navbar() {
                           </div>
                         </Link>
 
-                        <Link href="/products" onClick={() => setIsOpen(false)}>
+                        <Link href="/products/promos" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-250">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Promos</span>

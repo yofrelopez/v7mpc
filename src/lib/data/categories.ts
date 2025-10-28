@@ -8,103 +8,43 @@ import { ProductCategory } from '@/types/products';
 // ============================================================================
 
 export const productCategories: ProductCategory[] = [
-  // 1. PROMOTIONAL PRODUCTS (Core business)
+  // 1. JEWELRY & RECOGNITION (Medals, pins, plaques, awards)
   {
-    id: 'promotional',
-    slug: 'promotional-products', 
-    name: 'Promotional Products',
-    description: 'Custom branded promotional items for marketing campaigns, trade shows, and corporate events. Elevate your brand presence with memorable giveaways.',
-    image: '/categories/promotional.jpg',
+    id: 'jewelry-recognition',
+    slug: 'jewelry-recognition',
+    name: 'Jewelry & Recognition',
+    description: 'Custom medals, pins, plaques, and commemorative awards designed for recognition and service programs.',
+    image: '/categories/jewelry-recognition.jpg',
     productCount: 0 // Will be calculated dynamically
   },
 
-  // 2. APPAREL & ACCESSORIES
+  // 2. APPAREL (Uniforms, clothing, branded apparel)
   {
     id: 'apparel',
-    slug: 'apparel-accessories',
-    name: 'Apparel & Accessories', 
-    description: 'Custom branded clothing, uniforms, and accessories. Professional corporate apparel and promotional wearables with your logo.',
+    slug: 'apparel',
+    name: 'Apparel', 
+    description: 'Custom uniforms, event apparel, and branded clothing for teams, schools, and departments.',
     image: '/categories/apparel.jpg',
     productCount: 0
   },
 
-  // 3. BAGS & CASES  
+  // 3. PROMOS (Promotional products, giveaways, marketing items)
   {
-    id: 'bags',
-    slug: 'bags-cases',
-    name: 'Bags & Cases',
-    description: 'Custom bags, backpacks, briefcases, and protective cases. Perfect for corporate gifts, trade shows, and employee appreciation.',
-    image: '/categories/bags.jpg',
+    id: 'promos',
+    slug: 'promos',
+    name: 'Promos',
+    description: 'Branded pens, mugs, lanyards, and office essentials — ideal for outreach, recruitment, and campaign visibility.',
+    image: '/categories/promos.jpg',
     productCount: 0
   },
 
-  // 4. DRINKWARE & KITCHEN
+  // 4. SIGNS & DISPLAYS (Signage, banners, visual displays)
   {
-    id: 'drinkware',
-    slug: 'drinkware-kitchen',
-    name: 'Drinkware & Kitchen',
-    description: 'Custom mugs, water bottles, tumblers, and kitchen accessories. Practical promotional items for daily brand exposure.',
-    image: '/categories/drinkware.jpg',  
-    productCount: 0
-  },
-
-  // 5. OFFICE SUPPLIES
-  {
-    id: 'office',
-    slug: 'office-supplies',
-    name: 'Office Supplies',
-    description: 'Professional office supplies, stationery, and desk accessories. Custom branded items for corporate environments.',
-    image: '/categories/office.jpg',
-    productCount: 0
-  },
-
-  // 6. TECH & ELECTRONICS
-  {
-    id: 'tech',
-    slug: 'tech-electronics', 
-    name: 'Tech & Electronics',
-    description: 'Custom branded technology accessories, power banks, USB drives, and electronic promotional items.',
-    image: '/categories/tech.jpg',
-    productCount: 0
-  },
-
-  // 7. AWARDS & RECOGNITION
-  {
-    id: 'awards',
-    slug: 'awards-recognition',
-    name: 'Awards & Recognition',
-    description: 'Custom trophies, plaques, acrylic awards, and recognition items. Celebrate achievements with personalized awards.',
-    image: '/categories/awards.jpg',
-    productCount: 0
-  },
-
-  // 8. OUTDOOR & SPORTS
-  {
-    id: 'outdoor',
-    slug: 'outdoor-sports',
-    name: 'Outdoor & Sports', 
-    description: 'Custom outdoor gear, sports equipment, and recreational promotional items. Perfect for active lifestyle brands.',
-    image: '/categories/outdoor.jpg',
-    productCount: 0
-  },
-
-  // 9. HEALTH & WELLNESS
-  {
-    id: 'health',
-    slug: 'health-wellness',
-    name: 'Health & Wellness',
-    description: 'Custom wellness products, fitness accessories, and health-focused promotional items for modern workplace culture.',
-    image: '/categories/health.jpg',
-    productCount: 0
-  },
-
-  // 10. SEASONAL & EVENTS
-  {
-    id: 'seasonal',
-    slug: 'seasonal-events',
-    name: 'Seasonal & Events',
-    description: 'Holiday-themed and event-specific promotional items. Custom products for special occasions and seasonal campaigns.',
-    image: '/categories/seasonal.jpg',
+    id: 'signs-displays',
+    slug: 'signs-displays',
+    name: 'Signs & Displays',
+    description: 'Indoor/outdoor signage, banners, and visual materials for events and facilities.',
+    image: '/categories/signs-displays.jpg',
     productCount: 0
   }
 ];
@@ -161,16 +101,10 @@ export const getFeaturedCategories = (limit: number = 6): ProductCategory[] => {
 // ============================================================================
 
 export const categoryKeywords = {
-  promotional: ['giveaway', 'marketing', 'brand', 'custom', 'logo', 'trade show'],
-  apparel: ['clothing', 'uniform', 'shirt', 'jacket', 'hat', 'embroidery'],
-  bags: ['backpack', 'tote', 'briefcase', 'luggage', 'travel', 'laptop bag'],
-  drinkware: ['mug', 'bottle', 'tumbler', 'cup', 'thermos', 'coffee'],
-  office: ['pen', 'notebook', 'desk', 'stationery', 'folder', 'organizer'],
-  tech: ['usb', 'charger', 'speaker', 'headphones', 'power bank', 'cable'],
-  awards: ['trophy', 'plaque', 'medal', 'recognition', 'achievement', 'award'],
-  outdoor: ['camping', 'hiking', 'sports', 'fitness', 'recreation', 'adventure'],
-  health: ['wellness', 'fitness', 'safety', 'sanitizer', 'stress relief'],
-  seasonal: ['holiday', 'christmas', 'halloween', 'valentine', 'graduation']
+  'jewelry-recognition': ['medal', 'pin', 'plaque', 'award', 'trophy', 'recognition', 'achievement', 'commemoration', 'jewelry', 'badge'],
+  'apparel': ['clothing', 'uniform', 'shirt', 'jacket', 'hat', 'cap', 'polo', 'embroidery', 'apparel', 'branded clothing'],
+  'promos': ['pen', 'mug', 'keychain', 'lanyard', 'promotional', 'giveaway', 'marketing', 'brand', 'custom', 'logo', 'office supplies'],
+  'signs-displays': ['sign', 'banner', 'display', 'signage', 'poster', 'indoor', 'outdoor', 'visual', 'materials', 'facility']
 };
 
 // ============================================================================

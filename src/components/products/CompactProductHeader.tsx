@@ -17,6 +17,8 @@ interface CompactProductHeaderProps {
   allProducts: Product[];
   productCount: number;
   totalProducts: number;
+  categoryLocked?: boolean;
+  pageTitle?: string;
 }
 
 export default function CompactProductHeader({
@@ -28,7 +30,9 @@ export default function CompactProductHeader({
   onSortChange,
   allProducts,
   productCount,
-  totalProducts
+  totalProducts,
+  categoryLocked = false,
+  pageTitle = 'Products'
 }: CompactProductHeaderProps) {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [isSortOpen, setIsSortOpen] = useState(false);
@@ -49,11 +53,13 @@ export default function CompactProductHeader({
 
   const handleClearFilters = () => {
     onSearchChange('');
-    onCategoryChange(null);
+    if (!categoryLocked) {
+      onCategoryChange(null);
+    }
     setIsCategoriesOpen(false);
   };
 
-  const hasActiveFilters = searchTerm || selectedCategory;
+  const hasActiveFilters = searchTerm || (selectedCategory && !categoryLocked);
   const selectedCategoryName = selectedCategory 
     ? categories.find(c => c.slug === selectedCategory)?.name 
     : null;
@@ -65,7 +71,7 @@ export default function CompactProductHeader({
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4">
         {/* Products Title */}
         <h1 className="text-2xl font-bold text-slate-800 shrink-0 mb-2 sm:mb-0">
-          Products
+          {pageTitle}
         </h1>
         
         <div className="flex items-center gap-3 flex-1">
@@ -122,18 +128,20 @@ export default function CompactProductHeader({
             </div>
 
             {/* Categories Menu Button */}
-            <button
-              onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-              className="flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-md hover:bg-slate-200 transition-colors"
-            >
-              <Menu className="h-4 w-4" />
-              <span className="hidden sm:inline">Categories</span>
-              {hasActiveFilters && (
-                <span className="bg-slate-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  !
-                </span>
-              )}
-            </button>
+            {!categoryLocked && (
+              <button
+                onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
+                className="flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-md hover:bg-slate-200 transition-colors"
+              >
+                <Menu className="h-4 w-4" />
+                <span className="hidden sm:inline">Categories</span>
+                {hasActiveFilters && (
+                  <span className="bg-slate-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    !
+                  </span>
+                )}
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -152,12 +160,14 @@ export default function CompactProductHeader({
             <span className="text-slate-500">in</span>
             <span className="bg-slate-600 text-white px-2 py-1 rounded-full text-xs flex items-center gap-1">
               {selectedCategoryName}
-              <button
-                onClick={() => onCategoryChange(null)}
-                className="hover:bg-slate-500 rounded-full p-0.5"
-              >
-                <X className="h-3 w-3" />
-              </button>
+              {!categoryLocked && (
+                <button
+                  onClick={() => onCategoryChange(null)}
+                  className="hover:bg-slate-500 rounded-full p-0.5"
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              )}
             </span>
           </div>
         )}

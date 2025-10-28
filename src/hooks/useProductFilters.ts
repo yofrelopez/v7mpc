@@ -7,6 +7,8 @@ export type SortOption = 'name-asc' | 'name-desc' | 'category' | 'newest';
 
 interface UseProductFiltersProps {
   products: Product[];
+  initialCategory?: string | null;
+  categoryLocked?: boolean;
 }
 
 interface UseProductFiltersReturn {
@@ -20,11 +22,16 @@ interface UseProductFiltersReturn {
   totalProducts: number;
   filteredCount: number;
   resetFilters: () => void;
+  categoryLocked: boolean;
 }
 
-export function useProductFilters({ products }: UseProductFiltersProps): UseProductFiltersReturn {
+export function useProductFilters({ 
+  products, 
+  initialCategory = null, 
+  categoryLocked = false 
+}: UseProductFiltersProps): UseProductFiltersReturn {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialCategory);
   const [sortBy, setSortBy] = useState<SortOption>('name-asc');
 
   const filteredProducts = useMemo(() => {
@@ -68,8 +75,17 @@ export function useProductFilters({ products }: UseProductFiltersProps): UseProd
 
   const resetFilters = () => {
     setSearchTerm('');
-    setSelectedCategory(null);
+    if (!categoryLocked) {
+      setSelectedCategory(null);
+    }
     setSortBy('name-asc');
+  };
+
+  // Create a wrapper for setSelectedCategory that respects categoryLocked
+  const handleCategoryChange = (category: string | null) => {
+    if (!categoryLocked) {
+      setSelectedCategory(category);
+    }
   };
 
   return {
@@ -77,11 +93,12 @@ export function useProductFilters({ products }: UseProductFiltersProps): UseProd
     searchTerm,
     setSearchTerm,
     selectedCategory,
-    setSelectedCategory,
+    setSelectedCategory: handleCategoryChange,
     sortBy,
     setSortBy,
     totalProducts: products.length,
     filteredCount: filteredProducts.length,
-    resetFilters
+    resetFilters,
+    categoryLocked
   };
 }
