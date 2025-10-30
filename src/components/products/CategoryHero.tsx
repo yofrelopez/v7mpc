@@ -10,6 +10,7 @@ interface CategoryHeroProps {
   features?: string[];
   heroImage?: string;
   showButtons?: boolean;
+  imagePosition?: string;
 }
 
 export default function CategoryHero({
@@ -19,7 +20,8 @@ export default function CategoryHero({
   customGradient = 'from-slate-800 to-slate-900',
   features = ['Custom Design Services', 'Quality Guaranteed'],
   heroImage,
-  showButtons = false
+  showButtons = false,
+  imagePosition = 'object-center'
 }: CategoryHeroProps) {
   return (
     <section className={`bg-gradient-to-r ${customGradient} text-white py-16 lg:py-24 relative overflow-hidden`}>
@@ -30,7 +32,7 @@ export default function CategoryHero({
             src={heroImage}
             alt={`${category.name} hero background`}
             fill
-            className="object-cover opacity-20"
+            className={`object-cover opacity-20 ${imagePosition}`}
             priority
           />
         </div>
@@ -45,17 +47,17 @@ export default function CategoryHero({
             </span>
           )}
         </h1>
-        <p className="font-accent text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
+        <p className="font-accent text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
           {category.description}
         </p>
         
         {/* Subcategory Tags */}
         {subcategoryTags.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-4 text-sm mb-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
             {subcategoryTags.map((tag, index) => (
               <span 
                 key={index}
-                className="bg-slate-700/80 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-slate-600/80 transition-colors border border-white/10"
+                className="bg-slate-700/80 backdrop-blur-sm px-3 py-1.5 text-xs sm:text-sm rounded-full hover:bg-slate-600/80 transition-colors border border-white/10"
               >
                 {tag}
               </span>
@@ -64,12 +66,12 @@ export default function CategoryHero({
         )}
         
         {/* Features & Product Count */}
-        <div className="flex flex-wrap items-center justify-center gap-2 text-slate-400 mb-8">
+        <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2 text-slate-400 mb-8 text-sm sm:text-base">
           <span className="font-accent">{productCount} Products Available</span>
           {features.map((feature, index) => (
             <div key={index} className="flex items-center">
               <span>•</span>
-              <span className="font-accent ml-2">{feature}</span>
+              <span className="font-accent ml-1 sm:ml-2">{feature}</span>
             </div>
           ))}
         </div>

@@ -135,7 +135,7 @@ export default function Navbar() {
                     </Link>
                     <div className="border-t border-gray-100 my-2"></div>
                     <Link 
-                      href="/products" 
+                      href="/products/apparel" 
                       className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
                       onClick={() => setActiveDropdown(null)}
                     >
@@ -151,7 +151,7 @@ export default function Navbar() {
                       Promos
                     </Link>
                     <Link 
-                      href="/products" 
+                      href="/products/signs-displays" 
                       className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
                       onClick={() => setActiveDropdown(null)}
                     >
@@ -284,7 +284,7 @@ export default function Navbar() {
                           </div>
                         </Link>
 
-                        <Link href="/products" onClick={() => setIsOpen(false)}>
+                        <Link href="/products/apparel" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-200">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Apparel</span>
@@ -304,7 +304,7 @@ export default function Navbar() {
                           </div>
                         </Link>
 
-                        <Link href="/products" onClick={() => setIsOpen(false)}>
+                        <Link href="/products/signs-displays" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-300">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Signs & Displays</span>
