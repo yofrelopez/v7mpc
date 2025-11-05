@@ -1,4 +1,27 @@
+import type { Metadata } from 'next';
 import { Hero, WhatWeProvide, ProductsShowcase } from '@/components/home';
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'V7MPC specializes in custom products, promotional items, and recognition solutions. Professional manufacturing and sourcing for medals, awards, corporate gifts, and more.',
+  keywords: ['custom products', 'promotional items', 'medals', 'awards', 'corporate gifts', 'recognition solutions', 'manufacturing'],
+  openGraph: {
+    title: 'V7MPC - Professional Custom Products & Manufacturing',
+    description: 'Specializing in custom products, promotional items, and recognition solutions. Professional manufacturing and sourcing for medals, awards, corporate gifts, and more.',
+    images: [
+      {
+        url: '/images/government/hero_2.png',
+        width: 1200,
+        height: 630,
+        alt: 'V7MPC Custom Products and Manufacturing',
+      },
+    ],
+  },
+  twitter: {
+    title: 'V7MPC - Professional Custom Products & Manufacturing',
+    description: 'Specializing in custom products, promotional items, and recognition solutions.',
+  },
+};
 
 export default function Home() {
   return (
