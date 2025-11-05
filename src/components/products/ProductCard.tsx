@@ -47,7 +47,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </h3>
             
             <p className="text-slate-600 text-xs sm:text-xs mb-1 sm:mb-2 line-clamp-2 leading-tight hidden sm:block">
-              {product.description.length > 80 ? `${product.description.substring(0, 80)}...` : product.description}
+              {product.shortDescription && product.shortDescription.length > 80 ? `${product.shortDescription.substring(0, 80)}...` : product.shortDescription}
             </p>
           </div>
           

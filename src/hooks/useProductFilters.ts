@@ -42,7 +42,7 @@ export function useProductFilters({
       const searchLower = searchTerm.toLowerCase().trim();
       result = result.filter(product =>
         product.name.toLowerCase().includes(searchLower) ||
-        product.description.toLowerCase().includes(searchLower) ||
+        (product.shortDescription && product.shortDescription.toLowerCase().includes(searchLower)) ||
         product.features.some(feature => feature.toLowerCase().includes(searchLower)) ||
         product.category.name.toLowerCase().includes(searchLower)
       );

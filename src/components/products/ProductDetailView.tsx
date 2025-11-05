@@ -82,8 +82,8 @@ export default function ProductDetailView({ product }: ProductDetailViewProps) {
               <h1 className="text-3xl font-bold text-slate-900 mb-3">
                 {product.name}
               </h1>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                {product.description}
+              <p className="text-slate-600 leading-relaxed">
+                {product.shortDescription}
               </p>
             </div>
 

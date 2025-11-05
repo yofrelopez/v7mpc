@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
-import { ZoomIn } from 'lucide-react';
+import { ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Product } from '@/types/products';
 
 interface ProductImageGalleryProps {
@@ -11,19 +11,28 @@ interface ProductImageGalleryProps {
 
 export default function ProductImageGallery({ product }: ProductImageGalleryProps) {
   const [selectedImage, setSelectedImage] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   
-  // For now, we'll use the first image repeated for different angles/views
-  const images = product.images.length > 0 ? [
-    product.images[0],
-    product.images[0], // Placeholder - would be different angles  
-    product.images[0], // Placeholder - would be different angles
-    product.images[0]  // Placeholder - would be different angles
-  ] : [
-    '/placeholder-product.jpg', // Fallback placeholder
-    '/placeholder-product.jpg',
-    '/placeholder-product.jpg', 
-    '/placeholder-product.jpg'
-  ];
+  // Use actual product images, with fallback
+  const images = product.images.length > 0 ? product.images : ['/placeholder-product.jpg'];
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -240, // Scroll by ~3 thumbnails width
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 240, // Scroll by ~3 thumbnails width
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <div className="space-y-4">
@@ -50,40 +59,74 @@ export default function ProductImageGallery({ product }: ProductImageGalleryProp
         </div>
       </div>
 
-      {/* Thumbnail Images */}
-      <div className="grid grid-cols-4 gap-3">
-        {images.map((image, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedImage(index)}
-            className={`relative aspect-square bg-gray-50 rounded-md overflow-hidden border-2 transition-colors ${
-              selectedImage === index 
-                ? 'border-slate-600' 
-                : 'border-transparent hover:border-slate-300'
-            }`}
-          >
-            <Image
-              src={image}
-              alt={`${product.name} view ${index + 1}`}
-              fill
-              className="object-cover"
-            />
-          </button>
-        ))}
+      {/* Thumbnail Images - Horizontal scroll with navigation */}
+      <div className="relative group">
+        <div 
+          ref={scrollContainerRef}
+          className="flex gap-3 overflow-x-auto scrollbar-hide pb-2" 
+          style={{ scrollBehavior: 'smooth' }}
+        >
+          {images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => setSelectedImage(index)}
+              className={`relative aspect-square min-w-[64px] w-16 h-16 md:min-w-[80px] md:w-20 md:h-20 bg-gray-50 rounded-md overflow-hidden border-2 transition-colors ${
+                selectedImage === index 
+                  ? 'border-slate-600' 
+                  : 'border-transparent hover:border-slate-300'
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`${product.name} view ${index + 1}`}
+                fill
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
+        
+        {/* Modern Navigation Arrows - Desktop only */}
+        {images.length > 4 && (
+          <>
+            {/* Left Arrow */}
+            <button
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center w-8 h-8 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-sm opacity-0 group-hover:opacity-100 hover:bg-white hover:scale-110 transition-all duration-200 z-10"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-4 h-4 text-slate-600" />
+            </button>
+            
+            {/* Right Arrow */}
+            <button
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center w-8 h-8 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-sm opacity-0 group-hover:opacity-100 hover:bg-white hover:scale-110 transition-all duration-200 z-10"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-4 h-4 text-slate-600" />
+            </button>
+            
+            {/* Gradient Indicator - Mobile only */}
+            <div className="absolute right-0 top-0 bottom-2 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden" />
+          </>
+        )}
       </div>
 
-      {/* Image Navigation Dots */}
-      <div className="flex justify-center space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedImage(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              selectedImage === index ? 'bg-slate-600' : 'bg-slate-300'
-            }`}
-          />
-        ))}
-      </div>
+      {/* Image Navigation Dots - Only show if multiple images */}
+      {images.length > 1 && (
+        <div className="flex justify-center space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setSelectedImage(index)}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                selectedImage === index ? 'bg-slate-600' : 'bg-slate-300'
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

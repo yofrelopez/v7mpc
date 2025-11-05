@@ -6,12 +6,22 @@
 // PHASE 1: CORE INTERFACES (SIMPLIFIED)
 // ============================================================================
 
+// Rich Content Types for flexible content blocks
+export interface ContentBlock {
+  type: 'text' | 'image';
+  content?: string;      // For type 'text'
+  src?: string;         // For type 'image'
+  alt?: string;         // For type 'image'
+  caption?: string;     // Optional caption for images
+}
+
 export interface Product {
   // Basic Information
   id: string;
   slug: string;
   name: string;
-  description: string;
+  shortDescription?: string;    // Brief description for cards/lists
+  description: string | ContentBlock[];  // Rich content support with backwards compatibility
   
   // Categorization
   category: ProductCategory;
@@ -23,6 +33,11 @@ export interface Product {
   // Basic Features
   features: string[];
   isCustomizable: boolean;
+  
+  // Rich Content Sections (optional for enhanced product pages)
+  technicalSpecifications?: string | ContentBlock[];     // Rich text/HTML or rich content
+  packingDelivery?: ContentBlock[];                      // Rich content with images
+  faq?: string | ContentBlock[];                         // Rich text/HTML or rich content
   
   // Timestamps
   createdAt: Date;

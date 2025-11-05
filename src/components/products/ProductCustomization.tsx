@@ -52,53 +52,11 @@ export default function ProductCustomization({ product, compact = false }: Produ
   }
 
   return (
-    <section>
-      <h2 className="text-2xl font-bold text-slate-900 mb-6">
-        Customization Options
-      </h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {customizationOptions.map((option, index) => (
-          <div 
-            key={index}
-            className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-start gap-4">
-              <div className="shrink-0">
-                {option.icon}
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-lg font-semibold text-slate-900">
-                    {option.title}
-                  </h3>
-                  {option.popular && (
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
-                      Popular
-                    </span>
-                  )}
-                </div>
-                <p className="text-slate-600 mb-4">
-                  {option.description}
-                </p>
-                <ul className="space-y-2">
-                  {option.options.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-center gap-2 text-sm text-slate-700">
-                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
+    <section className="mt-12">
       {/* Customization Process */}
-      <div className="mt-8 bg-slate-50 rounded-lg p-6">
+      <div className="bg-slate-50 rounded-lg p-6">
         <h3 className="text-lg font-semibold text-slate-900 mb-4">
-          Customization Process
+          How We Customize Your Order
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {[
