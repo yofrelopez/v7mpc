@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { OrganizationJsonLd, WebSiteJsonLd, LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,10 +47,11 @@ export const metadata: Metadata = {
     description: 'Professional custom products, medals, promotional items, and recognition solutions. High-quality craftsmanship for achievements, events, and corporate needs.',
     images: [
       {
-        url: '/images/government/hero_2.png',
+        url: 'https://v7mpc.vercel.app/images/government/hero_2.png',
         width: 1200,
         height: 630,
-        alt: 'V7MPC - Custom Products & Recognition Items',
+        alt: 'V7MPC - Professional Custom Products and Recognition Solutions',
+        type: 'image/png',
       },
     ],
   },
@@ -57,7 +59,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'V7MPC - Custom Products & Recognition Items',
     description: 'Professional custom products, medals, promotional items, and recognition solutions.',
-    images: ['/images/government/hero_2.png'],
+    images: ['https://v7mpc.vercel.app/images/government/hero_2.png'],
+    creator: '@v7mpc',
+    site: '@v7mpc',
   },
   robots: {
     index: true,
@@ -82,6 +86,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ scrollPaddingTop: '5rem' }}>
+      <head>
+        {/* Structured Data */}
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
+        <LocalBusinessJsonLd />
+      </head>
       <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-white`}>
         {/* Fixed Header */}
         <header>

@@ -43,20 +43,32 @@ export default function ProductImageGallery({ product }: ProductImageGalleryProp
           alt={product.name}
           fill
           className="object-cover transition-transform group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
+          unoptimized={images[selectedImage].startsWith('https://')}
+          onError={(e) => {
+            console.error('Image failed to load:', images[selectedImage]);
+          }}
+          onLoad={() => {
+            console.log('Image loaded successfully:', images[selectedImage]);
+          }}
         />
         
         {/* Zoom Icon */}
-        <div className="absolute inset-0 bg-slate-600 bg-opacity-0 group-hover:bg-opacity-10 transition-colors flex items-center justify-center">
-          <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="bg-black/20 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            <ZoomIn className="h-6 w-6 text-white" />
+          </div>
         </div>
 
-        {/* Sample Badge */}
-        <div className="absolute top-4 left-4">
-          <span className="bg-white bg-opacity-90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">
-            Sample Image
-          </span>
-        </div>
+        {/* Sample Badge - Only show for local placeholder images */}
+        {images[selectedImage].includes('placeholder') && (
+          <div className="absolute top-4 left-4">
+            <span className="bg-white bg-opacity-90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">
+              Sample Image
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Thumbnail Images - Horizontal scroll with navigation */}
@@ -81,6 +93,8 @@ export default function ProductImageGallery({ product }: ProductImageGalleryProp
                 alt={`${product.name} view ${index + 1}`}
                 fill
                 className="object-cover"
+                sizes="(max-width: 640px) 64px, 80px"
+                unoptimized={image.startsWith('https://')}
               />
             </button>
           ))}

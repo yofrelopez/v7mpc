@@ -2,6 +2,7 @@
 // Professional B2B product card with direct action
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Product } from '@/types/products';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Star } from 'lucide-react';
@@ -21,11 +22,21 @@ export default function ProductCard({ product }: ProductCardProps) {
       <Link href={productUrl} className="block">
         {/* Imagen del producto */}
         <div className="relative h-32 sm:h-40 md:h-48 bg-slate-100 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-            <span className="text-slate-500 text-xs sm:text-sm font-medium text-center px-2">
-              {product.name}
-            </span>
-          </div>
+          {product.images && product.images.length > 0 ? (
+            <Image
+              src={product.images[0]}
+              alt={product.name}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+              <span className="text-slate-500 text-xs sm:text-sm font-medium text-center px-2">
+                {product.name}
+              </span>
+            </div>
+          )}
           
           {/* Customizable Badge */}
           {product.isCustomizable && (
@@ -51,21 +62,21 @@ export default function ProductCard({ product }: ProductCardProps) {
             </p>
           </div>
           
-          {/* Features - Hidden on mobile for space */}
-          {product.features && product.features.length > 0 && (
-            <div className="mb-2 sm:mb-3 hidden sm:block">
+          {/* Tags - Show on mobile and desktop */}
+          {product.tags && product.tags.length > 0 && (
+            <div className="mb-2 sm:mb-3">
               <div className="flex flex-wrap gap-1">
-                {product.features.slice(0, 2).map((feature, index) => (
+                {product.tags.slice(0, 4).map((tag, index) => (
                   <span 
                     key={index}
-                    className="text-xs bg-slate-50 text-slate-600 px-1.5 py-0.5 rounded border"
+                    className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full font-medium"
                   >
-                    {feature}
+                    {tag}
                   </span>
                 ))}
-                {product.features.length > 2 && (
-                  <span className="text-xs text-slate-400">
-                    +{product.features.length - 2}
+                {product.tags.length > 4 && (
+                  <span className="text-xs text-slate-400 px-1">
+                    +{product.tags.length - 4}
                   </span>
                 )}
               </div>

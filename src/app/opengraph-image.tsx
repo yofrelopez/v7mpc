@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'V7MPC - Custom Products & Recognition Items';
+export const alt = 'V7MPC - Professional Custom Products & Recognition Solutions';
 export const size = {
   width: 1200,
   height: 630,
@@ -17,11 +17,16 @@ export default function HomeOGImage() {
           height: '100%',
           width: '100%',
           display: 'flex',
-          backgroundColor: '#ffffff',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#1e293b',
+          background: 'linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%)',
+          color: 'white',
           position: 'relative',
         }}
       >
-        {/* Background gradient */}
+        {/* Background Pattern */}
         <div
           style={{
             position: 'absolute',
@@ -29,32 +34,33 @@ export default function HomeOGImage() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%)',
+            opacity: 0.1,
+            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px)',
           }}
         />
         
-        {/* Content */}
+        {/* Main Content */}
         <div
           style={{
-            position: 'relative',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
             alignItems: 'center',
+            justifyContent: 'center',
             padding: '60px',
             textAlign: 'center',
-            color: 'white',
+            position: 'relative',
             zIndex: 1,
           }}
         >
-          {/* Main Title */}
+          {/* V7MPC Logo/Brand */}
           <div
             style={{
-              fontSize: 72,
+              fontSize: 80,
               fontWeight: 'bold',
               marginBottom: 30,
-              color: '#f1f5f9',
+              color: '#ffffff',
               letterSpacing: '0.05em',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
             }}
           >
             V7MPC
@@ -63,121 +69,70 @@ export default function HomeOGImage() {
           {/* Subtitle */}
           <div
             style={{
-              fontSize: 48,
+              fontSize: 40,
               fontWeight: '600',
               marginBottom: 40,
               lineHeight: 1.2,
-              maxWidth: '900px',
-              color: '#ffffff',
-            }}
-          >
-            Custom Products & Recognition Items
-          </div>
-          
-          {/* Description */}
-          <div
-            style={{
-              fontSize: 28,
-              color: '#cbd5e1',
-              marginBottom: 50,
               maxWidth: '800px',
-              lineHeight: 1.3,
+              color: '#e2e8f0',
+              textAlign: 'center',
             }}
           >
-            Professional manufacturing and sourcing for medals, awards, promotional products, and corporate solutions
+            Professional Custom Products & Recognition Solutions
           </div>
           
           {/* Features */}
           <div
             style={{
               display: 'flex',
-              gap: '30px',
+              flexDirection: 'row',
+              gap: '40px',
               flexWrap: 'wrap',
               justifyContent: 'center',
+              maxWidth: '900px',
             }}
           >
             <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                padding: '12px 24px',
+                backgroundColor: 'rgba(59, 130, 246, 0.9)',
+                padding: '16px 24px',
                 borderRadius: '25px',
-                border: '2px solid #3b82f6',
+                fontSize: 22,
+                color: '#ffffff',
+                fontWeight: '600',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
               }}
             >
-              <div style={{ fontSize: 20, color: '#93c5fd', fontWeight: '600' }}>
-                Custom Medals
-              </div>
+              Custom Manufacturing
             </div>
             <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: 'rgba(168, 85, 247, 0.2)',
-                padding: '12px 24px',
+                backgroundColor: 'rgba(16, 185, 129, 0.9)',
+                padding: '16px 24px',
                 borderRadius: '25px',
-                border: '2px solid #a855f7',
+                fontSize: 22,
+                color: '#ffffff',
+                fontWeight: '600',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
               }}
             >
-              <div style={{ fontSize: 20, color: '#c4b5fd', fontWeight: '600' }}>
-                Promotional Items
-              </div>
+              Professional Sourcing
             </div>
             <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: 'rgba(34, 197, 94, 0.2)',
-                padding: '12px 24px',
+                backgroundColor: 'rgba(245, 158, 11, 0.9)',
+                padding: '16px 24px',
                 borderRadius: '25px',
-                border: '2px solid #22c55e',
+                fontSize: 22,
+                color: '#ffffff',
+                fontWeight: '600',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
               }}
             >
-              <div style={{ fontSize: 20, color: '#86efac', fontWeight: '600' }}>
-                Recognition Solutions
-              </div>
+              Quality Assurance
             </div>
           </div>
         </div>
-        
-        {/* Decorative elements */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '30px',
-            right: '30px',
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            background: 'rgba(59, 130, 246, 0.1)',
-            border: '3px solid rgba(59, 130, 246, 0.3)',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '30px',
-            left: '30px',
-            width: '80px',
-            height: '80px',
-            borderRadius: '50%',
-            background: 'rgba(168, 85, 247, 0.1)',
-            border: '2px solid rgba(168, 85, 247, 0.3)',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            right: '50px',
-            width: '60px',
-            height: '60px',
-            borderRadius: '50%',
-            background: 'rgba(34, 197, 94, 0.1)',
-            border: '2px solid rgba(34, 197, 94, 0.3)',
-          }}
-        />
       </div>
     ),
     {

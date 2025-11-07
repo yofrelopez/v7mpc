@@ -1,33 +1,55 @@
 import type { Metadata } from 'next';
 import { ContactHero, ContactMap } from '@/components/contact';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with V7MPC for custom products, quotes, and manufacturing inquiries. We\'re here to help with your recognition items and promotional product needs.',
-  keywords: ['contact V7MPC', 'custom product quotes', 'manufacturing inquiry', 'customer support', 'business contact'],
+  title: 'Contact Us - Get in Touch with Our Team | V7MPC',
+  description: 'Contact V7MPC for promotional products, custom apparel, and branded merchandise. Get quotes, ask questions, or schedule consultations with our expert team.',
+  keywords: ['contact V7MPC', 'promotional products quote', 'custom merchandise inquiry', 'branded products consultation', 'business solutions contact'],
   openGraph: {
-    title: 'Contact V7MPC - Get Your Custom Product Quote',
-    description: 'Get in touch with V7MPC for custom products, quotes, and manufacturing inquiries. Professional customer support for all your needs.',
+    title: 'Contact Us - Get in Touch with Our Team | V7MPC',
+    description: 'Contact V7MPC for promotional products, custom apparel, and branded merchandise. Get quotes, ask questions, or schedule consultations.',
+    type: 'website',
     images: [
       {
-        url: '/images/contact/contact-og.jpg',
+        url: '/images/hero_2.png',
         width: 1200,
         height: 630,
-        alt: 'Contact V7MPC - Professional Customer Support',
+        alt: 'V7MPC Contact - Professional Promotional Products',
       },
     ],
   },
   twitter: {
-    title: 'Contact V7MPC - Get Your Custom Product Quote',
-    description: 'Get in touch for custom products, quotes, and manufacturing inquiries.',
+    card: 'summary_large_image',
+    title: 'Contact Us - Get in Touch with Our Team | V7MPC',
+    description: 'Contact V7MPC for promotional products, custom apparel, and branded merchandise. Get quotes and expert consultations.',
+    images: ['/images/hero_2.png'],
   },
 };
 
 export default function ContactPage() {
+  // Generate breadcrumb data for structured data
+  const breadcrumbItems = [
+    {
+      name: 'Home',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://v7mpc.com'
+    },
+    {
+      name: 'Contact',
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://v7mpc.com'}/contact`
+    }
+  ];
+
   return (
-    <div>
-      <ContactHero />
-      <ContactMap />
-    </div>
+    <>
+      {/* Structured Data */}
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      
+      {/* Main Content */}
+      <div>
+        <ContactHero />
+        <ContactMap />
+      </div>
+    </>
   );
 }

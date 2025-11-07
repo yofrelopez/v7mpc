@@ -23,12 +23,14 @@ export default function RichContent({ blocks, className = '' }: RichContentProps
         if (block.type === 'image') {
           return (
             <div key={index} className="my-6">
-              <div className="relative aspect-video bg-slate-100 rounded-lg overflow-hidden">
+              <div className="relative bg-slate-100 rounded-lg overflow-hidden max-h-96">
                 <Image
                   src={block.src || '/placeholder-product.jpg'}
                   alt={block.alt || 'Product image'}
-                  fill
-                  className="object-cover"
+                  width={800}
+                  height={600}
+                  className="object-contain w-full h-auto max-h-96"
+                  unoptimized={block.src?.startsWith('https://')}
                 />
               </div>
               {block.caption && (

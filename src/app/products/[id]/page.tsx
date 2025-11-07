@@ -2,28 +2,55 @@ import { notFound } from 'next/navigation';
 import { mockProducts } from '@/lib/data/mockData';
 import ProductDetailView from '@/components/products/ProductDetailView';
 import { ContentBlock } from '@/types/products';
+import { ProductJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
-interface ProductPageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage(props: PageProps<'/products/[id]'>) {
+  const { id } = await props.params;
+  
   // Find product by ID in mockProducts
-  const product = mockProducts.find(p => p.id === params.id);
+  const product = mockProducts.find(p => p.id === id);
 
   // If product not found, show 404
   if (!product) {
     notFound();
   }
 
-  return <ProductDetailView product={product} />;
+  // Generate breadcrumb data for structured data
+  const breadcrumbItems = [
+    {
+      name: 'Home',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://v7mpc.com'
+    },
+    {
+      name: 'Products',
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://v7mpc.com'}/products`
+    },
+    {
+      name: product.category.name,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://v7mpc.com'}/products?category=${product.category.slug}`
+    },
+    {
+      name: product.name,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://v7mpc.com'}/products/${product.id}`
+    }
+  ];
+
+  return (
+    <>
+      {/* Structured Data */}
+      <ProductJsonLd product={product} />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      
+      {/* Main Content */}
+      <ProductDetailView product={product} />
+    </>
+  );
 }
 
 // Generate metadata for SEO
-export async function generateMetadata({ params }: ProductPageProps) {
-  const product = mockProducts.find(p => p.id === params.id);
+export async function generateMetadata(props: PageProps<'/products/[id]'>) {
+  const { id } = await props.params;
+  const product = mockProducts.find(p => p.id === id);
 
   if (!product) {
     return {

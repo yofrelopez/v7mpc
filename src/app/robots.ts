@@ -1,12 +1,14 @@
 import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://v7mpc.com';
+
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/private/', '/admin/'],
+      disallow: ['/admin/', '/api/'],
     },
-    sitemap: 'https://v7mpc.vercel.app/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
