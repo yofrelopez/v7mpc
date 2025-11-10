@@ -22,12 +22,16 @@ export default function WhoWeAre() {
             
             {/* Company Description */}
             <div className="space-y-6">
-              <p className="font-accent text-lg text-slate-700 leading-relaxed">
-                V7 Marketplace Corporation (V7MP) is a <span className="font-semibold text-slate-900">minority-owned, Latin woman-led enterprise</span> specializing in national and international sourcing, manufacturing, and custom promotional solutions.
+              <p className="font-accent text-base text-slate-700 leading-relaxed text-justify">
+                V7 Marketplace Corporation (V7MP) is a <span className="font-semibold text-slate-900">minority-owned, Latin woman-led enterprise</span> specializing in national and international sourcing, manufacturing, and custom promotional solutions. Our founder, a proud mother and wife, leads V7MP with love, dedication, and a passion for serving each client. We partner with companies across industries to provide high-quality, competitively priced products—from custom promotional items to recognized brands—carefully tailored to meet each client's unique needs.
               </p>
               
-              <p className="font-accent text-base text-slate-600 leading-relaxed">
-                We provide companies across industries, including government entities, with high-quality, competitively priced products—from custom promotional items to recognized brands—tailored to meet each client's unique needs. Leveraging the latest technologies and market insights, V7MP offers both branded and unbranded products giving clients access to the most effective solutions for their industry.
+              <p className="font-accent text-base text-slate-600 leading-relaxed text-justify">
+                Sourcing both nationally and internationally, and with access to the latest technologies and market insights, V7MP offers both branded and unbranded products, empowering clients with effective, cost-efficient solutions that set them apart in their fields.
+              </p>
+              
+              <p className="font-accent text-base text-slate-600 leading-relaxed text-justify">
+                By choosing V7 Marketplace Corporation, clients gain a reliable, ethical partner capable of navigating the complexities of global sourcing, delivering results that align with government standards and procurement expectations. Discover the difference of working with a trusted partner committed to your success and driven by integrity, innovation, and excellence.
               </p>
             </div>
 
@@ -83,19 +87,6 @@ export default function WhoWeAre() {
                     <h4 className="font-primary font-semibold text-slate-900 mb-2">Custom Manufacturing</h4>
                     <p className="font-accent text-sm text-slate-600 leading-relaxed">Tailored solutions for custom and private label products.</p>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Value Proposition */}
-            <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-6 lg:p-8 rounded-xl border border-blue-200/50 shadow-sm">
-              <div className="flex items-start gap-4">
-                <div className="text-6xl text-blue-300 leading-none font-serif">&ldquo;</div>
-                <div>
-                  <h3 className="font-primary text-lg font-semibold text-slate-900 mb-3">Our Advantage</h3>
-                  <p className="font-accent text-base text-slate-700 leading-relaxed italic">
-                    Leveraging the latest technologies and market insights, we provide both branded and unbranded products, giving clients access to the most effective solutions for their industry.
-                  </p>
                 </div>
               </div>
             </div>

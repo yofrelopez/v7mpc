@@ -83,18 +83,17 @@ export default function WhatWeProvide() {
             {/* Main Description */}
             <div className="space-y-6 mb-10">
               <p className="font-accent text-base md:text-lg text-slate-300 leading-relaxed font-light">
-                At V7 Marketplace Corporation (V7MP), we specialize in tailored global 
+                At V7 Marketplace Corporation (V7MP), we specialize in providing tailored global 
                 product sourcing, procurement, and manufacturing solutions for a diverse 
                 range of clients, including government entities, institutional organizations, e-commerce 
-                platforms, and businesses across various industries.
+                platforms, and corporations across various industries.
               </p>
               
               <p className="font-accent text-base md:text-lg text-slate-400 leading-relaxed font-light">
                 By sourcing both nationally and internationally, we ensure our clients receive 
                 high-quality, cost-effective products that meet rigorous standards and 
                 deliver exceptional value. Our streamlined processes and deep market 
-                expertise allow us to serve the unique needs of businesses and institutions 
-                with precision and reliability.
+                expertise enable us to serve the unique needs of businesses and institutions alike.
               </p>
             </div>
             

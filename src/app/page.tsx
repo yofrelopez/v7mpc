@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Hero, WhatWeProvide, ProductsShowcase } from '@/components/home';
+import { Hero, CoreServices, WhatWeProvide, ProductsShowcase } from '@/components/home';
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -30,6 +30,9 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <Hero />
+      
+      {/* Core Services Section */}
+      <CoreServices />
       
       {/* What We Provide Section */}
       <WhatWeProvide />
