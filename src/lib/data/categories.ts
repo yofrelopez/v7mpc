@@ -12,7 +12,7 @@ export const productCategories: ProductCategory[] = [
   {
     id: 'jewelry-recognition',
     slug: 'jewelry-recognition',
-    name: 'Jewelry & Recognition',
+    name: 'Jewelry & Recognition Awards',
     description: 'Custom medals, pins, plaques, and commemorative awards designed for recognition and service programs.',
     image: '/categories/jewelry-recognition.jpg',
     productCount: 0 // Will be calculated dynamically

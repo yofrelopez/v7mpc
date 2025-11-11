@@ -46,7 +46,7 @@ export default function PromosPage() {
     totalPages
   } = usePagination({ 
     items: filteredProducts, 
-    initialItemsPerPage: 6
+    initialItemsPerPage: 24
   });
 
   if (!category) {

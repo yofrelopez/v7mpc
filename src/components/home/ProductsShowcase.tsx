@@ -8,7 +8,7 @@ export default function ProductsShowcase() {
   const categories = [
     {
       id: 'jewelry-recognition',
-      title: 'Jewelry & Recognition',
+      title: 'Jewelry & Recognition Awards',
       description: 'Premium awards, plaques, and recognition items that celebrate achievements and build lasting memories.',
       image: '/images/products/jewelry.png',
       link: '/products/jewelry-recognition',

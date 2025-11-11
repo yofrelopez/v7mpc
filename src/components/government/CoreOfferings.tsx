@@ -4,7 +4,7 @@ import { Medal, Shirt, Briefcase, Signpost } from 'lucide-react';
 export default function CoreOfferings() {
   const offerings = [
     {
-      title: "Jewelry & Recognition",
+      title: "Jewelry & Recognition Awards",
       description: "Custom medals, pins, plaques, and commemorative awards designed for recognition and service programs.",
       icon: Medal,
       color: "from-slate-600 to-slate-700",

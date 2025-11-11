@@ -22,7 +22,7 @@ export default function Hero() {
               <h1 className="font-primary text-3xl md:text-4xl lg:text-5xl font-bold text-gray-700 leading-tight">
                 <span className="block">Reliable. Efficient.</span>
                 <span className="block text-slate-600">Global.</span>
-                <span className="block text-gray-600">Manufacturing</span>
+                <span className="block text-gray-600">Sourcing & Manufacturing</span>
                 <span className="block text-gray-600">Solutions</span>
               </h1>
               

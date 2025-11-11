@@ -11,6 +11,19 @@ export default function RichContent({ blocks, className = '' }: RichContentProps
     <div className={`space-y-4 ${className}`}>
       {blocks.map((block, index) => {
         if (block.type === 'text') {
+          // Check if the text content contains HTML tags
+          const hasHtmlTags = block.content && /<(h[1-6]|ul|ol|li|p|strong|em|br)/i.test(block.content);
+          
+          if (hasHtmlTags) {
+            return (
+              <div 
+                key={index} 
+                className="prose prose-slate max-w-none"
+                dangerouslySetInnerHTML={{ __html: block.content || '' }}
+              />
+            );
+          }
+          
           return (
             <div key={index} className="prose prose-slate max-w-none">
               <p className="text-slate-700 leading-relaxed">
@@ -57,6 +70,18 @@ interface SmartContentProps {
 export function SmartContent({ content, className = '' }: SmartContentProps) {
   // If it's a string, render as regular text or list
   if (typeof content === 'string') {
+    // Check if the string contains HTML tags (safe tags only: h1-h6, ul, ol, li, p, strong, em, br)
+    const hasSafeHtmlTags = /<(h[1-6]|ul|ol|li|p|strong|em|br)/i.test(content);
+    
+    if (hasSafeHtmlTags) {
+      return (
+        <div 
+          className={`prose prose-slate max-w-none ${className}`}
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      );
+    }
+    
     // Check if the string contains FAQ format (Q: ... A: ...)
     if (content.includes('Q:') && content.includes('A:')) {
       // Split by Q: and process each question-answer pair

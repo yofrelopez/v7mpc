@@ -21,8 +21,14 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/cdn/shop/files/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdnm.sanmar.com',
+        port: '',
+        pathname: '/catalog/images/**',
+      },
     ],
-    domains: ['images.51microshop.com', 'v7marketplace.myshopify.com', 'cdn.shopify.com'], // Fallback configuration
+    domains: ['images.51microshop.com', 'v7marketplace.myshopify.com', 'cdn.shopify.com', 'cdnm.sanmar.com'], // Fallback configuration
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     formats: ['image/webp'],

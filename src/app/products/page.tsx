@@ -1,6 +1,7 @@
 import { mockProducts } from '@/lib/data/mockData';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import ProductsPageClient from './ProductsPageClient';
+import { fetchAllSanMarProducts } from '@/lib/api/sanmar-fetcher';
 
 // Generate metadata for the products page
 export const metadata = {
@@ -23,7 +24,7 @@ export const metadata = {
   },
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
   // Generate breadcrumb data for structured data
   const breadcrumbItems = [
     {
@@ -36,13 +37,25 @@ export default function ProductsPage() {
     }
   ];
 
+  // Fetch SanMar products (server-side, cached)
+  let sanMarProducts: Awaited<ReturnType<typeof fetchAllSanMarProducts>> = [];
+  try {
+    sanMarProducts = await fetchAllSanMarProducts();
+  } catch (error) {
+    console.error('Error loading SanMar products:', error);
+    sanMarProducts = [];
+  }
+
+  // Combine mock products with SanMar products
+  const allProducts = [...mockProducts, ...sanMarProducts];
+
   return (
     <>
       {/* Structured Data */}
       <BreadcrumbJsonLd items={breadcrumbItems} />
       
       {/* Main Content */}
-      <ProductsPageClient />
+      <ProductsPageClient products={allProducts} />
     </>
   );
 }

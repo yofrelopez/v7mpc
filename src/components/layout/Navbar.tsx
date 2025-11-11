@@ -129,7 +129,7 @@ export default function Navbar() {
                       onClick={() => setActiveDropdown(null)}
                     >
                       <div>
-                        <div className="font-primary font-semibold text-gray-900 group-hover:text-gray-800">Jewelry & Recognition</div>
+                        <div className="font-primary font-semibold text-gray-900 group-hover:text-gray-800">Jewelry & Recognition Awards</div>
                       </div>
                       <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-200" />
                     </Link>
@@ -277,7 +277,7 @@ export default function Navbar() {
                         <Link href="/products/jewelry-recognition" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-150">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
-                            <span className="font-accent text-sm font-light tracking-wide">Jewelry & Recognition</span>
+                            <span className="font-accent text-sm font-light tracking-wide">Jewelry & Recognition Awards</span>
                             <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
                               <ArrowRight className="w-3 h-3 text-slate-600" />
                             </div>

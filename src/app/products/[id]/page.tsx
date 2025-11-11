@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { mockProducts } from '@/lib/data/mockData';
+import { fetchAllSanMarProducts } from '@/lib/api/sanmar-fetcher';
 import ProductDetailView from '@/components/products/ProductDetailView';
 import { ContentBlock } from '@/types/products';
 import { ProductJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
@@ -7,10 +8,20 @@ import { ProductJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 export default async function ProductPage(props: PageProps<'/products/[id]'>) {
   const { id } = await props.params;
   
-  // Find product by ID in mockProducts
-  const product = mockProducts.find(p => p.id === id);
+  // Find product by ID in mockProducts first
+  let product = mockProducts.find(p => p.id === id);
 
-  // If product not found, show 404
+  // If not found in mock, try SanMar products
+  if (!product) {
+    try {
+      const sanMarProducts = await fetchAllSanMarProducts();
+      product = sanMarProducts.find(p => p.id === id);
+    } catch (error) {
+      console.error('Error fetching SanMar products:', error);
+    }
+  }
+
+  // If product not found in either source, show 404
   if (!product) {
     notFound();
   }
@@ -50,7 +61,19 @@ export default async function ProductPage(props: PageProps<'/products/[id]'>) {
 // Generate metadata for SEO
 export async function generateMetadata(props: PageProps<'/products/[id]'>) {
   const { id } = await props.params;
-  const product = mockProducts.find(p => p.id === id);
+  
+  // Find product in mockProducts first
+  let product = mockProducts.find(p => p.id === id);
+
+  // If not found, try SanMar
+  if (!product) {
+    try {
+      const sanMarProducts = await fetchAllSanMarProducts();
+      product = sanMarProducts.find(p => p.id === id);
+    } catch (error) {
+      console.error('Error fetching SanMar products for metadata:', error);
+    }
+  }
 
   if (!product) {
     return {

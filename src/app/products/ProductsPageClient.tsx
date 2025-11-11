@@ -1,13 +1,17 @@
 'use client';
 
-import { mockProducts } from '@/lib/data/mockData';
+import { Product } from '@/types/products';
 import ProductCard from '@/components/products/ProductCard';
 import CompactProductHeader from '@/components/products/CompactProductHeader';
 import Pagination from '@/components/products/Pagination';
 import { useProductFilters } from '@/hooks/useProductFilters';
 import { usePagination } from '@/hooks/usePagination';
 
-export default function ProductsPageClient() {
+interface ProductsPageClientProps {
+  products: Product[];
+}
+
+export default function ProductsPageClient({ products }: ProductsPageClientProps) {
   const {
     filteredProducts,
     searchTerm,
@@ -19,7 +23,7 @@ export default function ProductsPageClient() {
     totalProducts,
     filteredCount,
     resetFilters
-  } = useProductFilters({ products: mockProducts });
+  } = useProductFilters({ products });
 
   const {
     currentPage,
@@ -30,7 +34,7 @@ export default function ProductsPageClient() {
     totalPages
   } = usePagination({ 
     items: filteredProducts, 
-    initialItemsPerPage: 6 // Start with 6 to show pagination better
+    initialItemsPerPage: 24
   });
 
   return (
@@ -45,7 +49,7 @@ export default function ProductsPageClient() {
             onCategoryChange={setSelectedCategory}
             sortBy={sortBy}
             onSortChange={setSortBy}
-            allProducts={mockProducts}
+            allProducts={products}
             productCount={filteredCount}
             totalProducts={totalProducts}
           />

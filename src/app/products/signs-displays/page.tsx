@@ -45,7 +45,7 @@ export default function SignsDisplaysPage() {
     totalPages
   } = usePagination({ 
     items: filteredProducts, 
-    initialItemsPerPage: 6
+    initialItemsPerPage: 24
   });
 
   if (!category) {

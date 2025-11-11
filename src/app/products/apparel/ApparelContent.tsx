@@ -1,6 +1,6 @@
 'use client';
 
-import { mockProducts } from '@/lib/data/mockData';
+import { Product } from '@/types/products';
 import { getCategoryBySlug } from '@/lib/data/categories';
 import ProductCard from '@/components/products/ProductCard';
 import CompactProductHeader from '@/components/products/CompactProductHeader';
@@ -9,14 +9,13 @@ import CategoryHero from '@/components/products/CategoryHero';
 import { useProductFilters } from '@/hooks/useProductFilters';
 import { usePagination } from '@/hooks/usePagination';
 
-export default function JewelryRecognitionPage() {
+interface ApparelContentProps {
+  products: Product[];
+}
+
+export default function ApparelContent({ products }: ApparelContentProps) {
   // Get category info
-  const category = getCategoryBySlug('jewelry-recognition');
-  
-  // Pre-filter products by jewelry-recognition category
-  const categoryProducts = mockProducts.filter(
-    product => product.category.slug === 'jewelry-recognition'
-  );
+  const category = getCategoryBySlug('apparel');
 
   const {
     filteredProducts,
@@ -31,8 +30,8 @@ export default function JewelryRecognitionPage() {
     resetFilters,
     categoryLocked
   } = useProductFilters({ 
-    products: categoryProducts,
-    initialCategory: 'jewelry-recognition',
+    products,
+    initialCategory: 'apparel',
     categoryLocked: true
   });
 
@@ -52,20 +51,31 @@ export default function JewelryRecognitionPage() {
     return <div>Category not found</div>;
   }
 
+  // Custom category data for apparel with gradient highlight
+  const apparelCategory = {
+    ...category,
+    name: 'Apparel That Unites',
+    highlightText: 'Your Team',
+    description: 'Elevate your organization\'s presence with premium uniforms and apparel designed for comfort, performance, and brand consistency. From schools to government offices, our tailored solutions ensure every team looks as professional as the work they do.'
+  };
+
   return (
     <div className="bg-slate-50">
       
       {/* Category Hero Section */}
       <CategoryHero 
-        category={category}
-        productCount={categoryProducts.length}
-        subcategoryTags={['Medals', 'Pins & Badges', 'Awards & Plaques', 'Custom Jewelry']}
-        features={['Custom Design Services', 'Quality Guaranteed', 'Fast Turnaround']}
-        heroImage="/images/products/jewelry.png"
+        category={apparelCategory}
+        productCount={products.length}
+        subcategoryTags={['Uniforms', 'T-Shirts', 'Polo Shirts', 'Jackets', 'Hats & Caps']}
+        features={['Premium Materials', 'Custom Embroidery', 'Bulk Ordering']}
+        heroImage="/images/products/apparel.png"
+        customGradient="from-slate-800 to-slate-900"
+        showButtons={false}
+        imagePosition="object-right object-center sm:object-center sm:object-[center_75%]"
       />
 
       <div className="container mx-auto px-4 py-8">
-        {/* Compact Header with integrated search and sort - category locked to Jewelry & Recognition */}
+        {/* Compact Header with integrated search and sort - category locked to Apparel */}
         <div className="relative">
           <CompactProductHeader
             searchTerm={searchTerm}
@@ -74,11 +84,11 @@ export default function JewelryRecognitionPage() {
             onCategoryChange={setSelectedCategory}
             sortBy={sortBy}
             onSortChange={setSortBy}
-            allProducts={categoryProducts}
+            allProducts={products}
             productCount={filteredCount}
             totalProducts={totalProducts}
             categoryLocked={categoryLocked}
-            pageTitle="Jewelry & Recognition Awards"
+            pageTitle="Apparel"
           />
         </div>
         
@@ -120,12 +130,12 @@ export default function JewelryRecognitionPage() {
               </svg>
             </div>
             <h3 className="text-lg font-medium text-slate-600 mb-2">
-              No products found
+              No apparel products found
             </h3>
             <p className="text-slate-500 mb-4">
               {searchTerm
                 ? 'Try adjusting your search terms'
-                : 'No products are available in this category at this time'}
+                : 'No apparel products are available at this time'}
             </p>
             {searchTerm && (
               <button
@@ -137,32 +147,6 @@ export default function JewelryRecognitionPage() {
             )}
           </div>
         )}
-        
-        {/* Future Subcategories Section - Placeholder */}
-        <div className="mt-16 p-8 bg-white rounded-2xl border border-slate-200 shadow-sm">
-          <div className="text-center">
-            <h3 className="font-primary text-2xl font-semibold text-slate-900 mb-4">
-              Explore Subcategories
-            </h3>
-            <p className="font-accent text-slate-600 mb-6">
-              Browse our specialized selection within Jewelry & Recognition Awards
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <h4 className="font-primary font-semibold text-slate-900 mb-1">Medals</h4>
-                <p className="font-accent text-sm text-slate-600">Coming Soon</p>
-              </div>
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <h4 className="font-primary font-semibold text-slate-900 mb-1">Pins & Badges</h4>
-                <p className="font-accent text-sm text-slate-600">Coming Soon</p>
-              </div>
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <h4 className="font-primary font-semibold text-slate-900 mb-1">Awards & Plaques</h4>
-                <p className="font-accent text-sm text-slate-600">Coming Soon</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
