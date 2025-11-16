@@ -99,7 +99,7 @@ export default function WhatWeProvide() {
             
             {/* CTA Button */}
             <Link 
-              href="/cotizacion"
+              href="/quote"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-blue-500/20"
             >
               <span>REQUEST QUOTE</span>

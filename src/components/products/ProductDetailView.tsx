@@ -21,10 +21,10 @@ export default function ProductDetailView({ product }: ProductDetailViewProps) {
   const handleRequestQuote = () => {
     const params = new URLSearchParams({
       product: product.name,
-      productId: product.id,
+      id: product.id,
       quantity: selectedQuantity.toString()
     });
-    router.push(`/cotizacion?${params.toString()}`);
+    router.push(`/quote?${params.toString()}`);
   };
 
   const handleBackToProducts = () => {
@@ -136,7 +136,10 @@ export default function ProductDetailView({ product }: ProductDetailViewProps) {
                 Request Quote for {selectedQuantity} units
               </button>
               
-              <button className="w-full border border-slate-300 text-slate-700 py-3 px-6 rounded-md hover:bg-slate-50 transition-colors font-medium">
+              <button 
+                onClick={() => router.push('/contact')}
+                className="w-full border border-slate-300 text-slate-700 py-3 px-6 rounded-md hover:bg-slate-50 transition-colors font-medium"
+              >
                 Contact for Bulk Orders
               </button>
             </div>

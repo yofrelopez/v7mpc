@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/cotizacion`,
+      url: `${baseUrl}/quote`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,

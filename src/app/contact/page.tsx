@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ContactHero, ContactMap } from '@/components/contact';
+import { ContactHero, ContactMap, ContactForm } from '@/components/contact';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
@@ -48,6 +48,14 @@ export default function ContactPage() {
       {/* Main Content */}
       <div>
         <ContactHero />
+        
+        {/* Contact Form Section */}
+        <section className="py-16 lg:py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ContactForm />
+          </div>
+        </section>
+        
         <ContactMap />
       </div>
     </>

@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
 
             {/* CTA Button */}
             <div className="pt-4">
-              <Link href="/cotizacion">
+              <Link href="/quote">
                 <Button 
                   size="lg"
                   className="font-primary group bg-slate-600 hover:bg-slate-700 text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-slate-600/40"

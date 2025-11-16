@@ -84,7 +84,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/cotizacion" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
+                <Link href="/quote" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
                   <ChevronRight className="w-3 h-3 mr-2 text-slate-600/60 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
                   <span className="group-hover/link:translate-x-0.5 transition-transform duration-300">Get Quote</span>
                 </Link>
@@ -190,6 +190,29 @@ export default function Footer() {
           <div className="mt-5 pt-5 border-t border-gray-700/20 text-center">
             <p className="font-accent text-sm text-gray-500 font-light max-w-lg mx-auto">
               Empowering businesses through strategic sourcing and promotional solutions
+            </p>
+          </div>
+
+          {/* Developer Signature */}
+          <div className="mt-4 text-center">
+            <p className="font-accent text-xs text-gray-600 font-light">
+              Crafted with expertise by{' '}
+              <a 
+                href="https://idev.pe/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-slate-400 transition-colors duration-300 font-normal group inline-flex items-center gap-1"
+              >
+                <span className="group-hover:underline decoration-slate-600/40 underline-offset-2">iDev</span>
+                <svg 
+                  className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </p>
           </div>
         </div>

@@ -14,7 +14,7 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   // Create URLs for navigation
   const productUrl = `/products/${product.id}`;
-  const quoteUrl = `/cotizacion?product=${encodeURIComponent(product.name)}&id=${encodeURIComponent(product.id)}`;
+  const quoteUrl = `/quote?product=${encodeURIComponent(product.name)}&id=${encodeURIComponent(product.id)}`;
 
   return (
     <div className="bg-white rounded-lg md:rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">

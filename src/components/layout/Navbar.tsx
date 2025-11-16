@@ -205,7 +205,7 @@ export default function Navbar() {
               </div>
 
               {/* Refined Quote Button */}
-              <Link href="/cotizacion">
+              <Link href="/quote">
                 <Button 
                   className="font-primary group bg-white/80 text-slate-600 hover:text-slate-700 font-medium px-5 py-2.5 rounded-xl border-2 border-slate-400/60 hover:border-slate-600 transition-all duration-300"
                 >

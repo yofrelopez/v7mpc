@@ -95,7 +95,7 @@ export default function CoreServices() {
               Let us show you how our comprehensive approach can streamline your procurement process and deliver exceptional results.
             </p>
             <a 
-              href="/cotizacion"
+              href="/quote"
               className="inline-flex items-center gap-3 bg-slate-700 hover:bg-slate-800 text-white font-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-slate-500/20"
             >
               <span>Get Started Today</span>
