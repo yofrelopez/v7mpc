@@ -2,17 +2,24 @@
 
 import { Gem, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function JewelryHero() {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(148,163,184,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(251,191,36,0.05),transparent_50%)]"></div>
-      
-      {/* Floating Decorative Elements */}
-      <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-br from-amber-500/10 to-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 left-20 w-48 h-48 bg-gradient-to-br from-slate-400/10 to-slate-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/jewelry/jewelry-hero.png"
+          alt="V7MPC Jewelry Division - Luxury Collections"
+          fill
+          priority
+          className="object-cover"
+          quality={90}
+        />
+        {/* Dark overlay to match original background tone */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/75 to-gray-900/80"></div>
+      </div>
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
         

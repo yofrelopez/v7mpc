@@ -20,7 +20,7 @@ export default function MainDivisions() {
       ],
       link: '/jewelry',
       icon: Gem,
-      image: '/images/divisions/jewelry-placeholder.jpg',
+      image: '/images/divisions/jewelry-card.png',
       gradient: 'from-amber-500 to-yellow-600',
       bgGradient: 'from-amber-50 to-yellow-50'
     },
@@ -37,7 +37,7 @@ export default function MainDivisions() {
       ],
       link: '/promotional-products',
       icon: Gift,
-      image: '/images/divisions/promotional-placeholder.jpg',
+      image: '/images/divisions/promotional-card.png',
       gradient: 'from-blue-500 to-indigo-600',
       bgGradient: 'from-blue-50 to-indigo-50'
     }
@@ -78,8 +78,17 @@ export default function MainDivisions() {
                   
                   {/* Image Section */}
                   <div className="relative h-64 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
-                    {/* Placeholder gradient background */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${division.bgGradient} opacity-60`}></div>
+                    {/* Background Image */}
+                    <Image
+                      src={division.image}
+                      alt={division.title}
+                      fill
+                      className="object-cover"
+                      quality={85}
+                    />
+                    
+                    {/* Color overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${division.bgGradient} opacity-40`}></div>
                     
                     {/* Icon Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center">
