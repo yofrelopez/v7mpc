@@ -60,7 +60,7 @@ export default function CoreOfferings() {
         <div className="mb-12 lg:mb-16 sm:px-12 lg:px-16 xl:px-20">
           <div className="relative aspect-[3/2] overflow-hidden shadow-xl group">
             <Image
-              src="/government/core_offerings_products.png"
+              src="/images/government/core_offerings_products.png"
               alt="V7MPC Core Offerings for Government & Institutions"
               fill
               className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

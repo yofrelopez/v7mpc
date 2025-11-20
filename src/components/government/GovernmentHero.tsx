@@ -9,7 +9,7 @@ export default function GovernmentHero() {
       {/* Background Image Fullscreen */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/government/hero_2.png"
+          src="/images/government/hero_2.png"
           alt="Government & Institutions Hero"
           fill
           className="object-cover object-center"

@@ -148,7 +148,7 @@ export default function ProcurementCompliance() {
           <div className="lg:order-last">
             <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl group">
               <Image
-                src="/government/procurement.png"
+                src="/images/government/procurement.png"
                 alt="V7MPC Procurement & Compliance Process"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

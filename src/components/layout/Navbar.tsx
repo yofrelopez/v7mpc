@@ -104,7 +104,7 @@ export default function Navbar() {
                 </Button>
               </Link>
 
-              {/* Solutions Dropdown */}
+              {/* Products & Solutions Dropdown */}
               <div className="relative">
                 <Button 
                   variant="ghost" 
@@ -112,52 +112,65 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveDropdown('solutions')}
                   onClick={() => handleDropdownToggle('solutions')}
                 >
-                  Solutions
+                  Products & Solutions
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
                     activeDropdown === 'solutions' ? 'rotate-180' : ''
                   }`} />
                 </Button>
-                {/* Solutions Dropdown Menu */}
+                {/* Products & Solutions Dropdown Menu */}
                 {activeDropdown === 'solutions' && (
                   <div 
                     className="absolute top-full left-0 mt-3 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 py-4 z-50 animate-in slide-in-from-top-2 duration-300"
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
+                    {/* View All Solutions - Featured */}
                     <Link 
-                      href="/products/jewelry-recognition" 
-                      className="group flex items-center justify-between px-6 py-4 text-sm text-gray-700 hover:bg-gray-50 transition-all duration-200"
+                      href="/solutions" 
+                      className="group flex items-center justify-between px-6 py-4 text-sm text-gray-700 hover:bg-slate-50 transition-all duration-200 border-b border-gray-100"
                       onClick={() => setActiveDropdown(null)}
                     >
                       <div>
-                        <div className="font-primary font-semibold text-gray-900 group-hover:text-gray-800">Jewelry & Recognition Awards</div>
+                        <div className="font-primary font-semibold text-slate-900 group-hover:text-slate-700">View All Solutions</div>
+                        <div className="font-accent text-xs text-gray-500 mt-0.5">Explore our complete offerings</div>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-200" />
+                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-all duration-200" />
                     </Link>
-                    <div className="border-t border-gray-100 my-2"></div>
-                    <Link 
-                      href="/products/apparel" 
-                      className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
-                      onClick={() => setActiveDropdown(null)}
-                    >
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                      Apparel
-                    </Link>
-                    <Link 
-                      href="/products/promos" 
-                      className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
-                      onClick={() => setActiveDropdown(null)}
-                    >
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                      Promos
-                    </Link>
-                    <Link 
-                      href="/products/signs-displays" 
-                      className="font-accent flex items-center px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800 transition-colors duration-200"
-                      onClick={() => setActiveDropdown(null)}
-                    >
-                      <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
-                      Signs & Displays
-                    </Link>
+                    
+                    {/* Category Links */}
+                    <div className="py-2">
+                      <Link 
+                        href="/products/jewelry-recognition" 
+                        className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <Award className="w-4 h-4 text-gray-400 group-hover:text-slate-600 mr-3 transition-colors duration-200" />
+                        Jewelry & Recognition Awards
+                      </Link>
+                      <Link 
+                        href="/products/apparel" 
+                        className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-slate-600 transition-colors duration-200"></span>
+                        Apparel
+                      </Link>
+                      <Link 
+                        href="/products/promos" 
+                        className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-slate-600 transition-colors duration-200"></span>
+                        Promos
+                      </Link>
+                      <Link 
+                        href="/products/signs-displays" 
+                        className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-slate-600 transition-colors duration-200"></span>
+                        Signs & Displays
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
@@ -257,13 +270,13 @@ export default function Navbar() {
                   </div>
                 </Link>
 
-                {/* Solutions Section with Enhanced Animation */}
+                {/* Products & Solutions Section with Enhanced Animation */}
                 <div>
                   <button 
                     className="group w-full flex items-center justify-between px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500"
                     onClick={() => handleDropdownToggle('mobile-solutions')}
                   >
-                    <span className="font-primary font-normal text-base tracking-wide">Solutions</span>
+                    <span className="font-primary font-normal text-base tracking-wide">Products & Solutions</span>
                     <ChevronDown className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                       activeDropdown === 'mobile-solutions' ? 'rotate-180 text-slate-600 scale-110' : 'group-hover:text-gray-600'
                     }`} />
@@ -274,6 +287,17 @@ export default function Navbar() {
                     <div className="bg-gradient-to-r from-gray-50/60 to-gray-50/30 border-l-4 border-slate-600/20 animate-in slide-in-from-top-3 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
                       <div className="py-2 space-y-0.5">
                         
+                        {/* View All Solutions - Featured */}
+                        <Link href="/solutions" onClick={() => setIsOpen(false)}>
+                          <div className="group flex items-center px-12 py-3 text-slate-700 hover:text-slate-900 hover:bg-white/80 transition-all duration-400 animate-in slide-in-from-left-4 delay-100 border-b border-gray-200/50 mb-1">
+                            <Award className="w-4 h-4 text-slate-500 mr-4 group-hover:text-slate-700 transition-colors duration-400" />
+                            <span className="font-accent text-sm font-medium tracking-wide">View All Solutions</span>
+                            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
+                              <ArrowRight className="w-3 h-3 text-slate-600" />
+                            </div>
+                          </div>
+                        </Link>
+
                         <Link href="/products/jewelry-recognition" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-150">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>

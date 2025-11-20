@@ -119,10 +119,10 @@ export default function ProductsShowcase() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <Link 
-            href="/products"
+            href="/solutions"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-slate-600/20"
           >
-            <span>View All Products</span>
+            <span>Explore All Solutions</span>
             <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 group-hover:rotate-90">
               <ArrowRight className="w-3 h-3 text-white" />
             </div>

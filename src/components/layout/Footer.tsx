@@ -72,9 +72,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
+                <Link href="/solutions" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
                   <ChevronRight className="w-3 h-3 mr-2 text-slate-600/60 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
-                  <span className="group-hover/link:translate-x-0.5 transition-transform duration-300">Products</span>
+                  <span className="group-hover/link:translate-x-0.5 transition-transform duration-300">Solutions</span>
                 </Link>
               </li>
               <li>

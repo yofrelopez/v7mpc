@@ -149,7 +149,7 @@ export default function ContactSection() {
               {/* Main Image Container */}
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl group">
                 <Image
-                  src="/government/contact.png"
+                  src="/images/government/contact.png"
                   alt="V7MPC Government Team - Ready to Partner with Your Institution"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

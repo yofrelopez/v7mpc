@@ -28,7 +28,6 @@ const nextConfig: NextConfig = {
         pathname: '/catalog/images/**',
       },
     ],
-    domains: ['images.51microshop.com', 'v7marketplace.myshopify.com', 'cdn.shopify.com', 'cdnm.sanmar.com'], // Fallback configuration
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     formats: ['image/webp'],

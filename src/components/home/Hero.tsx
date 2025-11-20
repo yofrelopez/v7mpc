@@ -49,13 +49,13 @@ export default function Hero() {
               </div>
               
               {/* CTA Button */}
-              <Link href="/products">
+              <Link href="/solutions">
                 <Button 
                   size="lg"
                   className="font-primary group bg-slate-600 hover:bg-slate-700 text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-slate-600/20"
                 >
                   <span className="flex items-center gap-3">
-                    <span>Check out our Products</span>
+                    <span>Explore Our Solutions</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-all duration-300" />
                   </span>
                 </Button>
