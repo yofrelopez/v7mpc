@@ -18,11 +18,13 @@ export const metadata: Metadata = {
     'faith-based merchandise'
   ],
   openGraph: {
+    type: 'website',
+    url: 'https://www.v7mpc.com/solutions',
     title: 'Products & Solutions | V7 Marketplace Corporation',
     description: 'Discover our two specialized divisions: Premium Jewelry Collections and Strategic Promotional Products. Excellence in every detail.',
     images: [
       {
-        url: '/images/divisions/solutions-hero.png',
+        url: 'https://www.v7mpc.com/images/divisions/solutions-hero.png',
         width: 1200,
         height: 630,
         alt: 'V7MPC - Products & Solutions Overview',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Products & Solutions | V7 Marketplace Corporation',
     description: 'Premium Jewelry Collections & Strategic Promotional Products',
-    images: ['/images/divisions/solutions-hero.png'],
+    images: ['https://www.v7mpc.com/images/divisions/solutions-hero.png'],
   },
 };
 

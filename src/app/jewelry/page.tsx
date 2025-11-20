@@ -22,11 +22,13 @@ export const metadata: Metadata = {
     'V7 Marketplace jewelry'
   ],
   openGraph: {
+    type: 'website',
+    url: 'https://www.v7mpc.com/jewelry',
     title: 'Jewelry Division | V7 Marketplace Corporation',
     description: 'Four distinctive brands united by craftsmanship: Zaché® Prestige, Signature, Original, and Lu Love®. Jewelry that connects deeply with the heart.',
     images: [
       {
-        url: '/images/jewelry/jewelry-hero.png',
+        url: 'https://www.v7mpc.com/images/jewelry/jewelry-hero.png',
         width: 1200,
         height: 630,
         alt: 'V7MPC Jewelry Division - Zaché® Collections & Lu Love®',
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jewelry Division | V7 Marketplace Corporation',
     description: 'Zaché® Collections & Lu Love® - Crafted with precision, worn with pride.',
-    images: ['/images/jewelry/jewelry-hero.png'],
+    images: ['https://www.v7mpc.com/images/jewelry/jewelry-hero.png'],
   },
 };
 

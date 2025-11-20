@@ -22,11 +22,13 @@ export const metadata: Metadata = {
     'school promotional items'
   ],
   openGraph: {
+    type: 'website',
+    url: 'https://www.v7mpc.com/promotional-products',
     title: 'Promotional Products | V7 Marketplace Corporation',
     description: 'Strategic promotional solutions across 7 categories. From office essentials to eco-friendly products — amplify your brand with purpose.',
     images: [
       {
-        url: '/images/promotional/promotional-hero.png',
+        url: 'https://www.v7mpc.com/images/promotional/promotional-hero.png',
         width: 1200,
         height: 630,
         alt: 'V7MPC Promotional Products Division',
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Promotional Products | V7 Marketplace Corporation',
     description: 'Strategic brand solutions that speak your message.',
-    images: ['/images/promotional/promotional-hero.png'],
+    images: ['https://www.v7mpc.com/images/promotional/promotional-hero.png'],
   },
 };
 
