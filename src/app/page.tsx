@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Specializing in custom products, promotional items, and recognition solutions. Professional manufacturing and sourcing for medals, awards, corporate gifts, and more.',
     images: [
       {
-        url: 'https://v7mpc.vercel.app/images/government/hero_2.png',
+        url: '/images/government/hero_2.png',
         width: 1200,
         height: 630,
         alt: 'V7MPC - Professional Custom Products and Recognition Solutions',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'V7MPC - Professional Custom Products & Manufacturing',
     description: 'Specializing in custom products, promotional items, and recognition solutions.',
-    images: ['https://v7mpc.vercel.app/images/government/hero_2.png'],
+    images: ['/images/government/hero_2.png'],
   },
 };
 

@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://v7mpc.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.v7mpc.com'),
   title: {
     template: '%s | V7MPC',
     default: 'V7MPC - Custom Products & Recognition Items'
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://v7mpc.vercel.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.v7mpc.com',
     siteName: 'V7MPC',
     title: 'V7MPC - Custom Products & Recognition Items',
     description: 'Professional custom products, medals, promotional items, and recognition solutions. High-quality craftsmanship for achievements, events, and corporate needs.',
     images: [
       {
-        url: 'https://v7mpc.vercel.app/images/government/hero_2.png',
+        url: '/images/government/hero_2.png',
         width: 1200,
         height: 630,
         alt: 'V7MPC - Professional Custom Products and Recognition Solutions',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'V7MPC - Custom Products & Recognition Items',
     description: 'Professional custom products, medals, promotional items, and recognition solutions.',
-    images: ['https://v7mpc.vercel.app/images/government/hero_2.png'],
+    images: ['/images/government/hero_2.png'],
     creator: '@v7mpc',
     site: '@v7mpc',
   },
