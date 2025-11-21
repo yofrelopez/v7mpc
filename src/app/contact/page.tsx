@@ -10,11 +10,20 @@ export const metadata: Metadata = {
     title: 'Contact Us - Get in Touch with Our Team | V7MPC',
     description: 'Contact V7MPC for promotional products, custom apparel, and branded merchandise. Get quotes, ask questions, or schedule consultations.',
     type: 'website',
+    images: [
+      {
+        url: '/contact/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Us - Get in Touch with Our Team | V7MPC',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Us - Get in Touch with Our Team | V7MPC',
     description: 'Contact V7MPC for promotional products, custom apparel, and branded merchandise. Get quotes and expert consultations.',
+    images: ['/contact/twitter-image'],
   },
 };
 

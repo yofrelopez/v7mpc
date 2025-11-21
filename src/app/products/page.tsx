@@ -21,6 +21,14 @@ export const metadata = {
     title: 'Professional Products & Custom Solutions | V7MPC',
     description: 'Browse our complete catalog of professional promotional products, custom apparel, and branded merchandise.',
     type: 'website',
+    images: [
+      {
+        url: '/products/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Professional Products & Custom Solutions | V7MPC',
+      },
+    ],
   },
 };
 

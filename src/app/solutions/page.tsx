@@ -22,11 +22,20 @@ export const metadata: Metadata = {
     url: 'https://www.v7mpc.com/solutions',
     title: 'Products & Solutions | V7 Marketplace Corporation',
     description: 'Discover our two specialized divisions: Premium Jewelry Collections and Strategic Promotional Products. Excellence in every detail.',
+    images: [
+      {
+        url: '/solutions/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Products & Solutions | V7 Marketplace Corporation',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Products & Solutions | V7 Marketplace Corporation',
     description: 'Premium Jewelry Collections & Strategic Promotional Products',
+    images: ['/solutions/twitter-image'],
   },
 };
 

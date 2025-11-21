@@ -15,11 +15,20 @@ export const metadata: Metadata = {
     title: 'Government Solutions - Federal & Local Institution Services | V7MPC',
     description: 'Specialized promotional products and branded merchandise solutions for government institutions. GSA Schedule and procurement-compliant.',
     type: 'website',
+    images: [
+      {
+        url: '/government-institutions/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Government Solutions - Federal & Local Institution Services | V7MPC',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Government Solutions - Federal & Local Institution Services | V7MPC',
     description: 'Specialized promotional products for government institutions. GSA Schedule and procurement-compliant services.',
+    images: ['/government-institutions/twitter-image'],
   },
 };
 

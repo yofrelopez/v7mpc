@@ -10,11 +10,20 @@ export const metadata: Metadata = {
     url: 'https://www.v7mpc.com',
     title: 'V7MPC - Professional Custom Products & Manufacturing',
     description: 'Specializing in custom products, promotional items, and recognition solutions. Professional manufacturing and sourcing for medals, awards, corporate gifts, and more.',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'V7MPC - Professional Custom Products & Manufacturing',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'V7MPC - Professional Custom Products & Manufacturing',
     description: 'Specializing in custom products, promotional items, and recognition solutions.',
+    images: ['/twitter-image'],
   },
 };
 
