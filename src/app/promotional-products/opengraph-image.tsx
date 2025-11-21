@@ -1,5 +1,4 @@
 import { ImageResponse } from 'next/og';
-import { BaseOGLayout } from '@/lib/og-templates';
 
 export const runtime = 'edge';
 export const alt = 'V7MPC Promotional Products - Strategic Brand Solutions';
@@ -9,14 +8,14 @@ export const size = {
 };
 export const contentType = 'image/jpeg';
 
-export default function PromotionalOGImage() {
+export default async function PromotionalOGImage() {
+  const imageUrl = new URL('/images/promotional/promotional-hero.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.v7mpc.com');
+  const imageData = await fetch(imageUrl).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
-      <BaseOGLayout
-        title="Promotional Products"
-        subtitle="Strategic Solutions That Speak Your Message"
-        badges={['Office & Writing', 'Drinkware', 'Tech & Gadgets', 'Eco-Friendly']}
-      />
+      // @ts-ignore
+      <img src={imageData} width="1200" height="630" style={{ objectFit: 'cover' }} />
     ),
     {
       ...size,

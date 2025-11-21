@@ -1,5 +1,4 @@
 import { ImageResponse } from 'next/og';
-import { BaseOGLayout } from '@/lib/og-templates';
 
 export const runtime = 'edge';
 export const alt = 'Contact V7MPC - Get in Touch';
@@ -12,14 +11,26 @@ export const contentType = 'image/jpeg';
 export default function ContactOGImage() {
   return new ImageResponse(
     (
-      <BaseOGLayout
-        title="Contact Us"
-        subtitle="Get in Touch with Our Expert Team"
-        badges={['Request Quote', 'Ask Questions', 'Schedule Consultation']}
-      />
+      <div
+        style={{
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#1e293b',
+          background: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
+        }}
+      >
+        <div style={{ fontSize: 72, fontWeight: 'bold', color: '#ffffff', marginBottom: 20 }}>
+          Contact Us
+        </div>
+        <div style={{ fontSize: 32, color: '#cbd5e1', maxWidth: 800, textAlign: 'center' }}>
+          Get in Touch with Our Expert Team
+        </div>
+      </div>
     ),
-    {
-      ...size,
-    }
+    { ...size }
   );
 }
