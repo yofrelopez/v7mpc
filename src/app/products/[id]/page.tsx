@@ -95,9 +95,6 @@ export async function generateMetadata(props: PageProps<'/products/[id]'>) {
     : textContent || product.shortDescription;
 
   // Get the first image for OG
-  const productImage = product.images[0] || '/images/products/default-product.jpg';
-
-  // Get the first image for OG
   const productImage = product.images[0] || 'https://www.v7mpc.com/images/og/solutions-hero.jpg';
 
   return {
