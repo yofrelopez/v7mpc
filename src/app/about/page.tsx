@@ -10,20 +10,11 @@ export const metadata: Metadata = {
     title: 'About V7MPC - Your Partner in Custom Recognition & Promotional Products',
     description: 'Learn about V7MPC\'s commitment to quality custom products, recognition items, and promotional merchandise.',
     type: 'website',
-    images: [
-      {
-        url: '/images/hero_2.png',
-        width: 1200,
-        height: 630,
-        alt: 'About V7MPC - Professional Custom Products Partner',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About V7MPC - Your Partner in Custom Recognition & Promotional Products',
     description: 'Learn about our commitment to quality custom products and promotional merchandise.',
-    images: ['/images/hero_2.png'],
   },
 };
 
