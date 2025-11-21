@@ -97,6 +97,9 @@ export async function generateMetadata(props: PageProps<'/products/[id]'>) {
   // Get the first image for OG
   const productImage = product.images[0] || '/images/products/default-product.jpg';
 
+  // Get the first image for OG
+  const productImage = product.images[0] || 'https://www.v7mpc.com/images/og/solutions-hero.jpg';
+
   return {
     title: product.name,
     description: metaDescription,
@@ -113,7 +116,7 @@ export async function generateMetadata(props: PageProps<'/products/[id]'>) {
       description: metaDescription,
       images: [
         {
-          url: `/products/${product.id}/opengraph-image`,
+          url: productImage,
           width: 1200,
           height: 630,
           alt: `${product.name} - Professional custom product by V7MPC`,
@@ -125,7 +128,7 @@ export async function generateMetadata(props: PageProps<'/products/[id]'>) {
       card: 'summary_large_image',
       title: `${product.name} | V7MPC`,
       description: metaDescription,
-      images: [`/products/${product.id}/twitter-image`],
+      images: [productImage],
     },
     // Additional product metadata
     other: {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/about/opengraph-image',
+        url: 'https://www.v7mpc.com/images/og/hero.jpg',
         width: 1200,
         height: 630,
         alt: 'About V7MPC - Your Partner in Custom Recognition & Promotional Products',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About V7MPC - Your Partner in Custom Recognition & Promotional Products',
     description: 'Learn about our commitment to quality custom products and promotional merchandise.',
-    images: ['/about/twitter-image'],
+    images: ['https://www.v7mpc.com/images/og/hero.jpg'],
   },
 };
 

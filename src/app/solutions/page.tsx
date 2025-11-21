@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'Discover our two specialized divisions: Premium Jewelry Collections and Strategic Promotional Products. Excellence in every detail.',
     images: [
       {
-        url: '/solutions/opengraph-image',
+        url: 'https://www.v7mpc.com/images/og/solutions-hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Products & Solutions | V7 Marketplace Corporation',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Products & Solutions | V7 Marketplace Corporation',
     description: 'Premium Jewelry Collections & Strategic Promotional Products',
-    images: ['/solutions/twitter-image'],
+    images: ['https://www.v7mpc.com/images/og/solutions-hero.jpg'],
   },
 };
 

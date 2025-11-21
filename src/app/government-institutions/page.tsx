@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/government-institutions/opengraph-image',
+        url: 'https://www.v7mpc.com/images/og/hero_2.jpg',
         width: 1200,
         height: 630,
         alt: 'Government Solutions - Federal & Local Institution Services | V7MPC',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Government Solutions - Federal & Local Institution Services | V7MPC',
     description: 'Specialized promotional products for government institutions. GSA Schedule and procurement-compliant services.',
-    images: ['/government-institutions/twitter-image'],
+    images: ['https://www.v7mpc.com/images/og/hero_2.jpg'],
   },
 };
 

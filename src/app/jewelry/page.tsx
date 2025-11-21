@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: 'Four distinctive brands united by craftsmanship: Zaché® Prestige, Signature, Original, and Lu Love®. Jewelry that connects deeply with the heart.',
     images: [
       {
-        url: '/jewelry/opengraph-image',
+        url: 'https://www.v7mpc.com/images/og/jewelry-hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Jewelry Division | V7 Marketplace Corporation',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jewelry Division | V7 Marketplace Corporation',
     description: 'Zaché® Collections & Lu Love® - Crafted with precision, worn with pride.',
-    images: ['/jewelry/twitter-image'],
+    images: ['https://www.v7mpc.com/images/og/jewelry-hero.jpg'],
   },
 };
 

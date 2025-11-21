@@ -23,7 +23,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/products/opengraph-image',
+        url: 'https://www.v7mpc.com/images/og/solutions-hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Professional Products & Custom Solutions | V7MPC',

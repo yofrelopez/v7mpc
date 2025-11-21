@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: 'Strategic promotional solutions across 7 categories. From office essentials to eco-friendly products — amplify your brand with purpose.',
     images: [
       {
-        url: '/promotional-products/opengraph-image',
+        url: 'https://www.v7mpc.com/images/og/promotional-hero.jpg',
         width: 1200,
         height: 630,
         alt: 'Promotional Products | V7 Marketplace Corporation',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Promotional Products | V7 Marketplace Corporation',
     description: 'Strategic brand solutions that speak your message.',
-    images: ['/promotional-products/twitter-image'],
+    images: ['https://www.v7mpc.com/images/og/promotional-hero.jpg'],
   },
 };
 

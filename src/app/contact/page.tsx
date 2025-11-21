@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/contact/opengraph-image',
+        url: 'https://www.v7mpc.com/images/og/contact.jpg',
         width: 1200,
         height: 630,
         alt: 'Contact Us - Get in Touch with Our Team | V7MPC',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Us - Get in Touch with Our Team | V7MPC',
     description: 'Contact V7MPC for promotional products, custom apparel, and branded merchandise. Get quotes and expert consultations.',
-    images: ['/contact/twitter-image'],
+    images: ['https://www.v7mpc.com/images/og/contact.jpg'],
   },
 };
 
