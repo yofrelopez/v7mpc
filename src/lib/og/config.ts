@@ -20,28 +20,28 @@ export const OG_ROUTES: Record<string, OGConfig> = {
     route: '/',
     template: 'hero-image',
     title: 'V7MPC - Professional Custom Products & Recognition Solutions',
-    image: '/images/government/hero_2.png'
+    image: '/images/og/hero_2.jpg'
   },
   '/about': {
     route: '/about',
     template: 'hero-image',
     title: 'About V7MPC - Professional Custom Products',
     subtitle: 'Family-owned business delivering quality products since 1999',
-    image: '/images/about/hero.png'
+    image: '/images/og/hero.jpg'
   },
   '/contact': {
     route: '/contact',
     template: 'hero-image',
     title: 'Contact V7MPC - Get a Free Quote',
     subtitle: 'Professional custom products and recognition solutions',
-    image: '/images/government/contact.png'
+    image: '/images/og/contact.jpg'
   },
   '/contacto': {
     route: '/contacto',
     template: 'hero-image',
     title: 'Contacto V7MPC - Cotización Gratuita',
     subtitle: 'Productos personalizados profesionales',
-    image: '/images/government/contact.png'
+    image: '/images/og/contact.jpg'
   },
   '/products': {
     route: '/products',
@@ -55,28 +55,28 @@ export const OG_ROUTES: Record<string, OGConfig> = {
     template: 'hero-image',
     title: 'Government Solutions - V7MPC',
     subtitle: 'Trusted Partner for Government Organizations',
-    image: '/images/government/hero_2.png'
+    image: '/images/og/hero_2.jpg'
   },
   '/solutions': {
     route: '/solutions',
     template: 'hero-image',
     title: 'V7MPC Solutions - Products & Services',
     subtitle: 'Comprehensive solutions for your business',
-    image: '/images/divisions/solutions-hero.png'
+    image: '/images/og/solutions-hero.jpg'
   },
   '/jewelry': {
     route: '/jewelry',
     template: 'hero-image',
     title: 'Jewelry Division - Zaché Collections & Lu Love',
     subtitle: 'Premium jewelry and recognition products',
-    image: '/images/jewelry/jewelry-hero.png'
+    image: '/images/og/jewelry-hero.jpg'
   },
   '/promotional-products': {
     route: '/promotional-products',
     template: 'hero-image',
     title: 'Promotional Products - Strategic Brand Solutions',
     subtitle: 'Elevate your brand with custom promotional items',
-    image: '/images/promotional/promotional-hero.png'
+    image: '/images/og/promotional-hero.jpg'
   },
   '/quote': {
     route: '/quote',

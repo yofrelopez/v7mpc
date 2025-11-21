@@ -17,13 +17,16 @@ export default async function HomeOGImage() {
 
   // Use hero image if configured
   if (config.template === 'hero-image' && config.image) {
-    const imageUrl = new URL(config.image, process.env.NEXT_PUBLIC_SITE_URL || 'https://www.v7mpc.com');
-    const imageData = await fetch(imageUrl).then((res) => res.arrayBuffer());
-
     return new ImageResponse(
       (
-        // @ts-ignore
-        <img src={imageData} width="1200" height="630" style={{ objectFit: 'cover' }} />
+        // eslint-disable-next-line @next/next/no-img-element
+        <img 
+          src={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.v7mpc.com'}${config.image}`}
+          width="1200" 
+          height="630" 
+          style={{ objectFit: 'cover' }} 
+          alt={alt}
+        />
       ),
       {
         ...size,

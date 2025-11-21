@@ -61,39 +61,7 @@ export default async function ProductOGImage({
     );
   }
 
-  // Strategy 1: Use actual product image if available (AUTOMATIC)
-  if (product.images && product.images.length > 0) {
-    const productImageUrl = product.images[0];
-    
-    try {
-      // Fetch the product image
-      const imageUrl = productImageUrl.startsWith('http') 
-        ? productImageUrl 
-        : new URL(productImageUrl, process.env.NEXT_PUBLIC_SITE_URL || 'https://www.v7mpc.com');
-      
-      const imageData = await fetch(imageUrl).then((res) => res.arrayBuffer());
-
-      return new ImageResponse(
-        (
-          // @ts-ignore
-          <img 
-            src={imageData} 
-            width="1200" 
-            height="630" 
-            style={{ objectFit: 'cover' }} 
-          />
-        ),
-        {
-          ...size,
-        }
-      );
-    } catch (error) {
-      console.error('Error fetching product image for OG:', error);
-      // Fall through to Strategy 2
-    }
-  }
-
-  // Strategy 2: Generate with text overlay (fallback)
+  // Use generated design (optimized for WhatsApp - ~50KB)
   return new ImageResponse(
     (
       <BaseOGLayout
