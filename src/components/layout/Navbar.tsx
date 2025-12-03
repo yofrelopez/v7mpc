@@ -138,32 +138,32 @@ export default function Navbar() {
                     
                     {/* Category Links */}
                     <div className="py-2">
-                      <Link 
-                        href="/products/jewelry-recognition" 
+                      <Link
+                        href="/jewelry"
                         className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                         onClick={() => setActiveDropdown(null)}
                       >
                         <Award className="w-4 h-4 text-gray-400 group-hover:text-slate-600 mr-3 transition-colors duration-200" />
                         Jewelry & Recognition Awards
                       </Link>
-                      <Link 
-                        href="/products/apparel" 
+                      <Link
+                        href="/products/apparel"
                         className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                         onClick={() => setActiveDropdown(null)}
                       >
                         <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-slate-600 transition-colors duration-200"></span>
                         Apparel
                       </Link>
-                      <Link 
-                        href="/products/promos" 
+                      <Link
+                        href="/promotional-products"
                         className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                         onClick={() => setActiveDropdown(null)}
                       >
                         <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-slate-600 transition-colors duration-200"></span>
                         Promos
                       </Link>
-                      <Link 
-                        href="/products/signs-displays" 
+                      <Link
+                        href="/products/signs-displays"
                         className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
                         onClick={() => setActiveDropdown(null)}
                       >
@@ -298,7 +298,7 @@ export default function Navbar() {
                           </div>
                         </Link>
 
-                        <Link href="/products/jewelry-recognition" onClick={() => setIsOpen(false)}>
+                        <Link href="/jewelry" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-150">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Jewelry & Recognition Awards</span>
@@ -318,7 +318,7 @@ export default function Navbar() {
                           </div>
                         </Link>
 
-                        <Link href="/products/promos" onClick={() => setIsOpen(false)}>
+                        <Link href="/promotional-products" onClick={() => setIsOpen(false)}>
                           <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-250">
                             <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
                             <span className="font-accent text-sm font-light tracking-wide">Promos</span>

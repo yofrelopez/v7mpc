@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Phone, Mail, MessageSquare, FileText, Users, Shield, Award, ArrowRight } from 'lucide-react';
 
 export default function ContactSection() {
   const contactMethods = [
     {
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+1 (786) 286-7540",
       icon: Phone,
       color: "text-blue-600",
       bgColor: "bg-blue-50",
@@ -13,7 +14,7 @@ export default function ContactSection() {
     },
     {
       title: "Email",
-      value: "government@v7mpc.com",
+      value: "contact@v7mpc.com",
       icon: Mail,
       color: "text-emerald-600",
       bgColor: "bg-emerald-50",
@@ -48,7 +49,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+    <section id="contact-team" className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -121,17 +122,21 @@ export default function ContactSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
-              <button className="group inline-flex items-center gap-2 sm:gap-3 font-primary bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 hover:from-blue-700 hover:to-blue-800">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300 flex-shrink-0" />
-                <span className="truncate">Contact Government Team</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
-              </button>
-              
-              <button className="group inline-flex items-center gap-2 sm:gap-3 font-primary bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 transition-all duration-300">
-                <FileText className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300 flex-shrink-0" />
-                <span className="truncate">Request Quote</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
-              </button>
+              <Link href="/contact">
+                <button className="group inline-flex items-center gap-2 sm:gap-3 font-primary bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 hover:from-blue-700 hover:to-blue-800">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300 flex-shrink-0" />
+                  <span className="truncate">Contact Government Team</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
+                </button>
+              </Link>
+
+              <Link href="/quote">
+                <button className="group inline-flex items-center gap-2 sm:gap-3 font-primary bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 transition-all duration-300">
+                  <FileText className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300 flex-shrink-0" />
+                  <span className="truncate">Request Quote</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
+                </button>
+              </Link>
             </div>
 
             {/* Additional Info */}

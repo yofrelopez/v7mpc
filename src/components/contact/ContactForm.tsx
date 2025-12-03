@@ -202,7 +202,7 @@ export default function ContactFormComponent() {
               <Input
                 {...register('phone')}
                 type="tel"
-                placeholder="(850) 850-0140"
+                placeholder="+1 (786) 286-7540"
                 disabled={isSubmitting}
                 className={errors.phone ? 'border-red-500' : ''}
               />

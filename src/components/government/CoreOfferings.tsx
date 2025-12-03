@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Medal, Shirt, Briefcase, Signpost } from 'lucide-react';
 
 export default function CoreOfferings() {
@@ -123,12 +124,16 @@ export default function CoreOfferings() {
               Contact our government division specialists to discuss your specific requirements and compliance needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="font-primary bg-slate-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-slate-700 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
-                Request Consultation
-              </button>
-              <button className="font-primary border-2 border-slate-300 text-slate-700 px-8 py-3 rounded-xl font-semibold hover:border-slate-400 hover:text-slate-800 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
-                View Portfolio
-              </button>
+              <Link href="/quote">
+                <button className="font-primary bg-slate-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-slate-700 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+                  Request Consultation
+                </button>
+              </Link>
+              <Link href="/promotional-products">
+                <button className="font-primary border-2 border-slate-300 text-slate-700 px-8 py-3 rounded-xl font-semibold hover:border-slate-400 hover:text-slate-800 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+                  View Portfolio
+                </button>
+              </Link>
             </div>
           </div>
         </div>

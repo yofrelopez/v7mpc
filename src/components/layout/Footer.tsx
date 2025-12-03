@@ -47,7 +47,7 @@ export default function Footer() {
                 <div className="flex items-center justify-center w-8 h-8 bg-gray-800/30 rounded-lg group-hover:bg-slate-600/15 transition-colors duration-300">
                   <Phone className="w-4 h-4 text-slate-600/70" />
                 </div>
-                <span className="font-accent text-sm font-light">(850) 850-0140</span>
+                <span className="font-accent text-sm font-light">+1 (786) 286-7540</span>
               </div>
               <div className="group flex items-center space-x-3 text-gray-400 hover:text-gray-200 transition-colors duration-300">
                 <div className="flex items-center justify-center w-8 h-8 bg-gray-800/30 rounded-lg group-hover:bg-slate-600/15 transition-colors duration-300">
@@ -78,7 +78,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/capability-statement" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
+                <Link href="/contact" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
                   <ChevronRight className="w-3 h-3 mr-2 text-slate-600/60 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
                   <span className="group-hover/link:translate-x-0.5 transition-transform duration-300">Capability Statement</span>
                 </Link>
@@ -100,13 +100,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/faq" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
+                <Link href="/contact" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
                   <ChevronRight className="w-3 h-3 mr-2 text-slate-600/60 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
                   <span className="group-hover/link:translate-x-0.5 transition-transform duration-300">FAQ</span>
                 </Link>
               </li>
               <li>
-                <Link href="/shipping-info" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
+                <Link href="/contact" className="font-accent text-gray-400 hover:text-white transition-all duration-300 flex items-center group/link text-sm font-light">
                   <ChevronRight className="w-3 h-3 mr-2 text-slate-600/60 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
                   <span className="group-hover/link:translate-x-0.5 transition-transform duration-300">Shipping Info</span>
                 </Link>

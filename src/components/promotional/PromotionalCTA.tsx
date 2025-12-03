@@ -45,8 +45,8 @@ export default function PromotionalCTA() {
             </Button>
           </Link>
           
-          <Link href="/products/promos">
-            <Button 
+          <Link href="/promotional-products">
+            <Button
               size="lg"
               variant="outline"
               className="font-primary group bg-transparent hover:bg-white/10 text-white border-white/30 hover:border-white/50 font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl backdrop-blur-sm"

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FileText, Download, Shield, Award, CheckCircle, Building } from 'lucide-react';
 
 export default function CapabilityStatement() {
@@ -29,7 +30,7 @@ export default function CapabilityStatement() {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section id="capability-statement" className="py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -125,13 +126,15 @@ export default function CapabilityStatement() {
 
               {/* Download Button */}
               <div className="text-center">
-                <button className="group/btn inline-flex items-center gap-2 sm:gap-3 font-primary bg-gradient-to-r from-slate-600 to-slate-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:from-slate-700 hover:to-slate-800">
-                  <Download className="w-7 h-7 sm:w-6 sm:h-6 group-hover/btn:animate-bounce flex-shrink-0" />
-                  <span className="sm:inline">Download Capability Statement</span>
-                </button>
-                
+                <Link href="/contact">
+                  <button className="group/btn inline-flex items-center gap-2 sm:gap-3 font-primary bg-gradient-to-r from-slate-600 to-slate-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:from-slate-700 hover:to-slate-800">
+                    <Download className="w-7 h-7 sm:w-6 sm:h-6 group-hover/btn:animate-bounce flex-shrink-0" />
+                    <span className="sm:inline">Request Capability Statement</span>
+                  </button>
+                </Link>
+
                 <p className="font-accent text-xs sm:text-sm text-slate-500 mt-3 sm:mt-4">
-                  Free download • No registration required • Compatible with all devices
+                  Contact us to receive our official capability statement document
                 </p>
               </div>
 
@@ -152,12 +155,16 @@ export default function CapabilityStatement() {
               Contact our team for specific certifications, insurance certificates, or custom capability statements tailored to your project requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="font-primary border-2 border-slate-300 text-slate-700 px-6 py-3 rounded-xl font-semibold hover:border-slate-400 hover:text-slate-800 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">
-                Request Custom Documentation
-              </button>
-              <button className="font-primary border-2 border-slate-300 text-slate-700 px-6 py-3 rounded-xl font-semibold hover:border-slate-400 hover:text-slate-800 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">
-                Contact Our Team
-              </button>
+              <Link href="/quote">
+                <button className="font-primary border-2 border-slate-300 text-slate-700 px-6 py-3 rounded-xl font-semibold hover:border-slate-400 hover:text-slate-800 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">
+                  Request Custom Documentation
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="font-primary border-2 border-slate-300 text-slate-700 px-6 py-3 rounded-xl font-semibold hover:border-slate-400 hover:text-slate-800 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">
+                  Contact Our Team
+                </button>
+              </Link>
             </div>
           </div>
         </div>

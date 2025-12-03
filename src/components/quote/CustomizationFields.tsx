@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { CustomizationDetails } from '@/types/quote';
 import { Palette, Ruler, Shirt, Wrench } from 'lucide-react';
@@ -17,7 +18,17 @@ export default function CustomizationFields({
   onChange,
   disabled = false
 }: CustomizationFieldsProps) {
-  
+
+  // Local state for string inputs (colors and sizes)
+  const [colorsInput, setColorsInput] = useState('');
+  const [sizesInput, setSizesInput] = useState('');
+
+  // Sync local state with customization prop
+  useEffect(() => {
+    setColorsInput(customization.colors?.join(', ') || '');
+    setSizesInput(customization.sizes?.join(', ') || '');
+  }, [customization.colors, customization.sizes]);
+
   const handleChange = (field: keyof CustomizationDetails, value: any) => {
     onChange({
       ...customization,
@@ -40,8 +51,13 @@ export default function CustomizationFields({
         </label>
         <Input
           type="text"
-          value={customization.colors?.join(', ') || ''}
-          onChange={(e) => handleMultipleValues('colors', e.target.value)}
+          value={colorsInput}
+          onChange={(e) => setColorsInput(e.target.value)}
+          onBlur={(e) => {
+            if (e.target.value.trim()) {
+              handleMultipleValues('colors', e.target.value);
+            }
+          }}
           placeholder="e.g. Red, Blue, White"
           disabled={disabled}
         />
@@ -86,8 +102,13 @@ export default function CustomizationFields({
         </label>
         <Input
           type="text"
-          value={customization.sizes?.join(', ') || ''}
-          onChange={(e) => handleMultipleValues('sizes', e.target.value)}
+          value={sizesInput}
+          onChange={(e) => setSizesInput(e.target.value)}
+          onBlur={(e) => {
+            if (e.target.value.trim()) {
+              handleMultipleValues('sizes', e.target.value);
+            }
+          }}
           placeholder="e.g. S, M, L, XL, 2XL"
           disabled={disabled}
         />
