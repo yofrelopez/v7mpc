@@ -6,7 +6,7 @@ export default function ContactSection() {
   const contactMethods = [
     {
       title: "Phone",
-      value: "+1 (786) 286-7540",
+      value: "(850) 850-0140",
       icon: Phone,
       color: "text-blue-600",
       bgColor: "bg-blue-50",

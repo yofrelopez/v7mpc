@@ -47,7 +47,7 @@ export default function Footer() {
                 <div className="flex items-center justify-center w-8 h-8 bg-gray-800/30 rounded-lg group-hover:bg-slate-600/15 transition-colors duration-300">
                   <Phone className="w-4 h-4 text-slate-600/70" />
                 </div>
-                <span className="font-accent text-sm font-light">+1 (786) 286-7540</span>
+                <span className="font-accent text-sm font-light">(850) 850-0140</span>
               </div>
               <div className="group flex items-center space-x-3 text-gray-400 hover:text-gray-200 transition-colors duration-300">
                 <div className="flex items-center justify-center w-8 h-8 bg-gray-800/30 rounded-lg group-hover:bg-slate-600/15 transition-colors duration-300">

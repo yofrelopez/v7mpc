@@ -53,10 +53,10 @@ export default function ContactHero() {
                   Call us at
                 </p>
                 <a
-                  href="tel:+17862867540"
+                  href="tel:+18508500140"
                   className="font-primary text-lg font-semibold text-blue-600 hover:text-blue-700 transition-colors duration-300 group-hover:underline"
                 >
-                  +1 (786) 286-7540
+                  (850) 850-0140
                 </a>
               </div>
             </div>

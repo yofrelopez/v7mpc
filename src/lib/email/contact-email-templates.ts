@@ -193,7 +193,7 @@ export function generateContactCustomerEmail(data: ContactSubmission): string {
                     <ul style="margin: 0; padding-left: 20px; color: #1e3a8a; font-size: 14px; line-height: 1.8;">
                       <li>Our team will review your message</li>
                       <li>A specialist will respond within 24 business hours</li>
-                      <li>For urgent matters, call us at <a href="tel:+17862867540" style="color: #2563eb; text-decoration: none; font-weight: 600;">+1 (786) 286-7540</a></li>
+                      <li>For urgent matters, call us at <a href="tel:+18508500140" style="color: #2563eb; text-decoration: none; font-weight: 600;">(850) 850-0140</a></li>
                     </ul>
                   </div>
 
@@ -203,7 +203,7 @@ export function generateContactCustomerEmail(data: ContactSubmission): string {
                       <strong style="color: #1e293b;">V7 Marketplace Corporation</strong><br>
                       225 N Pace Blvd. Suite 225<br>
                       Pensacola, FL 32505<br>
-                      Phone: <a href="tel:+17862867540" style="color: #3b82f6; text-decoration: none;">+1 (786) 286-7540</a><br>
+                      Phone: <a href="tel:+18508500140" style="color: #3b82f6; text-decoration: none;">(850) 850-0140</a><br>
                       Email: <a href="mailto:contact@v7mpc.com" style="color: #3b82f6; text-decoration: none;">contact@v7mpc.com</a>
                     </p>
                   </div>
@@ -271,13 +271,13 @@ Sent: ${new Date(data.submittedAt).toLocaleString()}
 WHAT HAPPENS NEXT?
 - Our team will review your message
 - A specialist will respond within 24 business hours
-- For urgent matters, call us at +1 (786) 286-7540
+- For urgent matters, call us at (850) 850-0140
 
 CONTACT INFORMATION:
 V7 Marketplace Corporation
 225 N Pace Blvd. Suite 225
 Pensacola, FL 32505
-Phone: +1 (786) 286-7540
+Phone: (850) 850-0140
 Email: contact@v7mpc.com
 
 ---

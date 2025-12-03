@@ -219,8 +219,8 @@ export default function TermsConditionsPage() {
                 </p>
                 <p>
                   Phone:{' '}
-                  <a href="tel:+17862867540" className="text-blue-600 hover:text-blue-700 underline">
-                    +1 (786) 286-7540
+                  <a href="tel:+18508500140" className="text-blue-600 hover:text-blue-700 underline">
+                    (850) 850-0140
                   </a>
                 </p>
               </div>
