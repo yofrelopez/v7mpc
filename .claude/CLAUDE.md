@@ -118,11 +118,11 @@ Create a `.env.local` file in the project root:
 NEXT_PUBLIC_SITE_URL=https://www.v7mpc.com
 
 # Google reCAPTCHA v3
-RECAPTCHA_SECRET_KEY=your_secret_key_here
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_site_key_here
+RECAPTCHA_SECRET_KEY=YOUR_SECRET_KEY_FROM_GOOGLE_RECAPTCHA
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=YOUR_SITE_KEY_FROM_GOOGLE_RECAPTCHA
 
 # Resend Email Service
-RESEND_API_KEY=your_resend_api_key
+RESEND_API_KEY=YOUR_API_KEY_FROM_RESEND
 FROM_EMAIL=onboarding@resend.dev
 ADMIN_EMAIL=info@v7mpc.com
 ```
