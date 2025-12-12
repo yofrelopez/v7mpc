@@ -81,7 +81,7 @@ export function useProductFilters({
     if (selectedType) {
       const typeLower = selectedType.toLowerCase();
       result = result.filter(product =>
-        product.tags.some(tag => tag.toLowerCase() === typeLower)
+        product.tags.some(tag => tag.toLowerCase().includes(typeLower))
       );
     }
 

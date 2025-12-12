@@ -48,9 +48,11 @@ export default function ProductsPageClient({ products }: ProductsPageClientProps
     const brand = searchParams.get('brand');
     const type = searchParams.get('type');
 
-    if (category) setSelectedCategory(category);
-    if (brand) setSelectedBrand(brand);
-  }, [searchParams, setSelectedCategory, setSelectedBrand]);
+    // Always update state to match URL params (handle both set and unset)
+    setSelectedCategory(category || null);
+    setSelectedBrand(brand || null);
+    setSelectedType(type || null);
+  }, [searchParams, setSelectedCategory, setSelectedBrand, setSelectedType]);
 
   const {
     currentPage,

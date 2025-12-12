@@ -2,7 +2,7 @@
 // ============================================================================
 // SANMAR PRODUCT FETCHER - Load products from SanMar API or Static Catalog
 // ============================================================================
-'use server';
+import 'server-only';
 
 import { Product } from '@/types/products';
 import { std_getProductInfoByStyleColorSize } from './sanmar';

@@ -29,7 +29,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
         <div className="grid grid-cols-2 gap-3">
           {/* Hoodies */}
           <Link
-            href="/products?category=hoodies"
+            href="/products?type=hoodie"
             onClick={onItemClick}
             className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
@@ -41,7 +41,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
           {/* T-Shirts */}
           <Link
-            href="/products?category=t-shirts"
+            href="/products?type=t-shirt"
             onClick={onItemClick}
             className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
@@ -53,7 +53,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
           {/* Polos */}
           <Link
-            href="/products?category=polos"
+            href="/products?type=polo"
             onClick={onItemClick}
             className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
@@ -65,7 +65,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
           {/* Jackets */}
           <Link
-            href="/products?category=jackets"
+            href="/products?type=jacket"
             onClick={onItemClick}
             className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
@@ -77,7 +77,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
           {/* Bags */}
           <Link
-            href="/products?category=bags"
+            href="/products?type=bag"
             onClick={onItemClick}
             className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
@@ -89,7 +89,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
           {/* Caps */}
           <Link
-            href="/products?category=caps"
+            href="/products?type=cap"
             onClick={onItemClick}
             className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
@@ -101,7 +101,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
           {/* Workwear */}
           <Link
-            href="/products?category=workwear"
+            href="/products?type=workwear"
             onClick={onItemClick}
             className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
@@ -158,7 +158,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <div className="space-y-1">
             {/* Hoodies */}
             <Link
-              href="/products?category=hoodies"
+              href="/products?type=hoodie"
               onClick={onItemClick}
               className="group flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors"
             >
@@ -173,7 +173,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
             {/* T-Shirts */}
             <Link
-              href="/products?category=t-shirts"
+              href="/products?type=t-shirt"
               onClick={onItemClick}
               className="group flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors"
             >
@@ -188,7 +188,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
             {/* Polos */}
             <Link
-              href="/products?category=polos"
+              href="/products?type=polo"
               onClick={onItemClick}
               className="group flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors"
             >
@@ -203,7 +203,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
             {/* Jackets */}
             <Link
-              href="/products?category=jackets"
+              href="/products?type=jacket"
               onClick={onItemClick}
               className="group flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors"
             >
@@ -235,7 +235,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <div className="grid grid-cols-1 gap-2">
             {/* Bags */}
             <Link
-              href="/products?category=bags"
+              href="/products?type=bag"
               onClick={onItemClick}
               className="group flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 transition-colors"
             >
@@ -250,7 +250,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
             {/* Caps */}
             <Link
-              href="/products?category=caps"
+              href="/products?type=cap"
               onClick={onItemClick}
               className="group flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 transition-colors"
             >
@@ -265,7 +265,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
 
             {/* Workwear */}
             <Link
-              href="/products?category=workwear"
+              href="/products?type=workwear"
               onClick={onItemClick}
               className="group flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 transition-colors"
             >
