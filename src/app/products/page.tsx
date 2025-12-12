@@ -1,4 +1,5 @@
 import { mockProducts } from '@/lib/data/mockData';
+import { Suspense } from 'react';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import ProductsPageClient from './ProductsPageClient';
 import { fetchAllSanMarProducts } from '@/lib/api/sanmar-fetcher';
@@ -9,7 +10,7 @@ export const metadata = {
   description: 'Browse our complete catalog of professional promotional products, custom apparel, recognition items, and branded merchandise. Quality products for businesses and organizations.',
   keywords: [
     'promotional products',
-    'custom apparel', 
+    'custom apparel',
     'branded merchandise',
     'corporate gifts',
     'recognition items',
@@ -61,9 +62,11 @@ export default async function ProductsPage() {
     <>
       {/* Structured Data */}
       <BreadcrumbJsonLd items={breadcrumbItems} />
-      
+
       {/* Main Content */}
-      <ProductsPageClient products={allProducts} />
+      <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading products...</div>}>
+        <ProductsPageClient products={allProducts} />
+      </Suspense>
     </>
   );
 }

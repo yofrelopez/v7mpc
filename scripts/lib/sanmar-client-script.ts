@@ -128,16 +128,30 @@ function scriptSanMarProductToProduct(sanmarProducts: ParsedSanMarProduct[]): Pr
 
         const category = getCategoryBySlug('apparel') || { id: 'apparel', slug: 'apparel', name: 'Apparel', productCount: 0, image: '', description: '' };
 
-        // Images
-        const images = Array.from(new Set([
-            primary.colorProductImage,
-            primary.frontModel,
-            primary.backModel,
-            primary.sideModel,
-            primary.frontFlat,
-            primary.backFlat,
-            primary.productImage,
-        ].filter(Boolean)));
+        // Images: Aggregate ALL unique images from ALL variants (colors)
+        const uniqueImages = new Set<string>();
+
+        // 1. Add Primary Product generic images first (High priority)
+        [primary.productImage, primary.frontModel, primary.backModel, primary.sideModel]
+            .filter(Boolean)
+            .forEach(img => uniqueImages.add(img));
+
+        // 2. Iterate over all variants to add specific color images
+        variants.forEach(v => {
+            [
+                v.colorProductImage,
+                v.frontModel,
+                v.backModel,
+                v.sideModel,
+                v.frontFlat,
+                v.backFlat,
+                v.productImage
+            ]
+                .filter(Boolean)
+                .forEach(img => uniqueImages.add(img));
+        });
+
+        const images = Array.from(uniqueImages);
 
         const description: ContentBlock[] = [
             { type: 'text', content: primary.productDescription }
