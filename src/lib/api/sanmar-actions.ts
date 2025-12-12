@@ -4,7 +4,7 @@
 'use server';
 
 import { unstable_cache } from 'next/cache';
-import { fetchAllSanMarProducts, fetchSanMarProductsByCategory } from './sanmar-fetcher';
+import { fetchAllSanMarProducts, fetchSanMarProductsByCategory } from './sanmar-server-loader';
 import type { Product } from '@/types/products';
 
 // ============================================================================
@@ -146,10 +146,10 @@ export const getPersonalProtectionProducts = unstable_cache(
  */
 export async function revalidateSanMarCache() {
   const { revalidateTag } = await import('next/cache');
-  
+
   Object.values(CACHE_TAGS).forEach(tag => {
     revalidateTag(tag);
   });
-  
+
   return { success: true, message: 'SanMar product cache invalidated' };
 }
