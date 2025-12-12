@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RecaptchaProvider from "@/components/providers/RecaptchaProvider";
+import { CategoriesProvider } from "@/contexts/CategoriesContext";
 import { OrganizationJsonLd, WebSiteJsonLd, LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({
@@ -85,20 +86,22 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-white`}>
         <RecaptchaProvider>
-          {/* Fixed Header */}
-          <header>
-            <Navbar />
-          </header>
-          
-          {/* Main Content with natural flow */}
-          <main>
-            {children}
-          </main>
-          
-          {/* Footer */}
-          <footer>
-            <Footer />
-          </footer>
+          <CategoriesProvider>
+            {/* Fixed Header */}
+            <header>
+              <Navbar />
+            </header>
+
+            {/* Main Content with natural flow */}
+            <main>
+              {children}
+            </main>
+
+            {/* Footer */}
+            <footer>
+              <Footer />
+            </footer>
+          </CategoriesProvider>
         </RecaptchaProvider>
       </body>
     </html>

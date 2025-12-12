@@ -62,26 +62,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             </p>
           </div>
           
-          {/* Tags - Show on mobile and desktop */}
-          {product.tags && product.tags.length > 0 && (
-            <div className="mb-2 sm:mb-3">
-              <div className="flex flex-wrap gap-1">
-                {product.tags.slice(0, 4).map((tag, index) => (
-                  <span 
-                    key={index}
-                    className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-                {product.tags.length > 4 && (
-                  <span className="text-xs text-slate-400 px-1">
-                    +{product.tags.length - 4}
-                  </span>
-                )}
-              </div>
-            </div>
-          )}
+          {/* Tags - Hidden */}
+          {/* Removed tags display */}
           
           {/* Category */}
           <span className="text-xs bg-slate-100 text-slate-700 px-2 sm:px-3 py-1 rounded-full font-medium">

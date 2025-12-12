@@ -5,11 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { 
+import CategoryMenu from '@/components/products/CategoryMenu';
+import SolutionsMenu from '@/components/solutions/SolutionsMenu';
+import {
   ChevronDown,
   Shield,
   Award,
-  ArrowRight
+  ArrowRight,
+  Package
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -29,7 +32,7 @@ export default function Navbar() {
       const scrolled = window.scrollY > 10;
       setIsScrolled(scrolled);
     };
-    
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -42,7 +45,7 @@ export default function Navbar() {
         setActiveDropdown(null);
       }
     };
-    
+
     if (isOpen || activeDropdown) {
       document.addEventListener('click', handleClickOutside);
       return () => document.removeEventListener('click', handleClickOutside);
@@ -62,18 +65,16 @@ export default function Navbar() {
     <>
 
       {/* Modern Navigation */}
-      <nav 
-        className={`navbar-container py-2 sticky top-0 w-full z-50 transition-all duration-700 ease-out border-t-6 border-t-slate-600 ${
-          isMounted && isScrolled 
-            ? 'bg-white/95 backdrop-blur-xl shadow-2xl shadow-gray-900/10 border-b border-gray-200/50' 
-            : 'bg-white/98 shadow-lg'
-        }`}
+      <nav
+        className={`navbar-container py-2 sticky top-0 w-full z-50 transition-all duration-700 ease-out border-t-6 border-t-slate-600 ${isMounted && isScrolled
+          ? 'bg-white/95 backdrop-blur-xl shadow-2xl shadow-gray-900/10 border-b border-gray-200/50'
+          : 'bg-white/98 shadow-lg'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`flex items-center justify-between transition-all duration-500 ${
-            isMounted && isScrolled ? 'h-16' : 'h-20'
-          }`}>
-            
+          <div className={`relative flex items-center justify-between transition-all duration-500 ${isMounted && isScrolled ? 'h-16' : 'h-20'
+            }`}>
+
             {/* Clean Logo Section */}
             <div className="flex items-center">
               <Link href="/" className="group p-2">
@@ -96,107 +97,87 @@ export default function Navbar() {
             {/* Professional Desktop Navigation (English) */}
             <div className="hidden lg:flex items-center space-x-2">
               <Link href="/">
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   className="font-primary text-gray-700 hover:text-gray-900 hover:bg-gray-100/70 font-medium px-5 py-2.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                  onMouseEnter={() => setActiveDropdown(null)}
                 >
                   Home
                 </Button>
               </Link>
 
-              {/* Products & Solutions Dropdown */}
-              <div className="relative">
-                <Button 
-                  variant="ghost" 
+              {/* Products Dropdown with CategoryMenu */}
+              <div className="">
+                <Button
+                  variant="ghost"
+                  className="font-primary text-gray-700 hover:text-gray-900 hover:bg-gray-100/70 font-medium px-5 py-2.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg flex items-center gap-1"
+                  onMouseEnter={() => setActiveDropdown('products')}
+                  onClick={() => handleDropdownToggle('products')}
+                >
+                  Products
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'products' ? 'rotate-180' : ''
+                    }`} />
+                </Button>
+                {/* CategoryMenu Dropdown */}
+                {activeDropdown === 'products' && (
+                  <div
+                    className="absolute top-full left-0 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-200/50 z-50 animate-in slide-in-from-top-2 duration-300"
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <CategoryMenu onItemClick={() => setActiveDropdown(null)} />
+                  </div>
+                )}
+              </div>
+
+              {/* Solutions Dropdown with SolutionsMenu */}
+              <div className="">
+                <Button
+                  variant="ghost"
                   className="font-primary text-gray-700 hover:text-gray-900 hover:bg-gray-100/70 font-medium px-5 py-2.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg flex items-center gap-1"
                   onMouseEnter={() => setActiveDropdown('solutions')}
                   onClick={() => handleDropdownToggle('solutions')}
                 >
-                  Products & Solutions
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                    activeDropdown === 'solutions' ? 'rotate-180' : ''
-                  }`} />
+                  Solutions
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'solutions' ? 'rotate-180' : ''
+                    }`} />
                 </Button>
-                {/* Products & Solutions Dropdown Menu */}
+
+                {/* SolutionsMenu Dropdown */}
                 {activeDropdown === 'solutions' && (
-                  <div 
-                    className="absolute top-full left-0 mt-3 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 py-4 z-50 animate-in slide-in-from-top-2 duration-300"
+                  <div
+                    className="absolute top-full left-0 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-200/50 z-50 animate-in slide-in-from-top-2 duration-300"
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    {/* View All Solutions - Featured */}
-                    <Link 
-                      href="/solutions" 
-                      className="group flex items-center justify-between px-6 py-4 text-sm text-gray-700 hover:bg-slate-50 transition-all duration-200 border-b border-gray-100"
-                      onClick={() => setActiveDropdown(null)}
-                    >
-                      <div>
-                        <div className="font-primary font-semibold text-slate-900 group-hover:text-slate-700">View All Solutions</div>
-                        <div className="font-accent text-xs text-gray-500 mt-0.5">Explore our complete offerings</div>
-                      </div>
-                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-all duration-200" />
-                    </Link>
-                    
-                    {/* Category Links */}
-                    <div className="py-2">
-                      <Link
-                        href="/jewelry"
-                        className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        <Award className="w-4 h-4 text-gray-400 group-hover:text-slate-600 mr-3 transition-colors duration-200" />
-                        Jewelry & Recognition Awards
-                      </Link>
-                      <Link
-                        href="/products/apparel"
-                        className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-slate-600 transition-colors duration-200"></span>
-                        Apparel
-                      </Link>
-                      <Link
-                        href="/promotional-products"
-                        className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-slate-600 transition-colors duration-200"></span>
-                        Promos
-                      </Link>
-                      <Link
-                        href="/products/signs-displays"
-                        className="font-accent group flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-200"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        <span className="w-2 h-2 bg-gray-400 rounded-full mr-3 group-hover:bg-slate-600 transition-colors duration-200"></span>
-                        Signs & Displays
-                      </Link>
-                    </div>
+                    <SolutionsMenu onItemClick={() => setActiveDropdown(null)} />
                   </div>
                 )}
               </div>
 
               <Link href="/government-institutions">
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   className="font-primary text-gray-700 hover:text-gray-900 hover:bg-gray-100/70 font-medium px-5 py-2.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                  onMouseEnter={() => setActiveDropdown(null)}
                 >
                   Government & Institutions
                 </Button>
               </Link>
 
               <Link href="/about">
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   className="font-primary text-gray-700 hover:text-gray-900 hover:bg-gray-100/70 font-medium px-5 py-2.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                  onMouseEnter={() => setActiveDropdown(null)}
                 >
                   About
                 </Button>
               </Link>
 
               <Link href="/contact">
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   className="font-primary text-gray-700 hover:text-gray-900 hover:bg-gray-100/70 font-medium px-5 py-2.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                  onMouseEnter={() => setActiveDropdown(null)}
                 >
                   Contact
                 </Button>
@@ -217,19 +198,6 @@ export default function Navbar() {
                 </Badge>
               </div>
 
-              {/* Refined Quote Button */}
-              <Link href="/quote">
-                <Button 
-                  className="font-primary group bg-white/80 text-slate-600 hover:text-slate-700 font-medium px-5 py-2.5 rounded-xl border-2 border-slate-400/60 hover:border-slate-600 transition-all duration-300"
-                >
-                  <span className="flex items-center gap-2">
-                    <span className="hidden sm:inline">Request Quote</span>
-                    <span className="sm:hidden">Quote</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-all duration-300" />
-                  </span>
-                </Button>
-              </Link>
-
               {/* Modern Mobile Menu Button */}
               <Button
                 variant="ghost"
@@ -237,15 +205,12 @@ export default function Navbar() {
                 onClick={toggleMobileMenu}
               >
                 <div className="relative w-6 h-6">
-                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 ${
-                    isOpen ? 'rotate-45 top-3' : 'rotate-0 top-1'
-                  }`}></span>
-                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 top-3 ${
-                    isOpen ? 'opacity-0' : 'opacity-100'
-                  }`}></span>
-                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 ${
-                    isOpen ? '-rotate-45 top-3' : 'rotate-0 top-5'
-                  }`}></span>
+                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 ${isOpen ? 'rotate-45 top-3' : 'rotate-0 top-1'
+                    }`}></span>
+                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 top-3 ${isOpen ? 'opacity-0' : 'opacity-100'
+                    }`}></span>
+                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 ${isOpen ? '-rotate-45 top-3' : 'rotate-0 top-5'
+                    }`}></span>
                 </div>
               </Button>
             </div>
@@ -256,10 +221,10 @@ export default function Navbar() {
         {isOpen && (
           <div className="lg:hidden absolute left-0 right-0 top-full z-40 bg-white/98 backdrop-blur-xl border-t border-gray-200/50 shadow-2xl shadow-gray-900/5 animate-in slide-in-from-top-5 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
             <div className="max-w-7xl mx-auto">
-              
+
               {/* Elegant Mobile Navigation */}
               <div className="py-4">
-                
+
                 {/* Home Link */}
                 <Link href="/" onClick={() => setIsOpen(false)}>
                   <div className="group flex items-center px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500">
@@ -271,73 +236,44 @@ export default function Navbar() {
                 </Link>
 
                 {/* Products & Solutions Section with Enhanced Animation */}
+                {/* Products Section */}
                 <div>
-                  <button 
+                  <button
+                    className="group w-full flex items-center justify-between px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500"
+                    onClick={() => handleDropdownToggle('mobile-products')}
+                  >
+                    <span className="font-primary font-normal text-base tracking-wide">Products</span>
+                    <ChevronDown className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${activeDropdown === 'mobile-products' ? 'rotate-180 text-slate-600 scale-110' : 'group-hover:text-gray-600'
+                      }`} />
+                  </button>
+
+                  {/* Mobile Products Dropdown with CategoryMenu */}
+                  {activeDropdown === 'mobile-products' && (
+                    <div className="bg-slate-50 border-y border-slate-100">
+                      {/* We hide the desktop container padding/sizing to make it fit mobile better */}
+                      <div className="[&>div]:p-0 [&>div]:max-w-none">
+                        <CategoryMenu onItemClick={() => setIsOpen(false)} />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Solutions Section - Mobile */}
+                <div>
+                  <button
                     className="group w-full flex items-center justify-between px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500"
                     onClick={() => handleDropdownToggle('mobile-solutions')}
                   >
-                    <span className="font-primary font-normal text-base tracking-wide">Products & Solutions</span>
-                    <ChevronDown className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                      activeDropdown === 'mobile-solutions' ? 'rotate-180 text-slate-600 scale-110' : 'group-hover:text-gray-600'
-                    }`} />
+                    <span className="font-primary font-normal text-base tracking-wide">Solutions</span>
+                    <ChevronDown className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${activeDropdown === 'mobile-solutions' ? 'rotate-180 text-slate-600 scale-110' : 'group-hover:text-gray-600'
+                      }`} />
                   </button>
-                  
-                  {/* Refined Sub-menu with Staggered Animation */}
+
+                  {/* Mobile Solutions Dropdown */}
                   {activeDropdown === 'mobile-solutions' && (
-                    <div className="bg-gradient-to-r from-gray-50/60 to-gray-50/30 border-l-4 border-slate-600/20 animate-in slide-in-from-top-3 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                      <div className="py-2 space-y-0.5">
-                        
-                        {/* View All Solutions - Featured */}
-                        <Link href="/solutions" onClick={() => setIsOpen(false)}>
-                          <div className="group flex items-center px-12 py-3 text-slate-700 hover:text-slate-900 hover:bg-white/80 transition-all duration-400 animate-in slide-in-from-left-4 delay-100 border-b border-gray-200/50 mb-1">
-                            <Award className="w-4 h-4 text-slate-500 mr-4 group-hover:text-slate-700 transition-colors duration-400" />
-                            <span className="font-accent text-sm font-medium tracking-wide">View All Solutions</span>
-                            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-slate-600" />
-                            </div>
-                          </div>
-                        </Link>
-
-                        <Link href="/jewelry" onClick={() => setIsOpen(false)}>
-                          <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-150">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
-                            <span className="font-accent text-sm font-light tracking-wide">Jewelry & Recognition Awards</span>
-                            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-slate-600" />
-                            </div>
-                          </div>
-                        </Link>
-
-                        <Link href="/products/apparel" onClick={() => setIsOpen(false)}>
-                          <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-200">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
-                            <span className="font-accent text-sm font-light tracking-wide">Apparel</span>
-                            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-slate-600" />
-                            </div>
-                          </div>
-                        </Link>
-
-                        <Link href="/promotional-products" onClick={() => setIsOpen(false)}>
-                          <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-250">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
-                            <span className="font-accent text-sm font-light tracking-wide">Promos</span>
-                            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-slate-600" />
-                            </div>
-                          </div>
-                        </Link>
-
-                        <Link href="/products/signs-displays" onClick={() => setIsOpen(false)}>
-                          <div className="group flex items-center px-12 py-3 text-gray-600 hover:text-gray-800 hover:bg-white/70 transition-all duration-400 animate-in slide-in-from-left-4 delay-300">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-4 group-hover:bg-slate-600 group-hover:scale-125 transition-all duration-400"></div>
-                            <span className="font-accent text-sm font-light tracking-wide">Signs & Displays</span>
-                            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-all duration-400 group-hover:translate-x-1">
-                              <ArrowRight className="w-3 h-3 text-slate-600" />
-                            </div>
-                          </div>
-                        </Link>
-
+                    <div className="bg-slate-50 border-y border-slate-100">
+                      <div className="[&>div]:p-4">
+                        <SolutionsMenu onItemClick={() => setIsOpen(false)} />
                       </div>
                     </div>
                   )}
