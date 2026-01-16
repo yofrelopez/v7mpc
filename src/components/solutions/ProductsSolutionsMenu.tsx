@@ -63,6 +63,29 @@ export default function ProductsSolutionsMenu({ onItemClick, isMobile = false }:
 
     // --- MOBILE VIEW (Accordion) ---
     const [mobileOpenTab, setMobileOpenTab] = useState<MenuTab | null>('solutions');
+    const solutionsButtonRef = useRef<HTMLButtonElement>(null);
+    const apparelButtonRef = useRef<HTMLButtonElement>(null);
+
+    // Auto-scroll effect to fix accordion jumping
+    useEffect(() => {
+        if (!mobileOpenTab) return;
+
+        // Wait for the accordion transition (300ms) to finish/start processing
+        const timeoutId = setTimeout(() => {
+            const element = mobileOpenTab === 'solutions'
+                ? solutionsButtonRef.current
+                : apparelButtonRef.current;
+
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }, 300);
+
+        return () => clearTimeout(timeoutId);
+    }, [mobileOpenTab]);
 
     const toggleMobileTab = (tab: MenuTab) => {
         setMobileOpenTab(mobileOpenTab === tab ? null : tab);
@@ -75,6 +98,7 @@ export default function ProductsSolutionsMenu({ onItemClick, isMobile = false }:
                 {/* Mobile: Solutions Section */}
                 <div className="border-b border-slate-100 last:border-0">
                     <button
+                        ref={solutionsButtonRef}
                         onClick={() => toggleMobileTab('solutions')}
                         className="w-full flex items-center justify-between px-6 py-4 text-left font-medium text-slate-800 bg-slate-50 hover:bg-slate-100/50 transition-colors group"
                     >
@@ -104,6 +128,7 @@ export default function ProductsSolutionsMenu({ onItemClick, isMobile = false }:
                 {/* Mobile: Apparel Section */}
                 <div className="border-b border-slate-100 last:border-0">
                     <button
+                        ref={apparelButtonRef}
                         onClick={() => toggleMobileTab('apparel')}
                         className="w-full flex items-center justify-between px-6 py-4 text-left font-medium text-slate-800 bg-slate-50 hover:bg-slate-100/50 transition-colors group"
                     >
