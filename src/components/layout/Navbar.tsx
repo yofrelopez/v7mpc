@@ -5,8 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import CategoryMenu from '@/components/products/CategoryMenu';
-import SolutionsMenu from '@/components/solutions/SolutionsMenu';
+import ProductsSolutionsMenu from '@/components/solutions/ProductsSolutionsMenu';
 import {
   ChevronDown,
   Shield,
@@ -66,7 +65,7 @@ export default function Navbar() {
 
       {/* Modern Navigation */}
       <nav
-        className={`navbar-container py-2 sticky top-0 w-full z-50 transition-all duration-700 ease-out border-t-6 border-t-slate-600 ${isMounted && isScrolled
+        className={`navbar-container backdrop-blur-xl bg-white/90 border-b border-white/20 py-2 sticky top-0 w-full z-50 transition-all duration-700 ease-out border-t-4 border-t-slate-600 ${isMounted && isScrolled
           ? 'bg-white/95 backdrop-blur-xl shadow-2xl shadow-gray-900/10 border-b border-gray-200/50'
           : 'bg-white/98 shadow-lg'
           }`}
@@ -106,30 +105,7 @@ export default function Navbar() {
                 </Button>
               </Link>
 
-              {/* Products Dropdown with CategoryMenu */}
-              <div className="">
-                <Button
-                  variant="ghost"
-                  className="font-primary text-gray-700 hover:text-gray-900 hover:bg-gray-100/70 font-medium px-5 py-2.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg flex items-center gap-1"
-                  onMouseEnter={() => setActiveDropdown('products')}
-                  onClick={() => handleDropdownToggle('products')}
-                >
-                  Products
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'products' ? 'rotate-180' : ''
-                    }`} />
-                </Button>
-                {/* CategoryMenu Dropdown */}
-                {activeDropdown === 'products' && (
-                  <div
-                    className="absolute top-full left-0 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-200/50 z-50 animate-in slide-in-from-top-2 duration-300"
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <CategoryMenu onItemClick={() => setActiveDropdown(null)} />
-                  </div>
-                )}
-              </div>
-
-              {/* Solutions Dropdown with SolutionsMenu */}
+              {/* Unified Products & Solutions Dropdown */}
               <div className="">
                 <Button
                   variant="ghost"
@@ -137,18 +113,21 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveDropdown('solutions')}
                   onClick={() => handleDropdownToggle('solutions')}
                 >
-                  Solutions
+                  Products & Solutions
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'solutions' ? 'rotate-180' : ''
                     }`} />
                 </Button>
 
-                {/* SolutionsMenu Dropdown */}
+                {/* Unified Mega Menu Dropdown */}
                 {activeDropdown === 'solutions' && (
                   <div
-                    className="absolute top-full left-0 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-200/50 z-50 animate-in slide-in-from-top-2 duration-300"
+                    className="absolute top-full left-0 w-full mt-2 z-50 animate-in slide-in-from-top-2 duration-300 px-4"
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <SolutionsMenu onItemClick={() => setActiveDropdown(null)} />
+                    {/* Centered Container for the mega menu */}
+                    <div className="max-w-7xl mx-auto">
+                      <ProductsSolutionsMenu onItemClick={() => setActiveDropdown(null)} />
+                    </div>
                   </div>
                 )}
               </div>
@@ -219,7 +198,7 @@ export default function Navbar() {
 
         {/* Elegant Classic Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden absolute left-0 right-0 top-full z-40 bg-white/98 backdrop-blur-xl border-t border-gray-200/50 shadow-2xl shadow-gray-900/5 animate-in slide-in-from-top-5 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+          <div className="lg:hidden absolute left-0 right-0 top-full z-40 bg-white/98 backdrop-blur-xl border-t border-gray-200/50 shadow-2xl shadow-gray-900/5 animate-in slide-in-from-top-5 duration-700 ease-spring">
             <div className="max-w-7xl mx-auto">
 
               {/* Elegant Mobile Navigation */}
@@ -236,46 +215,20 @@ export default function Navbar() {
                 </Link>
 
                 {/* Products & Solutions Section with Enhanced Animation */}
-                {/* Products Section */}
-                <div>
-                  <button
-                    className="group w-full flex items-center justify-between px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500"
-                    onClick={() => handleDropdownToggle('mobile-products')}
-                  >
-                    <span className="font-primary font-normal text-base tracking-wide">Products</span>
-                    <ChevronDown className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${activeDropdown === 'mobile-products' ? 'rotate-180 text-slate-600 scale-110' : 'group-hover:text-gray-600'
-                      }`} />
-                  </button>
-
-                  {/* Mobile Products Dropdown with CategoryMenu */}
-                  {activeDropdown === 'mobile-products' && (
-                    <div className="bg-slate-50 border-y border-slate-100">
-                      {/* We hide the desktop container padding/sizing to make it fit mobile better */}
-                      <div className="[&>div]:p-0 [&>div]:max-w-none">
-                        <CategoryMenu onItemClick={() => setIsOpen(false)} />
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Solutions Section - Mobile */}
+                {/* Unified Mobile Products & Solutions */}
                 <div>
                   <button
                     className="group w-full flex items-center justify-between px-6 py-4 text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50/80 hover:to-transparent transition-all duration-300 border-l-4 border-transparent hover:border-slate-500"
                     onClick={() => handleDropdownToggle('mobile-solutions')}
                   >
-                    <span className="font-primary font-normal text-base tracking-wide">Solutions</span>
-                    <ChevronDown className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${activeDropdown === 'mobile-solutions' ? 'rotate-180 text-slate-600 scale-110' : 'group-hover:text-gray-600'
+                    <span className="font-primary font-normal text-base tracking-wide">Products & Solutions</span>
+                    <ChevronDown className={`w-5 h-5 transition-all duration-500 ease-spring ${activeDropdown === 'mobile-solutions' ? 'rotate-180 text-slate-600 scale-110' : 'group-hover:text-gray-600'
                       }`} />
                   </button>
 
-                  {/* Mobile Solutions Dropdown */}
+                  {/* Mobile Dropdown Body */}
                   {activeDropdown === 'mobile-solutions' && (
-                    <div className="bg-slate-50 border-y border-slate-100">
-                      <div className="[&>div]:p-4">
-                        <SolutionsMenu onItemClick={() => setIsOpen(false)} />
-                      </div>
-                    </div>
+                    <ProductsSolutionsMenu isMobile={true} onItemClick={() => setIsOpen(false)} />
                   )}
                 </div>
 

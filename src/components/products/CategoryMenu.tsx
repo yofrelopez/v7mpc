@@ -26,15 +26,15 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
       {/* MOBILE UI - 2 Column Grid ("App Style") */}
       {/* ============================================================ */}
       <div className="md:hidden space-y-4">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-2">
           {/* Hoodies */}
           <Link
             href="/products?type=hoodie"
             onClick={onItemClick}
-            className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-700">
-              <Shirt className="w-5 h-5" />
+              <Shirt className="w-4 h-4" />
             </div>
             <span className="text-sm font-medium text-slate-700">Hoodies</span>
           </Link>
@@ -43,10 +43,10 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <Link
             href="/products?type=t-shirt"
             onClick={onItemClick}
-            className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-700">
-              <Shirt className="w-5 h-5" />
+              <Shirt className="w-4 h-4" />
             </div>
             <span className="text-sm font-medium text-slate-700">T-Shirts</span>
           </Link>
@@ -55,10 +55,10 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <Link
             href="/products?type=polo"
             onClick={onItemClick}
-            className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-700">
-              <Shirt className="w-5 h-5" />
+              <Shirt className="w-4 h-4" />
             </div>
             <span className="text-sm font-medium text-slate-700">Polos</span>
           </Link>
@@ -67,10 +67,10 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <Link
             href="/products?type=jacket"
             onClick={onItemClick}
-            className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-700">
-              <Wind className="w-5 h-5" />
+              <Wind className="w-4 h-4" />
             </div>
             <span className="text-sm font-medium text-slate-700">Jackets</span>
           </Link>
@@ -79,10 +79,10 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <Link
             href="/products?type=bag"
             onClick={onItemClick}
-            className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-blue-600">
-              <Briefcase className="w-5 h-5" />
+              <Briefcase className="w-4 h-4" />
             </div>
             <span className="text-sm font-medium text-slate-700">Bags</span>
           </Link>
@@ -91,10 +91,10 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <Link
             href="/products?type=cap"
             onClick={onItemClick}
-            className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-blue-600">
-              <HardHat className="w-5 h-5" />
+              <HardHat className="w-4 h-4" />
             </div>
             <span className="text-sm font-medium text-slate-700">Caps</span>
           </Link>
@@ -103,10 +103,10 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <Link
             href="/products?type=workwear"
             onClick={onItemClick}
-            className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100 active:scale-95 transition-all"
           >
             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-blue-600">
-              <HardHat className="w-5 h-5" />
+              <HardHat className="w-4 h-4" />
             </div>
             <span className="text-sm font-medium text-slate-700">Workwear</span>
           </Link>
@@ -115,10 +115,10 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
           <Link
             href="/products?show=brands"
             onClick={onItemClick}
-            className="flex items-center gap-3 p-3 rounded-xl bg-amber-50 border border-amber-100 active:scale-95 transition-all"
+            className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white border border-amber-200 shadow-sm active:scale-95 transition-all"
           >
-            <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-amber-600">
-              <ChevronRight className="w-5 h-5" />
+            <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center text-amber-600">
+              <ChevronRight className="w-4 h-4" />
             </div>
             <span className="text-sm font-bold text-amber-800">Brands</span>
           </Link>
@@ -129,7 +129,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
         <Link
           href="/products"
           onClick={onItemClick}
-          className="flex items-center justify-center gap-2 p-3 w-full rounded-xl border border-slate-200 text-slate-600 font-medium hover:bg-slate-50 active:scale-95 transition-all text-sm"
+          className="flex items-center justify-center gap-2 p-3 w-full rounded-xl border border-slate-200 text-slate-600 font-medium hover:bg-slate-50 active:scale-95 transition-all text-sm shadow-sm"
         >
           <Package className="w-4 h-4" />
           View All Products
