@@ -181,17 +181,17 @@ export default function ProductsSolutionsMenu({ onItemClick, isMobile = false }:
                         onClick={() => setActiveTab('solutions')}
                         className={`w-full group relative flex items-center justify-between px-4 py-4 text-sm font-medium rounded-xl transition-all duration-300 ease-out
               ${activeTab === 'solutions'
-                                ? 'bg-white text-blue-700 shadow-lg shadow-blue-900/5 ring-1 ring-slate-200'
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                                ? 'bg-slate-100 text-slate-900 ring-1 ring-slate-200'
+                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                             }`}
                     >
                         <div className="flex items-center gap-4">
-                            <div className={`p-2.5 rounded-lg transition-all duration-300 ${activeTab === 'solutions' ? 'bg-blue-50 text-blue-600 scale-110' : 'bg-white border border-slate-100 text-slate-400 group-hover:border-slate-300 group-hover:text-slate-600'}`}>
+                            <div className={`p-2.5 rounded-lg transition-all duration-300 ${activeTab === 'solutions' ? 'bg-white shadow-sm ring-1 ring-slate-200/50 text-slate-700 scale-100' : 'bg-slate-50 border border-slate-100 text-slate-400 group-hover:border-slate-200 group-hover:text-slate-600'}`}>
                                 <Briefcase className="w-5 h-5" />
                             </div>
                             <div className="text-left">
                                 <span className="block text-sm font-bold tracking-tight">Our Solutions</span>
-                                <span className={`block text-[10px] font-medium mt-0.5 transition-all duration-300 ${activeTab === 'solutions' ? 'text-blue-600/70' : 'text-slate-400 group-hover:text-slate-500'}`}>
+                                <span className={`block text-[10px] font-medium mt-0.5 transition-all duration-300 ${activeTab === 'solutions' ? 'text-slate-500' : 'text-slate-400 group-hover:text-slate-500'}`}>
                                     Divisions & Services
                                 </span>
                             </div>
@@ -199,7 +199,7 @@ export default function ProductsSolutionsMenu({ onItemClick, isMobile = false }:
 
                         {/* Active Indicator */}
                         {activeTab === 'solutions' && (
-                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-600 rounded-l-full mr-[1px]"></div>
+                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-slate-800 rounded-l-full mr-[1px]"></div>
                         )}
                     </button>
 
@@ -209,17 +209,17 @@ export default function ProductsSolutionsMenu({ onItemClick, isMobile = false }:
                         onClick={() => setActiveTab('apparel')}
                         className={`w-full group relative flex items-center justify-between px-4 py-4 text-sm font-medium rounded-xl transition-all duration-300 ease-out
               ${activeTab === 'apparel'
-                                ? 'bg-white text-blue-700 shadow-lg shadow-blue-900/5 ring-1 ring-slate-200'
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                                ? 'bg-slate-100 text-slate-900 ring-1 ring-slate-200'
+                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                             }`}
                     >
                         <div className="flex items-center gap-4">
-                            <div className={`p-2.5 rounded-lg transition-all duration-300 ${activeTab === 'apparel' ? 'bg-blue-50 text-blue-600 scale-110' : 'bg-white border border-slate-100 text-slate-400 group-hover:border-slate-300 group-hover:text-slate-600'}`}>
+                            <div className={`p-2.5 rounded-lg transition-all duration-300 ${activeTab === 'apparel' ? 'bg-white shadow-sm ring-1 ring-slate-200/50 text-slate-700 scale-100' : 'bg-slate-50 border border-slate-100 text-slate-400 group-hover:border-slate-200 group-hover:text-slate-600'}`}>
                                 <Shirt className="w-5 h-5" />
                             </div>
                             <div className="text-left">
                                 <span className="block text-sm font-bold tracking-tight">Apparel Catalog</span>
-                                <span className={`block text-[10px] font-medium mt-0.5 transition-all duration-300 ${activeTab === 'apparel' ? 'text-blue-600/70' : 'text-slate-400 group-hover:text-slate-500'}`}>
+                                <span className={`block text-[10px] font-medium mt-0.5 transition-all duration-300 ${activeTab === 'apparel' ? 'text-slate-500' : 'text-slate-400 group-hover:text-slate-500'}`}>
                                     Shop Full Collection
                                 </span>
                             </div>
@@ -227,20 +227,37 @@ export default function ProductsSolutionsMenu({ onItemClick, isMobile = false }:
 
                         {/* Active Indicator */}
                         {activeTab === 'apparel' && (
-                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-600 rounded-l-full mr-[1px]"></div>
+                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-slate-800 rounded-l-full mr-[1px]"></div>
                         )}
                     </button>
                 </div>
 
-                {/* Bottom Support Link */}
-                <div className="px-6 py-6 mt-auto border-t border-slate-200/50">
+                {/* Bottom Quick Links */}
+                <div className="px-6 py-6 mt-auto border-t border-slate-200/50 space-y-3">
+                    {/* Browse Catalog CTA - Secondary / Outline Style */}
+                    <Link
+                        href="/products"
+                        onClick={onItemClick}
+                        className="group flex items-center gap-3 w-full p-3 rounded-xl bg-white border border-slate-200 text-slate-700 shadow-sm hover:border-slate-300 hover:shadow-md hover:text-slate-900 hover:bg-slate-50/50 transition-all duration-300"
+                    >
+                        <div className="p-1.5 rounded-lg bg-slate-100 text-slate-500 group-hover:bg-slate-200 group-hover:text-slate-700 transition-colors">
+                            <Package className="w-4 h-4" />
+                        </div>
+                        <span className="text-sm font-bold tracking-wide">Browse Full Catalog</span>
+                        <ChevronRight className="w-4 h-4 text-slate-400 ml-auto group-hover:text-slate-600 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+
+                    {/* Support Link - Secondary */}
                     <Link
                         href="/contact"
                         onClick={onItemClick}
-                        className="group flex items-center justify-between w-full p-3 rounded-lg bg-slate-100 hover:bg-blue-50 transition-all duration-300"
+                        className="group flex items-center justify-between w-full p-2.5 rounded-lg text-slate-500 hover:text-blue-700 hover:bg-blue-50/50 transition-all duration-300"
                     >
-                        <span className="text-xs font-semibold text-slate-600 group-hover:text-blue-700">Need Custom Quote?</span>
-                        <ChevronRight className="w-3 h-3 text-slate-400 group-hover:text-blue-500 transform group-hover:translate-x-1 transition-transform" />
+                        <span className="text-xs font-semibold">Need Custom Quote?</span>
+                        <div className="flex items-center text-[10px] font-medium opacity-60 group-hover:opacity-100">
+                            <span>Contact Us</span>
+                            <ChevronRight className="w-3 h-3 ml-1" />
+                        </div>
                     </Link>
                 </div>
             </div>

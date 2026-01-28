@@ -14,7 +14,7 @@ import ApparelBrands from './ApparelBrands';
 export default function ApparelSubcategories() {
   const subcategories = [
     {
-      id: 'uniforms',
+      id: 'uniform',
       name: 'Uniforms',
       tagline: 'Professional Uniforms for Institutions',
       description: 'High-quality professional uniforms designed for schools, government agencies, healthcare, and corporate environments. Built for durability, comfort, and consistent branding.',
@@ -23,7 +23,7 @@ export default function ApparelSubcategories() {
       bgColor: 'bg-slate-50'
     },
     {
-      id: 'tshirts',
+      id: 't-shirt',
       name: 'T-Shirts',
       tagline: 'Custom Branded T-Shirts',
       description: 'Premium cotton t-shirts perfect for events, teams, promotions, and casual workplace environments. Available in all sizes with full customization options.',
@@ -32,7 +32,7 @@ export default function ApparelSubcategories() {
       bgColor: 'bg-blue-50'
     },
     {
-      id: 'polos',
+      id: 'polo',
       name: 'Polo Shirts',
       tagline: 'Corporate Polo Shirts',
       description: 'Classic polo shirts that combine professionalism with comfort. Ideal for business casual environments, sales teams, and customer-facing roles.',
@@ -41,7 +41,7 @@ export default function ApparelSubcategories() {
       bgColor: 'bg-purple-50'
     },
     {
-      id: 'outerwear',
+      id: 'jacket',
       name: 'Outerwear',
       tagline: 'Jackets, Hoodies & Coats',
       description: 'Quality outerwear including jackets, hoodies, fleece, and coats. Perfect for outdoor teams, cold weather environments, and branded corporate apparel.',
@@ -50,7 +50,7 @@ export default function ApparelSubcategories() {
       bgColor: 'bg-amber-50'
     },
     {
-      id: 'hats',
+      id: 'cap',
       name: 'Hats & Caps',
       tagline: 'Custom Headwear',
       description: 'Stylish caps, hats, and headwear with custom embroidery. Great for sports teams, outdoor workers, promotional events, and brand visibility.',
@@ -58,15 +58,7 @@ export default function ApparelSubcategories() {
       gradient: 'from-rose-600 to-pink-700',
       bgColor: 'bg-rose-50'
     },
-    {
-      id: 'activewear',
-      name: 'Activewear',
-      tagline: 'Sports & Athletic Apparel',
-      description: 'Performance athletic wear designed for sports teams, fitness programs, and active organizations. Moisture-wicking fabrics and durable construction.',
-      icon: Zap,
-      gradient: 'from-emerald-600 to-green-700',
-      bgColor: 'bg-emerald-50'
-    }
+
   ];
 
   return (
@@ -98,7 +90,7 @@ export default function ApparelSubcategories() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Link
-                  href={`/products/apparel/catalog?subcategory=${subcategory.id}`}
+                  href={`/products?type=${subcategory.id}`}
                   className="group block"
                 >
                   <div className={`${subcategory.bgColor} rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 h-full flex flex-col`}>

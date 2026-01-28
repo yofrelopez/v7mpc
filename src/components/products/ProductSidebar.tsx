@@ -3,15 +3,16 @@
 
 import { Check, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 // Filter Configuration
 export const PRODUCT_TYPES = [
-    { id: 'polos', label: 'Polos' },
-    { id: 't-shirts', label: 'T-Shirts' },
-    { id: 'caps', label: 'Caps & Hats' },
-    { id: 'bags', label: 'Bags' },
-    { id: 'hoodies', label: 'Hoodies' },
-    { id: 'jackets', label: 'Jackets' },
+    { id: 'polo', label: 'Polos' },
+    { id: 't-shirt', label: 'T-Shirts' },
+    { id: 'cap', label: 'Caps & Hats' },
+    { id: 'bag', label: 'Bags' },
+    { id: 'hoodie', label: 'Hoodies' },
+    { id: 'jacket', label: 'Jackets' },
     { id: 'workwear', label: 'Workwear' },
 ];
 
@@ -38,13 +39,29 @@ interface ProductSidebarProps {
 }
 
 export default function ProductSidebar({
-    selectedType,
-    onTypeChange,
-    selectedBrand,
-    onBrandChange,
     className,
-    totalCounts
-}: ProductSidebarProps) {
+}: { className?: string }) {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    // Get current active filters from URL
+    const selectedType = searchParams.get('type');
+    const selectedBrand = searchParams.get('brand');
+
+    // Update URL helper
+    const updateFilter = (key: string, value: string | null) => {
+        const params = new URLSearchParams(searchParams.toString());
+        if (value) {
+            params.set(key, value);
+        } else {
+            params.delete(key);
+        }
+        // Reset page to 1 on filter change
+        params.delete('page');
+
+        router.push(`/products?${params.toString()}`, { scroll: false });
+    };
+
     return (
         <div className={cn("w-full space-y-8", className)}>
 
@@ -55,7 +72,7 @@ export default function ProductSidebar({
                 </h3>
                 <div className="space-y-1">
                     <button
-                        onClick={() => onTypeChange(null)}
+                        onClick={() => updateFilter('type', null)}
                         className={cn(
                             "w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200",
                             !selectedType
@@ -70,7 +87,7 @@ export default function ProductSidebar({
                     {PRODUCT_TYPES.map((type) => (
                         <button
                             key={type.id}
-                            onClick={() => onTypeChange(selectedType === type.id ? null : type.id)}
+                            onClick={() => updateFilter('type', selectedType === type.id ? null : type.id)}
                             className={cn(
                                 "w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200 group",
                                 selectedType === type.id
@@ -80,7 +97,6 @@ export default function ProductSidebar({
                         >
                             <span>{type.label}</span>
                             {selectedType === type.id && <Check className="w-4 h-4 text-slate-600" />}
-                            {/* Optional: Show count if available */}
                         </button>
                     ))}
                 </div>
@@ -93,7 +109,7 @@ export default function ProductSidebar({
                 </h3>
                 <div className="space-y-1 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                     <button
-                        onClick={() => onBrandChange(null)}
+                        onClick={() => updateFilter('brand', null)}
                         className={cn(
                             "w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200",
                             !selectedBrand
@@ -108,7 +124,7 @@ export default function ProductSidebar({
                     {TOP_BRANDS.map((brand) => (
                         <button
                             key={brand.id}
-                            onClick={() => onBrandChange(selectedBrand === brand.id ? null : brand.id)}
+                            onClick={() => updateFilter('brand', selectedBrand === brand.id ? null : brand.id)}
                             className={cn(
                                 "w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200 group",
                                 selectedBrand === brand.id

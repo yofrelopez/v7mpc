@@ -93,12 +93,7 @@ export default function ProductsPageClient({ products }: ProductsPageClientProps
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar - Desktop */}
           <aside className="hidden lg:block w-64 flex-shrink-0">
-            <ProductSidebar
-              selectedType={selectedType}
-              onTypeChange={setSelectedType}
-              selectedBrand={selectedBrand}
-              onBrandChange={setSelectedBrand}
-            />
+            <ProductSidebar />
           </aside>
 
           {/* Main Content */}

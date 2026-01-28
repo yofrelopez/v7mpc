@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { SolutionsHero, MainDivisions, SolutionsCTA } from '@/components/solutions';
-import ProductsShowcase from '@/components/home/ProductsShowcase';
 
 export const metadata: Metadata = {
   title: 'Products & Solutions | V7 Marketplace Corporation',
@@ -44,13 +43,10 @@ export default function SolutionsPage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <SolutionsHero />
-      
+
       {/* Main Divisions Section */}
       <MainDivisions />
-      
-      {/* Quick Category Preview (ProductsShowcase) */}
-      <ProductsShowcase />
-      
+
       {/* CTA Section */}
       <SolutionsCTA />
     </div>

@@ -2,15 +2,16 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  PenTool, 
-  Coffee, 
-  Smartphone, 
-  Briefcase, 
-  Home, 
-  Leaf, 
+import {
+  PenTool,
+  Coffee,
+  Smartphone,
+  Briefcase,
+  Home,
+  Leaf,
   Heart,
-  ArrowRight 
+  ArrowRight,
+  Signpost
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -92,17 +93,28 @@ export default function PromotionalCategories() {
       image: '/images/promotional/faith-placeholder.jpg',
       gradient: 'from-indigo-600 to-blue-700',
       bgColor: 'bg-indigo-50'
+    },
+    {
+      id: 'signs-displays',
+      name: 'Signs & Displays',
+      tagline: 'Custom Signage & Display Solutions',
+      description: 'High-impact signage, banners, and displays that capture attention and communicate your message clearly.',
+      fullDescription: 'Stand out in any environment with professional signage and displays. From trade show booths and retractable banners to outdoor yard signs and window decals, we offer durable, high-quality visual solutions that ensure your brand gets noticed.',
+      icon: Signpost,
+      image: '/images/products/signs_display.png',
+      gradient: 'from-purple-600 to-violet-700',
+      bgColor: 'bg-purple-50'
     }
   ];
 
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-primary text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-            Seven Comprehensive Categories
+            Eight Comprehensive Categories
           </h2>
           <p className="font-accent text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
             From office essentials to eco-friendly solutions, we offer strategic promotional products designed to amplify your brand's message and values.
@@ -114,7 +126,7 @@ export default function PromotionalCategories() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category, index) => {
             const IconComponent = category.icon;
-            
+
             return (
               <motion.div
                 key={category.id}
@@ -127,51 +139,51 @@ export default function PromotionalCategories() {
                   href={`/products/promos?category=${category.id}`}
                   className="group block"
                 >
-                <div className={`${category.bgColor} rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 h-full flex flex-col`}>
-                  
-                  {/* Icon Header */}
-                  <div className="relative h-48 flex items-center justify-center overflow-hidden">
-                    {/* Gradient Background */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                    
-                    {/* Icon */}
-                    <div className={`relative z-10 w-24 h-24 rounded-full bg-gradient-to-br ${category.gradient} flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500`}>
-                      <IconComponent className="w-12 h-12 text-white" />
+                  <div className={`${category.bgColor} rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100 h-full flex flex-col`}>
+
+                    {/* Icon Header */}
+                    <div className="relative h-48 flex items-center justify-center overflow-hidden">
+                      {/* Gradient Background */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
+
+                      {/* Icon */}
+                      <div className={`relative z-10 w-24 h-24 rounded-full bg-gradient-to-br ${category.gradient} flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500`}>
+                        <IconComponent className="w-12 h-12 text-white" />
+                      </div>
+
+                      {/* Decorative circles */}
+                      <div className={`absolute top-4 right-4 w-16 h-16 rounded-full bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
+                      <div className={`absolute bottom-4 left-4 w-20 h-20 rounded-full bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
                     </div>
-                    
-                    {/* Decorative circles */}
-                    <div className={`absolute top-4 right-4 w-16 h-16 rounded-full bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                    <div className={`absolute bottom-4 left-4 w-20 h-20 rounded-full bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    
-                    {/* Category Name */}
-                    <h3 className="font-primary text-xl lg:text-2xl font-bold text-slate-900 mb-2 group-hover:text-slate-700 transition-colors">
-                      {category.name}
-                    </h3>
+                    {/* Content */}
+                    <div className="p-6 flex flex-col flex-grow">
 
-                    {/* Tagline */}
-                    <p className={`font-accent text-xs font-semibold mb-3 bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`}>
-                      {category.tagline}
-                    </p>
+                      {/* Category Name */}
+                      <h3 className="font-primary text-xl lg:text-2xl font-bold text-slate-900 mb-2 group-hover:text-slate-700 transition-colors">
+                        {category.name}
+                      </h3>
 
-                    {/* Description */}
-                    <p className="font-accent text-sm text-slate-600 leading-relaxed mb-4 flex-grow">
-                      {category.description}
-                    </p>
+                      {/* Tagline */}
+                      <p className={`font-accent text-xs font-semibold mb-3 bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`}>
+                        {category.tagline}
+                      </p>
 
-                    {/* CTA */}
-                    <div className="flex items-center text-slate-700 group-hover:text-slate-900 transition-colors mt-auto">
-                      <span className="font-primary text-sm font-semibold">Explore Category</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      {/* Description */}
+                      <p className="font-accent text-sm text-slate-600 leading-relaxed mb-4 flex-grow">
+                        {category.description}
+                      </p>
+
+                      {/* CTA */}
+                      <div className="flex items-center text-slate-700 group-hover:text-slate-900 transition-colors mt-auto">
+                        <span className="font-primary text-sm font-semibold">Explore Category</span>
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
                     </div>
-                  </div>
 
-                </div>
-              </Link>
-            </motion.div>
+                  </div>
+                </Link>
+              </motion.div>
             );
           })}
         </div>

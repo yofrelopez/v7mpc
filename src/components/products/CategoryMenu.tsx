@@ -327,22 +327,7 @@ export default function CategoryMenu({ onItemClick }: CategoryMenuProps) {
         </div>
       </div>
 
-      {/* ============================================================ */}
-      {/* BOTTOM CTA: BROWSE ALL */}
-      {/* ============================================================ */}
-      <div className="hidden md:block mt-6 pt-6 border-t border-slate-200">
-        <Link
-          href="/products"
-          onClick={onItemClick}
-          className="group flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-200 shadow-md hover:shadow-lg"
-        >
-          <span className="text-sm font-semibold text-white flex items-center gap-2">
-            <Package className="w-5 h-5" />
-            Browse All Products
-          </span>
-          <ChevronRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
+
     </div >
   );
 }
